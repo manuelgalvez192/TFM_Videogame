@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     private SpriteRenderer sr;
+    private Vector2 gamepadInput;
 
     private int dir = 1;
 
@@ -22,22 +24,28 @@ public class PlayerMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-	private void FixedUpdate()
+    private void OnMovement(InputValue value)
+    {
+        gamepadInput = value.Get<Vector2>();
+    }
+    
+    private void FixedUpdate()
     {
         animator.SetBool("isRunning", false);
         
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || gamepadInput.x < 0)
         {
             rb.velocity = new Vector2(speed * -1, rb.velocity.y);
             animator.SetBool("isRunning", true);
             sr.flipX = true;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || gamepadInput.x > 0)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             animator.SetBool("isRunning", true);
             sr.flipX = false;
         }
+
     }
 }
