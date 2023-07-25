@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -119,12 +119,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: ScottPilgrimIdle_0
       rect:
         serializedVersion: 2
         x: 6
         y: 2
-        width: 39
+        width: 40
         height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a42dbe9424edd94dab6ead0d0b7835f
-      internalID: 1853330481
+      spriteID: 47ce87fbe23ed9c4591727836c58bc29
+      internalID: 1992025261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: ScottPilgrimIdle_1
       rect:
         serializedVersion: 2
         x: 46
         y: 2
         width: 38
-        height: 63
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e42f925198708a459eba1a11901b92c
-      internalID: -1892039901
+      spriteID: 9f9e7b876e5fea548b3367862d8e9954
+      internalID: -1034481663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: ScottPilgrimIdle_2
       rect:
         serializedVersion: 2
         x: 85
         y: 2
-        width: 38
-        height: 63
+        width: 39
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57a1387ca70e0eb428c70c22342096ed
-      internalID: -746567446
+      spriteID: 5f0c013990a3b0d4eab630c114de7015
+      internalID: -1727435521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: ScottPilgrimIdle_3
       rect:
         serializedVersion: 2
         x: 124
-        y: 2
-        width: 38
-        height: 63
+        y: 1
+        width: 39
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1daa3fc15f5ccc408ba3e91f8dd9eaf
-      internalID: 482610609
+      spriteID: 9c7e94b75f637e049aae8096c567e7e6
+      internalID: 763261961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_4
+      name: ScottPilgrimIdle_4
       rect:
         serializedVersion: 2
         x: 163
         y: 2
         width: 39
-        height: 63
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4c9692d1a0267e41b03ca8d8eddff57
-      internalID: 1118149280
+      spriteID: 678d46ef60b0efa4ea5f0a7adf87ba20
+      internalID: 1398583107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_5
+      name: ScottPilgrimIdle_5
       rect:
         serializedVersion: 2
         x: 202
         y: 2
         width: 38
-        height: 63
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ea78de082c635b4f8741e79138aa335
-      internalID: 158479312
+      spriteID: 82e2617898629f94c9b59350b5605036
+      internalID: -1606462586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_6
+      name: ScottPilgrimIdle_6
       rect:
         serializedVersion: 2
         x: 241
-        y: 2
-        width: 38
-        height: 63
+        y: 1
+        width: 39
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47f5ca0075b9e1f4583c98f4a26c45a2
-      internalID: -106282304
+      spriteID: af14b6fbb0dcd8f46b10abe2386e6441
+      internalID: -117311436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_7
+      name: ScottPilgrimIdle_7
       rect:
         serializedVersion: 2
         x: 280
         y: 2
-        width: 38
-        height: 63
+        width: 39
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,8 +280,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4757fa0e60b6c224dbcf62b7679de1f5
-      internalID: -1909525267
+      spriteID: e0c567e26d46c5545861e5941f960c0e
+      internalID: -1697625520
       vertices: []
       indices: 
       edges: []
@@ -289,7 +289,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cfec495769541ca43b5dd0c6f25e4f0f
+    spriteID: 2f423ec98fd2dde479cf02719aa9c332
     internalID: 0
     vertices: []
     indices: 
@@ -297,14 +297,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_4: 1118149280
-      Idle_1: -1892039901
-      Idle_3: 482610609
-      Idle_5: 158479312
-      Idle_0: 1853330481
-      Idle_6: -106282304
-      Idle_7: -1909525267
-      Idle_2: -746567446
+      ScottPilgrimIdle_7: -1697625520
+      ScottPilgrimIdle_2: -1727435521
+      ScottPilgrimIdle_0: 1992025261
+      ScottPilgrimIdle_6: -117311436
+      ScottPilgrimIdle_4: 1398583107
+      ScottPilgrimIdle_3: 763261961
+      ScottPilgrimIdle_5: -1606462586
+      ScottPilgrimIdle_1: -1034481663
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
