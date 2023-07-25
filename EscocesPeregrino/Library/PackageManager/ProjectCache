@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638257637144523715
-    m_Hash: 3072158506
+      ticks: 638258996072924198
+    m_Hash: 1971243439
   m_LockFileStatus:
     m_FilePath: C:/Users/Manuel/Documents/GitHub/TFM_Videogame/EscocesPeregrino/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638257637144563726
-    m_Hash: 28631361
+      ticks: 638258996072934160
+    m_Hash: 3791316679
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

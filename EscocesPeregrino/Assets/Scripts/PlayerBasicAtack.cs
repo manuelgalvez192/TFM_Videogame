@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBasicAtack : MonoBehaviour
 {
 
+    [SerializeField]
     private Animator animator;
     private Vector2 gamepadInput;
     
@@ -13,7 +14,6 @@ public class PlayerBasicAtack : MonoBehaviour
     
     void Start()
     {
-        animator = GetComponent<Animator>();
         atacking = false;
         comboCount = 0;
     }

@@ -7,22 +7,18 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-
-    private Rigidbody rb;
+    [SerializeField]
     private Animator animator;
+    [SerializeField]
     private SpriteRenderer sr;
+    [SerializeField]
+    private Rigidbody rb;
+    
     private Vector2 gamepadInput;
 
     private int dir = 1;
 
     private bool canControl = true;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
-    }
 
     private void OnMovement(InputValue value)
     {
