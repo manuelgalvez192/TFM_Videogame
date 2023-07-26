@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private SpriteRenderer sr;
     [SerializeField]
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     
     private Vector2 gamepadInput;
 
@@ -47,19 +47,31 @@ public class PlayerMovement : MonoBehaviour
 
         if (canControl)
         {
-            if (Input.GetKey(KeyCode.A) || gamepadInput.x < 0)
-            {
-                rb.velocity = new Vector2(speed * -1, rb.velocity.y);
-                animator.SetBool("isRunning", true);
-                sr.flipX = true;
-            }
+            rb.velocity = new Vector2(speed*Input.GetAxis("Horizontal"),rb.velocity.y);
+            
+            rb.velocity = new Vector2(rb.velocity.x, speed*Input.GetAxis("Vertical"));
 
-            if (Input.GetKey(KeyCode.D) || gamepadInput.x > 0)
+            if (rb.velocity.x > 0)
             {
-                rb.velocity = new Vector2(speed, rb.velocity.y);
                 animator.SetBool("isRunning", true);
                 sr.flipX = false;
+            }else
+                if (rb.velocity.x < 0)
+                {
+                    animator.SetBool("isRunning", true);
+                    sr.flipX = true;
+                }
+            
+            if (rb.velocity.y > 0 || rb.velocity.y < 0)
+            {
+                animator.SetBool("isRunning", true);
             }
+            
+            
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, 0);
         }
     }
 }
