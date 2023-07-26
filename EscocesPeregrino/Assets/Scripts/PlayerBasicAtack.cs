@@ -6,12 +6,17 @@ public class PlayerBasicAtack : MonoBehaviour
 {
 
     [SerializeField]
+    private GameObject hitbox;
+    [SerializeField]
     private Animator animator;
     private Vector2 gamepadInput;
     
     private int comboCount;
     private bool atacking;
-    
+
+    public delegate bool CanMove(bool value);
+    public static CanMove canMove;
+
     void Start()
     {
         atacking = false;
@@ -30,6 +35,8 @@ public class PlayerBasicAtack : MonoBehaviour
     {
         if (!atacking)
         {
+            canMove?.Invoke(false);
+            hitbox.SetActive(true);
             atacking = true;
             animator.SetTrigger(""+comboCount);
         }
@@ -37,6 +44,8 @@ public class PlayerBasicAtack : MonoBehaviour
 
     public void Combo()
     {
+        canMove?.Invoke(false);
+        hitbox.SetActive(true);
         atacking = true;
         animator.SetTrigger("" + comboCount);
     }
@@ -52,7 +61,11 @@ public class PlayerBasicAtack : MonoBehaviour
 
     public void FinishCombo()
     {
+        canMove?.Invoke(true);
         atacking = false;
         comboCount = 0;
+        hitbox.SetActive(false);
     }
+    
+    
 }
