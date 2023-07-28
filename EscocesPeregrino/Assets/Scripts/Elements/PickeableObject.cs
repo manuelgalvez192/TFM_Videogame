@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(Collider))]
-//[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class PickeableObject : MonoBehaviour
 {
-    public bool canPick;
     public bool isPicked;
+    public bool isSelected = false;
     Material objMat;
     [Header("Outliner Settings")]
     [SerializeField] float outlinerSpeed;
@@ -20,30 +20,34 @@ public class PickeableObject : MonoBehaviour
         objMat.SetTexture("Texture", GetComponent<SpriteRenderer>().sprite.texture);
         objMat.SetColor("_OutColor", outlinerColor);
     }
-    private void Update()
-    {
-        if(canPick)
-        {
-            if(!isPicked)
-            {
-                StartCoroutine(MaterialOnSelected());
-            }
-            isPicked = true;
-        }
-    }
+
     public virtual void OnPickObject()
     {
-
+        if (!isSelected)
+            return;
     }
     public virtual void OnDropObject()
     {
 
     }
 
+    public virtual void Select()
+    {
+        if (isSelected)
+            return;
+        isSelected = true;
+        StartCoroutine(MaterialOnSelected());
+    }
+
+    public virtual void UnSelect()
+    {
+        isSelected = false;
+    }
+
     IEnumerator MaterialOnSelected()
     {
         float x = 0;
-        while(canPick)
+        while(isSelected)
         {
             x += outlinerSpeed * Time.deltaTime;
             float y = Mathf.Sin(x);
@@ -53,17 +57,6 @@ public class PickeableObject : MonoBehaviour
         objMat.SetFloat("_OutValue", 0);
         isPicked = false;
         yield break;
-    }
-
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            canPick = true;
-            StartCoroutine(MaterialOnSelected());
-        }
     }
 
 }
