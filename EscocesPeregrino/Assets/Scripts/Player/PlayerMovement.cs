@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,11 +18,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 gamepadInput;
 
     private bool canControl = true;
-
-    private void OnMovement(InputValue value)
-    {
-        gamepadInput = value.Get<Vector2>();
-    }
 
     private void Start()
     {

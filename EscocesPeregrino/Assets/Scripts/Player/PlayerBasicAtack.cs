@@ -38,7 +38,7 @@ public class PlayerBasicAtack : MonoBehaviour
             canMove?.Invoke(false);
             hitbox.SetActive(true);
             atacking = true;
-            animator.SetTrigger(""+comboCount);
+            animator.SetTrigger("" + comboCount);
         }
     }
 
@@ -66,6 +66,4 @@ public class PlayerBasicAtack : MonoBehaviour
         comboCount = 0;
         hitbox.SetActive(false);
     }
-    
-    
 }
