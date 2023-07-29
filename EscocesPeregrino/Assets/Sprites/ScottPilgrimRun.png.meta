@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,169 +119,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_0
+      name: ScottPilgrimRun_0
       rect:
         serializedVersion: 2
         x: 7
         y: 3
-        width: 40
-        height: 59
+        width: 41
+        height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 503b154a329950d4caeb1072eabb4877
-      internalID: -1238098576
+      spriteID: 8044ea5d65d736a4a9ab97c8a29b57d6
+      internalID: -1390709850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_1
+      name: ScottPilgrimRun_1
       rect:
         serializedVersion: 2
         x: 49
-        y: 3
-        width: 44
-        height: 65
+        y: 4
+        width: 45
+        height: 63
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0a4c598b2a396c4aba6b74a377c68a6
-      internalID: 757435156
+      spriteID: ec78c822e04bce444825e8f3b0ee8aac
+      internalID: -1043618329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_2
+      name: ScottPilgrimRun_2
       rect:
         serializedVersion: 2
-        x: 94
-        y: 8
+        x: 95
+        y: 4
         width: 55
-        height: 55
+        height: 63
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab0b1a8faf0911e4dbd9a3a26ffe25d6
-      internalID: -1183946457
+      spriteID: 62885dd51e0fb304c8494f974f8f6f76
+      internalID: -793253129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_3
+      name: ScottPilgrimRun_3
       rect:
         serializedVersion: 2
-        x: 150
-        y: 6
+        x: 151
+        y: 4
         width: 48
-        height: 57
+        height: 63
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a62737ecc57b6a7449ac24bf02e26ff6
-      internalID: 246143274
+      spriteID: af5ec3450f7977549b7182feea9d9325
+      internalID: 1250302889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_4
+      name: ScottPilgrimRun_4
       rect:
         serializedVersion: 2
-        x: 199
-        y: 5
-        width: 42
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6692f304ed22eba43bef4d7d59bc4954
-      internalID: 1020093874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_5
-      rect:
-        serializedVersion: 2
-        x: 241
+        x: 200
         y: 3
-        width: 44
+        width: 41
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d46c707dd48e4948b2ef893b9148c5b
-      internalID: -2044715255
+      spriteID: 26a4f5f36fd0e064792dbdec85246f28
+      internalID: -889223337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_6
+      name: ScottPilgrimRun_5
       rect:
         serializedVersion: 2
-        x: 285
-        y: 7
+        x: 242
+        y: 4
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4490dc67bb0827b4286eba341083ac29
+      internalID: -899805940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimRun_6
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 5
         width: 52
-        height: 57
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aea0fd36e18ce284fa1fb0be4f2c3bc6
-      internalID: 1697450611
+      spriteID: 73ff61598ebcdd749bb2af9401178e7c
+      internalID: -1029514634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_7
+      name: ScottPilgrimRun_7
       rect:
         serializedVersion: 2
-        x: 338
-        y: 6
-        width: 48
-        height: 57
+        x: 339
+        y: 3
+        width: 50
+        height: 63
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7952d401da69fc442961c38de58f941a
-      internalID: 1070689522
+      spriteID: dcf961136ebbfb14e8870da487afad2a
+      internalID: 1034312081
       vertices: []
       indices: 
       edges: []
@@ -289,7 +289,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 73e5349198b10ae47ae964a3bc34b0f4
+    spriteID: 349cf1cab00bd344586263bfce5b122e
     internalID: 0
     vertices: []
     indices: 
@@ -297,14 +297,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run_6: 1697450611
-      Run_2: -1183946457
-      Run_1: 757435156
-      Run_3: 246143274
-      Run_7: 1070689522
-      Run_4: 1020093874
-      Run_0: -1238098576
-      Run_5: -2044715255
+      ScottPilgrimRun_0: -1390709850
+      ScottPilgrimRun_4: -889223337
+      ScottPilgrimRun_6: -1029514634
+      ScottPilgrimRun_7: 1034312081
+      ScottPilgrimRun_5: -899805940
+      ScottPilgrimRun_1: -1043618329
+      ScottPilgrimRun_3: 1250302889
+      ScottPilgrimRun_2: -793253129
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
