@@ -31,7 +31,6 @@ public class PlayerBasicAtack : MonoBehaviour
 
     private void OnBasicAtack()
     {
-        Debug.Log("llego");
         Combo();
     }
 
