@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,9 @@ using UnityEngine;
 public class PlayerBasicAtack : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject hitbox;
-    [SerializeField]
-    private Animator animator;
-    private Vector2 gamepadInput;
-    
+    [SerializeField] private GameObject hitbox;
+    [SerializeField] private Animator animator;
+
     private int comboCount;
     private bool atacking;
 
@@ -25,13 +23,19 @@ public class PlayerBasicAtack : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetMouseButtonDown(0)) && !atacking)
+        if (Input.GetMouseButtonDown(0))
         {
             Combo();
         }
     }
 
-    private void OnBasicAtack()//gamepad button pressed
+    private void OnBasicAtack()
+    {
+        Debug.Log("llego");
+        Combo();
+    }
+
+    public void Combo()
     {
         if (!atacking)
         {
@@ -41,18 +45,11 @@ public class PlayerBasicAtack : MonoBehaviour
             animator.SetTrigger("" + comboCount);
         }
     }
-
-    public void Combo()
-    {
-        canMove?.Invoke(false);
-        hitbox.SetActive(true);
-        atacking = true;
-        animator.SetTrigger("" + comboCount);
-    }
     
     public void StartCombo()
     {
         atacking = false;
+        
         if (comboCount < 3)
         {
             comboCount++;
@@ -61,9 +58,9 @@ public class PlayerBasicAtack : MonoBehaviour
 
     public void FinishCombo()
     {
+        comboCount = 0;
         canMove?.Invoke(true);
         atacking = false;
-        comboCount = 0;
         hitbox.SetActive(false);
     }
 }

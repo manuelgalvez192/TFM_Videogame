@@ -6,14 +6,10 @@ using UnityEngine.InputSystem;
 public class GamepadController : MonoBehaviour
 {
    
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private SpriteRenderer sr;
-    [SerializeField]
-    private Rigidbody2D rb;
+    [SerializeField] private float speed;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Rigidbody2D rb;
     
     private Vector2 gamepadInput;
 
@@ -65,8 +61,6 @@ public class GamepadController : MonoBehaviour
             {
                 animator.SetBool("isRunning", true);
             }
-            
-            
         }
         else
         {
