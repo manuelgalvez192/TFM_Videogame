@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Rigidbody2D rb;
-    
-    private Vector2 gamepadInput;
 
     private bool canControl = true;
 

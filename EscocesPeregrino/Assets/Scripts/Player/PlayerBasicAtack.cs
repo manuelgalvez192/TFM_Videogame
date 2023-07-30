@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBasicAtack : MonoBehaviour
 {
 
     [SerializeField] private GameObject hitbox;
     [SerializeField] private Animator animator;
-
+    [SerializeField] private InputAction input;
+    
     private int comboCount;
     private bool atacking;
 
