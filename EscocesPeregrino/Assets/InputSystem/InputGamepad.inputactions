@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "changeMenuOption",
+                    "type": "Button",
+                    "id": "73cfb1e3-9500-49c2-842c-e4d381fab8d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -75,6 +84,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "BasicAtack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1fcdda6c-5a75-418c-b63c-b218ee4e7240",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "changeMenuOption",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "528bef8d-ab1d-466d-b930-eacabc46bd0c",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "changeMenuOption",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

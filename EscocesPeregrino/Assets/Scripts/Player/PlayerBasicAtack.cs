@@ -9,7 +9,7 @@ public class PlayerBasicAtack : MonoBehaviour
 
     [SerializeField] private GameObject hitbox;
     [SerializeField] private Animator animator;
-    [SerializeField] private InputAction input;
+    private Gamepad gamepad;
     
     private int comboCount;
     private bool atacking;
@@ -19,21 +19,17 @@ public class PlayerBasicAtack : MonoBehaviour
 
     void Start()
     {
+        gamepad = Gamepad.current;
         atacking = false;
         comboCount = 0;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || gamepad.buttonWest.isPressed)
         {
             Combo();
         }
-    }
-
-    private void OnBasicAtack()
-    {
-        Combo();
     }
 
     public void Combo()

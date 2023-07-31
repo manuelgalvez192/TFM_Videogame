@@ -42,12 +42,12 @@ public class PlayerMovement : MonoBehaviour
             if (rb.velocity.x > 0)
             {
                 animator.SetBool("isRunning", true);
-                sr.flipX = false;
+                transform.localScale = new Vector2(1, transform.localScale.y);
             }else
                 if (rb.velocity.x < 0)
                 {
                     animator.SetBool("isRunning", true);
-                    sr.flipX = true;
+                    transform.localScale = new Vector2(-1, transform.localScale.y);
                 }
             
             if (rb.velocity.y > 0 || rb.velocity.y < 0)
