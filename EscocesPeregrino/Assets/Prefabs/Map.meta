@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:EscocesPeregrino/Assets/Prefabs/Map.meta
 guid: a4dbb4478618abd419e2a99720a7b584
+========
+guid: 2354024a585efcf41af9fd6b92426dc8
+>>>>>>>> Pickeable:EscocesPeregrino/Assets/Scripts/Player.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

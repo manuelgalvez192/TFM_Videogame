@@ -1,4 +1,4 @@
-Shader "Custom/CustomColorImage"
+Shader "Dani/CustomColorImage"
 {
     Properties
     {
