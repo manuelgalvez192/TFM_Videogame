@@ -363,6 +363,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/BorrarPruebas/MovementePruebas.cs"
+"Assets/Scripts/Combos/InputsGameManager.cs"
 "Assets/Scripts/Elements/PickeableObject.cs"
 "Assets/Scripts/Player/PlayerPick.cs"
 "Assets/Scripts/PlayerMovement.cs"
