@@ -16,6 +16,8 @@ public class Enemie : MonoBehaviour
     [SerializeField]
     private float maxLife = 100f;
 
+    private float currentLife;
+
 
 
     Rigidbody2D rb;
@@ -41,6 +43,11 @@ public class Enemie : MonoBehaviour
     Vector3 target;
     Vector2 vel;
 
+    bool isFirstStunned;
+    bool isStunned;
+
+    float HitDuration = 1.30f;
+
     private void Awake()
     {
         rb= GetComponent<Rigidbody2D>();
@@ -51,8 +58,11 @@ public class Enemie : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        currentLife = maxLife;
         InvokeRepeating("SetTarget", 0, 5);
         InvokeRepeating("Punch", 0, 5);
+        isFirstStunned = false;
+        isStunned = false;
     }
 
     // Update is called once per frame
@@ -80,6 +90,16 @@ public class Enemie : MonoBehaviour
                     state= States.pursuit;
 
                 }
+            }
+        }
+
+        if(currentLife <=50 && !isFirstStunned)
+        {
+            isFirstStunned = true;
+
+            if(isFirstStunned)
+            {
+
             }
         }
     }
@@ -117,7 +137,7 @@ public class Enemie : MonoBehaviour
             vel = Vector2.zero;
         }
         vel.Normalize();
-       if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemie_Punch1"))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemie_Punch1") || !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemie_Hitted"))
        {
             if (state == States.patrol)
             {
@@ -150,4 +170,30 @@ public class Enemie : MonoBehaviour
             anim.SetTrigger("Punch");
         }
     }
+
+    void RecieveDamage(float damage)
+    {
+        currentLife -= damage;
+        
+        
+    }
+
+  
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Hit"))
+        {
+            RecieveDamage(5);
+            anim.SetTrigger("Hitted");
+        }
+    }
+
+   /* private IEnumerator StunnedCoroutine()
+    {
+        float timeElapsed = 0f;
+        while(timeElapsed <= HitDuration)
+        {
+
+        }
+    }*/
 }
