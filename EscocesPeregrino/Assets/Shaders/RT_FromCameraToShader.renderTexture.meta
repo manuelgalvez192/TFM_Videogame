@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:EscocesPeregrino/Assets/Shaders/RT_FromCameraToShader.renderTexture.meta
+guid: a9de65f844ac9b644aad0d678b28ad04
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8400000
+========
+guid: c2560b5af8617e943900c0a306e92422
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 6200000
+>>>>>>>> playerAtack:EscocesPeregrino/Assets/Materials/PlayerPhysicsMaterial.physicsMaterial2D.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
