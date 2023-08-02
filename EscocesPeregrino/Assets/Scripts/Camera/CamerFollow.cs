@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CamerFollow : MonoBehaviour
 {
-    [SerializeField]
-    private Transform player;
+    [SerializeField] private Transform player;
+    
     public Vector3 offset;
 
     void FixedUpdate()

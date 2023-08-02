@@ -15,13 +15,31 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "BasicAtack",
-                    "type": "Value",
-                    "id": "b8b21004-ad84-4dad-ac0a-fc3a83a75f18",
+                    "name": "PauseGame",
+                    "type": "Button",
+                    "id": "a5920d2c-f7e0-4d16-87e0-ba721f1f67f9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BasicAtack",
+                    "type": "Button",
+                    "id": "6d94e06c-d820-4e7d-bcec-e8d9b88a8c78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "changeMenuOption",
+                    "type": "Button",
+                    "id": "73cfb1e3-9500-49c2-842c-e4d381fab8d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -49,7 +67,18 @@
                 },
                 {
                     "name": "",
-                    "id": "ff37bb07-1c0a-42cd-b1c9-e8f85b2e7470",
+                    "id": "c8dba115-07b2-4b8b-afbe-262e3d323a5c",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "364aa6e3-0dba-4e70-896b-56b7f5bc21d5",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
@@ -60,12 +89,23 @@
                 },
                 {
                     "name": "",
-                    "id": "7398284b-ec66-4064-b1cb-ae41b84951db",
-                    "path": "<DualShockGamepad>/buttonWest",
+                    "id": "1fcdda6c-5a75-418c-b63c-b218ee4e7240",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "BasicAtack",
+                    "action": "changeMenuOption",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "528bef8d-ab1d-466d-b930-eacabc46bd0c",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "changeMenuOption",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
