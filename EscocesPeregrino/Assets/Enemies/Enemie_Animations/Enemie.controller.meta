@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:EscocesPeregrino/Assets/Enemies/Enemie_Animations/Enemie.controller.meta
 guid: 520c2ac51d75dbf46b1e33a972dc176d
-========
-guid: 8ac8e05387fc16b48bce4a93cfd9be0b
->>>>>>>> develop:EscocesPeregrino/Assets/Animations/Player.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000

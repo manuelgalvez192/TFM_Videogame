@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:EscocesPeregrino/Assets/Enemies/Enemie_Animations/EnemieStunned.anim.meta
 guid: 1f45c6b9b099d9e428e5576ec09b02e0
-========
-guid: c645c979eed0ef4489387dbe542a350d
->>>>>>>> develop:EscocesPeregrino/Assets/Animations/BasicAtack1.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
