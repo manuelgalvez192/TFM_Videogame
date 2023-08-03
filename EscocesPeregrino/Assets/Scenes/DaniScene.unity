@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPicked: 0
-  isSelected: 1
+  isSelected: 0
   outlinerSpeed: 6
   outlinerColor: {r: 1, g: 0, b: 0, a: 1}
   maxOutliner: 0.15
@@ -780,9 +780,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1550332703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 230b516608adc1040a52dc4818c5c719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpKey: 32
+  attackKey: 106
+  dashKey: 107
+  coverKey: 108
+  pickKey: 108
 --- !u!1 &1983142158
 GameObject:
   m_ObjectHideFlags: 0
