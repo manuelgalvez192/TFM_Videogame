@@ -19,6 +19,8 @@ public class PickeableObject : MonoBehaviour
         objMat = GetComponent<SpriteRenderer>().material;
         objMat.SetTexture("Texture", GetComponent<SpriteRenderer>().sprite.texture);
         objMat.SetColor("_OutColor", outlinerColor);
+        objMat.SetFloat("_OutValue", 0);
+
     }
 
     public virtual void OnPickObject()
