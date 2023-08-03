@@ -46,7 +46,15 @@ public class Enemie : MonoBehaviour
     bool isFirstStunned;
     bool isStunned;
 
+    [SerializeField]
+    float hitDistance = 2.0f;
+    [SerializeField]
+    private AnimationCurve animCurve;
+    [SerializeField]
+    float hitBackForce = 10f;
     float HitDuration = 1.30f;
+
+    private Vector3 originalPos;
 
     private void Awake()
     {
@@ -58,6 +66,7 @@ public class Enemie : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        originalPos= transform.position;
         currentLife = maxLife;
         InvokeRepeating("SetTarget", 0, 5);
         InvokeRepeating("Punch", 0, 5);
@@ -99,7 +108,9 @@ public class Enemie : MonoBehaviour
 
             if(isFirstStunned)
             {
-
+                vel = Vector2.zero;
+                anim.SetTrigger("isFlying");
+                //StartCoroutine(StunnedCoroutine(hitDirection.normalized));
             }
         }
     }
@@ -188,12 +199,19 @@ public class Enemie : MonoBehaviour
         }
     }
 
-   /* private IEnumerator StunnedCoroutine()
+    private IEnumerator StunnedCoroutine(Vector3 hitDirection)
     {
+        Vector3 destination = originalPos - hitDirection * hitDistance;
+        GetComponent<Rigidbody>().AddForce(hitDirection * hitBackForce);
+
         float timeElapsed = 0f;
         while(timeElapsed <= HitDuration)
         {
+            float progress = timeElapsed / HitDuration;
+            transform.position = Vector3.Lerp(originalPos, destination, progress);
 
+            timeElapsed += Time.deltaTime;
+            yield return null;
         }
-    }*/
+    }
 }
