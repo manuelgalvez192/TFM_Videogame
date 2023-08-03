@@ -13,7 +13,7 @@ public class MovementePruebas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
-        transform.Translate(Vector3.up * Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        transform.Translate(Vector3.right * InputsGameManager.instance.HorizontalAxis * speed * Time.deltaTime);
+        transform.Translate(Vector3.up *InputsGameManager.instance.VerticalAxis * speed * Time.deltaTime);
     }
 }

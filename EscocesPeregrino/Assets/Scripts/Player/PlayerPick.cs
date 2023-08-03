@@ -31,6 +31,7 @@ public class PlayerPick : MonoBehaviour
                 }
             }
 
+
             yield return null;
         }
         yield break;
