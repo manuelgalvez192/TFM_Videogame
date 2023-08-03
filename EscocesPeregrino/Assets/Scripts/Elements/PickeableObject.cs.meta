@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:EscocesPeregrino/Assets/Scripts/Camera/CamerFollow.cs.meta
+guid: f4e110e676a997b488465f82c9b8287a
+========
+guid: fa67b2c1d839e994aa680082b8f95458
+>>>>>>>> Pickeable:EscocesPeregrino/Assets/Scripts/Elements/PickeableObject.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
