@@ -28,11 +28,11 @@ public class InputsGameManager : MonoBehaviour
 
 #endif
     //padbuttons
-    public PadInput attackPadButton;
-    public PadInput JumpPadButton;
-    public PadInput dashPadButton;
-    public PadInput coverPadButton;
-    public PadInput pickPadButton;
+     PadInput attackPadButton;
+     PadInput JumpPadButton;
+     PadInput dashPadButton;
+     PadInput coverPadButton;
+     PadInput pickPadButton;
 
 
     public static InputsGameManager instance;
@@ -61,21 +61,15 @@ public class InputsGameManager : MonoBehaviour
     public float VerticalAxis 
     { get 
         {
-#if UNITY_STANDALONE || UNITY_EDITOR
-
-            return Input.GetAxis("Vertical");
-#endif
-
+            verticalAxis = Input.GetAxis("Vertical");
+            return verticalAxis;
         }
     }
     public float HorizontalAxis 
     { get 
         {
-#if UNITY_STANDALONE || UNITY_EDITOR
-
-            return Input.GetAxis("Horizontal");
-#endif
-
+            horizontalAxis = Input.GetAxis("Horizontal");
+            return horizontalAxis;
         }
     }
     public bool AttackButton
