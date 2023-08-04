@@ -20,30 +20,17 @@ public class pauseGame : MonoBehaviour
     private short positionMenu = 1;
     private bool paused = false;
 
-    private Vector2 leftStick;
-    private Gamepad gamepad;
-
-    private void Start()
-    {
-        gamepad = Gamepad.current;
-    }
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (InputsGameManager.instance.PauseButtonDown)
         {
             PauseGame();
         }
 
-        if (paused && gamepad.buttonSouth.isPressed && (positionMenu == 1))
+        /*if (paused && gamepad.buttonSouth.isPressed && (positionMenu == 1))
         {
             PauseGame();
-        }
-    }
-
-    private void OnPauseGame()//gamepad press button start
-    {
-        PauseGame();
+        }*/
     }
 
     public void PauseGame()

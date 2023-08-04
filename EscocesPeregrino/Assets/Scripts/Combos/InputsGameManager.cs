@@ -13,6 +13,7 @@ public class InputsGameManager : MonoBehaviour
     bool dashInput;
     bool coverInput;
     bool pickInput;
+    private bool pauseInput;
 
 
 
@@ -25,6 +26,7 @@ public class InputsGameManager : MonoBehaviour
     [SerializeField] KeyCode dashKey = KeyCode.K;
     [SerializeField] KeyCode coverKey = KeyCode.L;
     [SerializeField] KeyCode pickKey = KeyCode.L;
+    [SerializeField] KeyCode pauseKey = KeyCode.P;
 
 #endif
     //padbuttons
@@ -33,6 +35,7 @@ public class InputsGameManager : MonoBehaviour
      PadInput dashPadButton;
      PadInput coverPadButton;
      PadInput pickPadButton;
+     PadInput pausePadButton;
 
 
     public static InputsGameManager instance;
@@ -52,7 +55,8 @@ public class InputsGameManager : MonoBehaviour
             JumpPadButton.PadButton = playerGamePad.buttonSouth;
             dashPadButton.PadButton = playerGamePad.buttonNorth;
             coverPadButton.PadButton = playerGamePad.buttonEast;
-            pickPadButton.PadButton = playerGamePad.dpad.right; 
+            pickPadButton.PadButton = playerGamePad.dpad.right;
+            pausePadButton.PadButton = playerGamePad.startButton;
 
         }
     }
@@ -310,7 +314,25 @@ public class InputsGameManager : MonoBehaviour
             return pickInput;
         }
     }
+    
+    //pause buttons
+    public bool PauseButtonDown
+    {
+        get
+        {
+            if (playerGamePad != null)
+                pauseInput = pausePadButton.GetPadButtonDown();
+            
+#if UNITY_STANDALONE || UNITY_EDITOR
+            if (!pauseInput)
+                pauseInput = Input.GetKeyDown(pauseKey);
+            
+#endif
+            return pauseInput;
+        }
+    }
 }
+
 [System.Serializable]
 public class PadInput
 {
