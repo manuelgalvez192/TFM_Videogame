@@ -26,7 +26,7 @@ public class PlayerBasicAtack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) || gamepad.buttonWest.isPressed)
+        if(InputsGameManager.instance.AttackButtonDown)
         {
             Combo();
         }
