@@ -59,23 +59,36 @@ public class MenuPlayerMovement : MonoBehaviour
     }
     void SetAnimatorValues()
     {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        if (InputsGameManager.instance.HorizontalAxis != 0 || InputsGameManager.instance.VerticalAxis != 0)
             anim.SetBool("isRunning", true);
         else
             anim.SetBool("isRunning", false);
+
+        if(InputsGameManager.instance.AttackButtonDown)
+        {
+            print("Attack");
+        }
+        if (InputsGameManager.instance.JumpButton)
+        {
+            print("Jump");
+        }
+        if (InputsGameManager.instance.CoverButtonUp)
+        {
+            print("Cover");
+        }
     }
     void Movement()
     {
-        transform.Translate(transform.right * Input.GetAxis("Horizontal") * speedX * Time.deltaTime);
-        transform.Translate(transform.up * Input.GetAxis("Vertical") * speedY * Time.deltaTime);
-        transform.localScale = new Vector3(transform.localScale.x - Input.GetAxis("Vertical") * speedZ * Time.deltaTime, transform.localScale.y - Input.GetAxis("Vertical") * speedZ * Time.deltaTime);
+        transform.Translate(transform.right * InputsGameManager.instance.HorizontalAxis * speedX * Time.deltaTime);
+        transform.Translate(transform.up * InputsGameManager.instance.VerticalAxis * speedY * Time.deltaTime);
+        transform.localScale = new Vector3(transform.localScale.x - InputsGameManager.instance.VerticalAxis * speedZ * Time.deltaTime, transform.localScale.y - Input.GetAxis("Vertical") * speedZ * Time.deltaTime);
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (InputsGameManager.instance.HorizontalAxis > 0)
         {
             Quaternion newRot = Quaternion.Euler(new Vector3(transform.rotation.x, 0, 0));
             transform.rotation = newRot;
         }
-        else if (Input.GetAxis("Horizontal") < 0)
+        else if (InputsGameManager.instance.HorizontalAxis < 0)
         {
             Quaternion newRot = Quaternion.Euler(new Vector3(transform.rotation.x, 180, 0));
             transform.rotation = newRot;

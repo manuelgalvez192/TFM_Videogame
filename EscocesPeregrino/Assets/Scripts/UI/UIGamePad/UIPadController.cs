@@ -13,7 +13,6 @@ public class UIPadController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     //Funcionality
     bool isJoystickActive = false;
-    bool isbuttonsPadActive = false;
 
     float horizontalAxis = 0;
     float verticalAxis =0 ;
@@ -24,6 +23,7 @@ public class UIPadController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField] UIPadButton dashButton;
     private void Awake()
     {
+        InputsGameManager.instance.UIController = this;
         jumpButton.ControllerParent = this;
         attackButton.ControllerParent = this;
         coverButton.ControllerParent = this;
@@ -33,11 +33,6 @@ public class UIPadController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     //gettersSetters
     public bool IsJoystickActive
     {
-        get { return isJoystickActive; }
-    }
-    public bool IsButtonsPadActive
-    {
-        set { isbuttonsPadActive = value; }
         get { return isJoystickActive; }
     }
 

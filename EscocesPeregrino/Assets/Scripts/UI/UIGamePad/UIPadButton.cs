@@ -23,14 +23,12 @@ public class UIPadButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        controllerPrent.IsButtonsPadActive = true;
         isPressed = true;
         startPicking = true;
         img.color = new Vector4(img.color.r, img.color.g, img.color.b, 1);
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        controllerPrent.IsButtonsPadActive = false;
         isPressed = false;
         hasBeenPressed = false;
         img.color = new Vector4(img.color.r, img.color.g, img.color.b, onUnpressedAlpha);

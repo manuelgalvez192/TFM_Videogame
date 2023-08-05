@@ -19,6 +19,9 @@ public class InputsGameManager : MonoBehaviour
 
     Gamepad playerGamePad;
 
+    [SerializeField]UIPadController uiController;
+    public UIPadController UIController { set { uiController = value; } }
+
 
 #if UNITY_STANDALONE || UNITY_EDITOR
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
@@ -66,11 +69,17 @@ public class InputsGameManager : MonoBehaviour
             pausePadButton.PadButton = playerGamePad.startButton;
         }
     }
+
     //Getters
 
     public float VerticalAxis 
     { get 
         {
+            if(uiController!=null && uiController.IsJoystickActive)
+            {
+                verticalAxis = uiController.VerticalAxis;
+            }
+            else
             verticalAxis = Input.GetAxis("Vertical");
             return verticalAxis;
         }
@@ -78,7 +87,12 @@ public class InputsGameManager : MonoBehaviour
     public float HorizontalAxis 
     { get 
         {
-            horizontalAxis = Input.GetAxis("Horizontal");
+            if (uiController != null && uiController.IsJoystickActive)
+            {
+                horizontalAxis = uiController.HorizontalAxis;
+            }
+            else
+                horizontalAxis = Input.GetAxis("Horizontal");
             return horizontalAxis;
         }
     }
@@ -86,6 +100,13 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                attackInput = uiController.AttackButton;
+                if(attackInput)
+                return attackInput;
+            }
+
             attackInput = false;
             
             if(playerGamePad!=null)
@@ -103,6 +124,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                attackInput = uiController.AttackButtonDown;
+                if (attackInput)
+                return attackInput;
+            }
             attackInput = false;
 
             if (playerGamePad!=null)
@@ -121,6 +148,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                attackInput = uiController.AttackButtonUp;
+                if (attackInput)
+                    return attackInput;
+            }
             attackInput = false;
 
             if (playerGamePad != null)
@@ -138,6 +171,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                jumpInput = uiController.JumpButton;
+                if(jumpInput)
+                return jumpInput;
+            }
             jumpInput = false;
 
             if (playerGamePad != null)
@@ -155,6 +194,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                jumpInput = uiController.JumpButtonDown;
+                if (jumpInput)
+                    return jumpInput;
+            }
             jumpInput = false;
 
             if (playerGamePad != null)
@@ -173,6 +218,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                jumpInput = uiController.JumpButtonUp;
+                if (jumpInput)
+                    return jumpInput;
+            }
             jumpInput = false;
 
             if (playerGamePad != null)
@@ -188,6 +239,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                dashInput = uiController.DashButton;
+                if (dashInput)
+                    return dashInput;
+            }
             dashInput = false;
 
             if (playerGamePad != null)
@@ -204,6 +261,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                dashInput = uiController.DashButtonDown;
+                if (dashInput)
+                    return dashInput;
+            }
             dashInput = false;
 
             if (playerGamePad != null)
@@ -221,6 +284,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                dashInput = uiController.DashButtonUp;
+                if (dashInput)
+                    return dashInput;
+            }
             dashInput = false;
 
             if (playerGamePad != null)
@@ -238,6 +307,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                coverInput = uiController.CoverButton;
+                if(coverInput)
+                return coverInput;
+            }
             coverInput = false;
 
             if (playerGamePad != null)
@@ -255,6 +330,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                coverInput = uiController.CoverButtonDown;
+                if (coverInput)
+                    return coverInput; return coverInput;
+            }
             coverInput = false;
 
             if (playerGamePad != null)
@@ -273,6 +354,12 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            if (uiController != null)
+            {
+                coverInput = uiController.CoverButtonUp;
+                if (coverInput)
+                    return coverInput; return coverInput;
+            }
             coverInput = false;
 
             if (playerGamePad != null)
