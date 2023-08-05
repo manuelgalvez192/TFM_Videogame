@@ -57,7 +57,6 @@ public class InputsGameManager : MonoBehaviour
             coverPadButton.PadButton = playerGamePad.buttonEast;
             pickPadButton.PadButton = playerGamePad.dpad.right;
             pausePadButton.PadButton = playerGamePad.startButton;
-
         }
     }
     //Getters
@@ -80,6 +79,8 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            attackInput = false;
+            
             if(playerGamePad!=null)
                 attackInput= attackPadButton.GetPadButton();
 #if UNITY_STANDALONE || UNITY_EDITOR
@@ -90,10 +91,12 @@ public class InputsGameManager : MonoBehaviour
 
         }
     }
+    
     public bool AttackButtonDown
     {
         get
         {
+            attackInput = false;
 
             if (playerGamePad!=null)
                 attackInput = attackPadButton.GetPadButtonDown();
@@ -111,6 +114,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            attackInput = false;
 
             if (playerGamePad != null)
                 attackInput = attackPadButton.GetPadButtonUp();
@@ -127,6 +131,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            jumpInput = false;
 
             if (playerGamePad != null)
                 jumpInput = JumpPadButton.GetPadButton();
@@ -143,6 +148,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            jumpInput = false;
 
             if (playerGamePad != null)
                 jumpInput = JumpPadButton.GetPadButtonDown();
@@ -160,6 +166,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            jumpInput = false;
 
             if (playerGamePad != null)
                 jumpInput = JumpPadButton.GetPadButtonUp();
@@ -174,6 +181,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            dashInput = false;
 
             if (playerGamePad != null)
                 dashInput = dashPadButton.GetPadButton();
@@ -189,6 +197,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            dashInput = false;
 
             if (playerGamePad != null)
                 dashInput = dashPadButton.GetPadButtonDown();
@@ -205,6 +214,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            dashInput = false;
 
             if (playerGamePad != null)
                 dashInput = dashPadButton.GetPadButtonUp();
@@ -221,6 +231,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            coverInput = false;
 
             if (playerGamePad != null)
                 coverInput = coverPadButton.GetPadButton();
@@ -237,6 +248,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            coverInput = false;
 
             if (playerGamePad != null)
                 coverInput = coverPadButton.GetPadButtonDown();
@@ -254,6 +266,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            coverInput = false;
 
             if (playerGamePad != null)
                 coverInput = coverPadButton.GetPadButtonUp();
@@ -270,6 +283,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            pickInput = false;
 
             if (playerGamePad != null)
                 pickInput = pickPadButton.GetPadButton();
@@ -286,7 +300,8 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
-
+            pickInput = false;
+            
             if (playerGamePad != null)
                 pickInput = pickPadButton.GetPadButtonDown();
 #if UNITY_STANDALONE || UNITY_EDITOR
@@ -303,6 +318,7 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            pickInput = false;
 
             if (playerGamePad != null)
                 pickInput = pickPadButton.GetPadButtonUp();
@@ -320,6 +336,8 @@ public class InputsGameManager : MonoBehaviour
     {
         get
         {
+            pauseInput = false;
+            
             if (playerGamePad != null)
                 pauseInput = pausePadButton.GetPadButtonDown();
             

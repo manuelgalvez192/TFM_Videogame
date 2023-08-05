@@ -314,10 +314,10 @@ MonoBehaviour:
   pauseMenu: {fileID: 530857699}
   resumeButton: {fileID: 1659485886}
   exitButton: {fileID: 1308123857}
-  resumeButtonScaleX: 0.3364453
-  resumeButtonScaleY: 0.95001
-  exitButtonScaleX: 0.3364453
-  exitButtonScaleY: 0.95001
+  resumeButtonScaleX: 0.22496
+  resumeButtonScaleY: 0.62498
+  exitButtonScaleX: 0.22496
+  exitButtonScaleY: 0.62498
 --- !u!4 &790936465
 Transform:
   m_ObjectHideFlags: 0
@@ -866,13 +866,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 435854323}
     m_Modifications:
+    - target: {fileID: 2328299364400374965, guid: 9e5b8fd58fc80f146b834e6309f037fe, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328299364400374965, guid: 9e5b8fd58fc80f146b834e6309f037fe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5094404183193346221, guid: 9e5b8fd58fc80f146b834e6309f037fe, type: 3}
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5094404183193346221, guid: 9e5b8fd58fc80f146b834e6309f037fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7457540641031718432, guid: 9e5b8fd58fc80f146b834e6309f037fe, type: 3}
       propertyPath: m_RootOrder
