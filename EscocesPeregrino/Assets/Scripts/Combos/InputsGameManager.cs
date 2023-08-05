@@ -25,7 +25,7 @@ public class InputsGameManager : MonoBehaviour
     [SerializeField] KeyCode attackKey = KeyCode.J;
     [SerializeField] KeyCode dashKey = KeyCode.K;
     [SerializeField] KeyCode coverKey = KeyCode.L;
-    [SerializeField] KeyCode pickKey = KeyCode.L;
+    [SerializeField] KeyCode pickKey = KeyCode.E;
     [SerializeField] KeyCode pauseKey = KeyCode.P;
 
 #endif
@@ -51,6 +51,13 @@ public class InputsGameManager : MonoBehaviour
         playerGamePad = Gamepad.current;
         if(playerGamePad!=null)
         {
+            attackPadButton = new PadInput();
+            JumpPadButton = new PadInput();
+            dashPadButton = new PadInput();
+            coverPadButton = new PadInput();
+            pickPadButton = new PadInput();
+            pausePadButton = new PadInput();
+
             attackPadButton.PadButton = playerGamePad.buttonWest;
             JumpPadButton.PadButton = playerGamePad.buttonSouth;
             dashPadButton.PadButton = playerGamePad.buttonNorth;
