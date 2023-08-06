@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class TakeDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float maxHealth;
+    
+    private float actualHealth;
+    
     void Start()
     {
-        
+        actualHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void ReduceLife(float damageAmount)
+    {
+        actualHealth -= damageAmount;
     }
 }
