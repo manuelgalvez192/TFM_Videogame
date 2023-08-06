@@ -27,10 +27,15 @@ public class pauseGame : MonoBehaviour
             PauseGame();
         }
 
-        /*if (paused && gamepad.buttonSouth.isPressed && (positionMenu == 1))
+        if (InputsGameManager.instance.MoveMenuDownDown || InputsGameManager.instance.MoveMenuUpDown)
+        {
+            OnChangeMenuOption();
+        }
+
+        if (paused && InputsGameManager.instance.AttackButtonDown && (positionMenu == 1))
         {
             PauseGame();
-        }*/
+        }
     }
 
     public void PauseGame()

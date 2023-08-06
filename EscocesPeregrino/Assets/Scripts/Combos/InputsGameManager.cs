@@ -14,6 +14,8 @@ public class InputsGameManager : MonoBehaviour
     bool coverInput;
     bool pickInput;
     private bool pauseInput;
+    private bool moveMenuUpInput;
+    private bool moveMenuDownInput;
 
 
 
@@ -27,6 +29,8 @@ public class InputsGameManager : MonoBehaviour
     [SerializeField] KeyCode coverKey = KeyCode.L;
     [SerializeField] KeyCode pickKey = KeyCode.L;
     [SerializeField] KeyCode pauseKey = KeyCode.P;
+    [SerializeField] KeyCode moveMenuUpKey = KeyCode.W;
+    [SerializeField] KeyCode moveMenuDownKey = KeyCode.S;
 
 #endif
     //padbuttons
@@ -36,6 +40,9 @@ public class InputsGameManager : MonoBehaviour
      PadInput coverPadButton;
      PadInput pickPadButton;
      PadInput pausePadButton;
+     PadInput moveMenuUpPadButton;
+     PadInput moveMenuDownPadButton;
+
 
 
     public static InputsGameManager instance;
@@ -57,6 +64,8 @@ public class InputsGameManager : MonoBehaviour
             coverPadButton.PadButton = playerGamePad.buttonEast;
             pickPadButton.PadButton = playerGamePad.dpad.right;
             pausePadButton.PadButton = playerGamePad.startButton;
+            moveMenuUpPadButton.PadButton = playerGamePad.dpad.up;
+            moveMenuDownPadButton.PadButton = playerGamePad.dpad.down;
         }
     }
     //Getters
@@ -347,6 +356,42 @@ public class InputsGameManager : MonoBehaviour
             
 #endif
             return pauseInput;
+        }
+    }
+    
+    public bool MoveMenuUpDown
+    {
+        get
+        {
+            moveMenuUpInput = false;
+            
+            if (playerGamePad != null)
+                moveMenuUpInput = moveMenuUpPadButton.GetPadButtonDown();
+            
+#if UNITY_STANDALONE || UNITY_EDITOR
+            if (!moveMenuUpInput)
+                moveMenuUpInput = Input.GetKeyDown(moveMenuUpKey);
+            
+#endif
+            return moveMenuUpInput;
+        }
+    }
+    
+    public bool MoveMenuDownDown
+    {
+        get
+        {
+            moveMenuDownInput = false;
+            
+            if (playerGamePad != null)
+                moveMenuDownInput = moveMenuDownPadButton.GetPadButtonDown();
+            
+#if UNITY_STANDALONE || UNITY_EDITOR
+            if (!moveMenuDownInput)
+                moveMenuDownInput = Input.GetKeyDown(moveMenuDownKey);
+            
+#endif
+            return moveMenuDownInput;
         }
     }
 }
