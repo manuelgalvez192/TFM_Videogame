@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class pauseGame : MonoBehaviour
@@ -22,20 +23,33 @@ public class pauseGame : MonoBehaviour
 
     void Update()
     {
-        if (InputsGameManager.instance.PauseButtonDown)
+        if (pauseMenu != null)
         {
-            PauseGame();
+            if (InputsGameManager.instance.PauseButtonDown)
+            {
+                PauseGame();
+            }
         }
 
-        if (InputsGameManager.instance.MoveMenuDownDown || InputsGameManager.instance.MoveMenuUpDown)
+        if (exitButton != null && resumeButton != null)
         {
-            OnChangeMenuOption();
+            if (InputsGameManager.instance.MoveMenuDownDown || InputsGameManager.instance.MoveMenuUpDown)
+            {
+                OnChangeMenuOption();
+            }
         }
-
+        
         if (paused && InputsGameManager.instance.AttackButtonDown && (positionMenu == 1))
         {
             PauseGame();
         }
+    
+        if (paused && InputsGameManager.instance.AttackButtonDown && (positionMenu == 2))
+        {
+            ExitMainMenu();
+        }
+        
+        
     }
 
     public void PauseGame()
@@ -76,5 +90,14 @@ public class pauseGame : MonoBehaviour
             resumeButton.transform.localScale = new Vector3(resumeButtonScaleX + 0.1f,
                 resumeButtonScaleY + 0.1f, 1);
         }
+    }
+
+    public void ExitMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        
+        Time.timeScale = pauseMenu.activeInHierarchy ? 1 : 0;
+        pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+        paused = !paused;
     }
 }
