@@ -31,11 +31,7 @@ public class Enemie : MonoBehaviour
 
     [SerializeField]
     States state = States.patrol;
-
-    [SerializeField]
-    protected Transform rightPunch;
-    [SerializeField]
-    protected Transform leftPunch;
+    
     [SerializeField]
     protected float punchRadius=0.1f;
 
@@ -126,18 +122,9 @@ public class Enemie : MonoBehaviour
 
     private  void OnDrawGizmosSelected()
     {
-        if (rightPunch == null || leftPunch == null)
-            return;
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(leftPunch.position, punchRadius);
-        Gizmos.DrawWireSphere(rightPunch.position, punchRadius);
-       
-
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, searchRange);
         Gizmos.DrawWireSphere(target, 0.2f);
-
-      
     }
    
     private void SetTarget()
