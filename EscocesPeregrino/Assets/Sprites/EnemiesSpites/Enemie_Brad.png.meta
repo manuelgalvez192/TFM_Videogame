@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -3451,7 +3451,7 @@ TextureImporter:
       Enemie_Brad_101: -666021329
       Enemie_Brad_17: -193367149
       Enemie_Brad_125: -1618913379
-      Enemie_Brad_73: 413543819
+      Enemie_Brad_78: 1809897344
       Enemie_Brad_76: 1044886094
       Enemie_Brad_43: 1150760453
       Enemie_Brad_14: -1066236673
@@ -3524,10 +3524,10 @@ TextureImporter:
       Enemie_Brad_28: 1500818120
       Enemie_Brad_95: 1778194609
       Enemie_Brad_9: 1448649285
-      Enemie_Brad_128: 714589129
+      Enemie_Brad_71: -1623358105
       Enemie_Brad_98: -2018179936
       Enemie_Brad_114: 860699698
-      Enemie_Brad_71: -1623358105
+      Enemie_Brad_128: 714589129
       Enemie_Brad_124: 1263836087
       Enemie_Brad_121: 386642312
       Enemie_Brad_66: 1768309845
@@ -3603,8 +3603,8 @@ TextureImporter:
       Enemie_Brad_91: 1760289705
       Enemie_Brad_12: 2047432329
       Enemie_Brad_130: -665549501
+      Enemie_Brad_73: 413543819
       Enemie_Brad_47: -1340110557
-      Enemie_Brad_78: 1809897344
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

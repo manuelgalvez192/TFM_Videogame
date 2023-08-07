@@ -68,8 +68,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.01, y: 0}
+  m_Size: {x: 0.26, y: 0.56}
   m_Direction: 0
 --- !u!1 &6329062689742753813
 GameObject:
@@ -83,7 +83,6 @@ GameObject:
   - component: {fileID: 930221121332049683}
   - component: {fileID: 3277626190893950128}
   - component: {fileID: 6520931318953661022}
-  - component: {fileID: 141399620871289660}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -195,29 +194,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &141399620871289660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6329062689742753813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e55c95cfa45995d42bb64e03130ce27e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitbox: {fileID: 8257791292594457816}
-  animator: {fileID: 6520931318953661022}
-  input:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!1 &8257791292594457816
 GameObject:
   m_ObjectHideFlags: 0

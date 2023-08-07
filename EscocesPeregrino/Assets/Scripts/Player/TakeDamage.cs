@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,14 +14,13 @@ public class TakeDamage : MonoBehaviour
         actualHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void ReduceLife(float damageAmount)
     {
         actualHealth -= damageAmount;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        //if(other.gameObject.tag())
     }
 }
