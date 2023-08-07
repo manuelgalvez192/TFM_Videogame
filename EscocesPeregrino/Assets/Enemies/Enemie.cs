@@ -46,13 +46,9 @@ public class Enemie : MonoBehaviour
     bool isFirstStunned;
     bool isStunned;
 
-    [SerializeField]
-    float hitDistance = 2.0f;
-    [SerializeField]
-    private AnimationCurve animCurve;
-    [SerializeField]
-    float hitBackForce = 10f;
-    float HitDuration = 1.30f;
+  
+    
+  
 
     private Vector3 originalPos;
 
@@ -78,6 +74,7 @@ public class Enemie : MonoBehaviour
     void Update()
     {
         Movement();
+        Die();
         if (state == States.pursuit)
         {
             target = player.transform.position;
@@ -102,17 +99,29 @@ public class Enemie : MonoBehaviour
             }
         }
 
-        if(currentLife <=50 && !isFirstStunned)
+       /* if(currentLife <=50 && !isFirstStunned)
         {
             isFirstStunned = true;
 
             if(isFirstStunned)
             {
-                vel = Vector2.zero;
+               // vel = Vector2.zero;
                 anim.SetTrigger("isFlying");
-                //StartCoroutine(StunnedCoroutine(hitDirection.normalized));
+                Vector2 dir = this.transform.position - player.transform.position;
+                dir.Normalize();
+                float strength = 10f;
+                rb.AddForce(dir * strength, ForceMode2D.Impulse);
+                Debug.Log("aaa");
+                isStunned = true;
+                
             }
         }
+
+        if(isStunned)
+        {
+            anim.SetBool("isKnocked",true);
+        }*/
+      
     }
 
     private  void OnDrawGizmosSelected()
@@ -192,26 +201,20 @@ public class Enemie : MonoBehaviour
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Hit"))
+        if (collision.CompareTag("Player"))
         {
             RecieveDamage(5);
             anim.SetTrigger("Hitted");
+            vel = Vector2.zero;
         }
     }
 
-    private IEnumerator StunnedCoroutine(Vector3 hitDirection)
+    private void Die()
     {
-        Vector3 destination = originalPos - hitDirection * hitDistance;
-        GetComponent<Rigidbody>().AddForce(hitDirection * hitBackForce);
-
-        float timeElapsed = 0f;
-        while(timeElapsed <= HitDuration)
+        if(currentLife<= 0)
         {
-            float progress = timeElapsed / HitDuration;
-            transform.position = Vector3.Lerp(originalPos, destination, progress);
-
-            timeElapsed += Time.deltaTime;
-            yield return null;
+            this.gameObject.SetActive(false);
         }
     }
+ 
 }
