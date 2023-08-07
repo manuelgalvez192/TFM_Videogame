@@ -6,44 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="23d8de2c-b261-41f3-91fb-4ff99eb8c711" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BasicAtack1.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BasicAtack1.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BasicAtack2.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BasicAtack2.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BasicAtack3.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/BasicAtack3.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Run.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Run.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/EnemieOnFloor.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/EnemieOnFloor.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/EnemieStunned.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/EnemieStunned.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Hitted.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Hitted.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Punch1.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Punch1.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Run.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Run.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Enemie_Walk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemie_Animations/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/EnemiesSpites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/EnemiesSpites/Enemie_Brad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/EnemiesSpites/Enemie_Brad.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TakeDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/TakeDamage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemie.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +90,7 @@
       <workItem from="1691183792430" duration="758000" />
       <workItem from="1691193952472" duration="3255000" />
       <workItem from="1691345833555" duration="3634000" />
-      <workItem from="1691430444315" duration="1272000" />
+      <workItem from="1691430444315" duration="2377000" />
     </task>
     <servers />
   </component>

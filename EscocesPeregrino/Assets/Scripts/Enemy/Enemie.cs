@@ -151,7 +151,16 @@ public class Enemie : MonoBehaviour
     {
        
         vel= target - transform.position;
-        sr.flipX =vel.x < 0;
+
+        if (vel.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        
         if(vel.magnitude < stoppingDistance)
         {
             vel = Vector2.zero;
