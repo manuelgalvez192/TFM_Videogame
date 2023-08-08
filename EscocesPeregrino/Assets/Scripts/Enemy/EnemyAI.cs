@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float offset;
 
     private float distance;
+    private Vector2 placeToGo;
 
     void Update()
     {
@@ -33,9 +34,11 @@ public class EnemyAI : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (distance <= detectionRange)
+        if (distance <= detectionRange && distance > offset)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            placeToGo = new Vector2(player.transform.position.x + offset, player.transform.position.y);
+
+            transform.position = Vector2.MoveTowards(transform.position, placeToGo, speed * Time.deltaTime);
             
             animator.SetBool("isWalking", true);
         }
@@ -44,5 +47,7 @@ public class EnemyAI : MonoBehaviour
         {
             rb.velocity = new Vector2(speed * Time.deltaTime, speed * Time.deltaTime);
         }
+        
+        print(distance);
     }
 }

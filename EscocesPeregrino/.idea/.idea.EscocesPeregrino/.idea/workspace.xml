@@ -6,15 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="23d8de2c-b261-41f3-91fb-4ff99eb8c711" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemie.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemie.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemie.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemie.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemie.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemie.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Walk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Walk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Walk.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Walk.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/Enemie_Brad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/Enemie_Brad.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/EnemyBasicAtack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/EnemyBasicAtack.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/EnemyIdle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/EnemyIdle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/EnemyWalk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/EnemiesSpites/EnemyWalk.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
