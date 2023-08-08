@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23d8de2c-b261-41f3-91fb-4ff99eb8c711" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemie.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemie.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemie.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemie.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemie.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemie.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Map/ScottPilgrimMap2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/BehaviorBricks/Actions/System/Vector3/GetRandomInArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuControlsScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/TakeDamage.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -91,7 +100,7 @@
       <workItem from="1691183792430" duration="758000" />
       <workItem from="1691193952472" duration="3255000" />
       <workItem from="1691345833555" duration="3634000" />
-      <workItem from="1691430444315" duration="6189000" />
+      <workItem from="1691430444315" duration="10869000" />
     </task>
     <servers />
   </component>

@@ -55,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("isRunning", true);
             }
             
-            
         }
         else
         {
