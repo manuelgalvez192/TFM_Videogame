@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2050687105109215634, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
+      propertyPath: enemyAi
+      value: 
+      objectReference: {fileID: 569622302}
     - target: {fileID: 2726423583011810375, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
       propertyPath: m_Size.x
       value: 0.57162476
@@ -363,6 +367,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7568013689733089673, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
   m_PrefabInstance: {fileID: 264143723}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &569622302 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 772806968628441091, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
+  m_PrefabInstance: {fileID: 264143723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea76bc9705a0c6946a903d9c226534a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &671685390
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private EnemyAI enemyAi;
 
     private bool isOnRange = false;
     public delegate bool CanMove(bool value);
@@ -17,7 +18,7 @@ public class EnemyAttack : MonoBehaviour
         if (other.tag == "Player")
         {
             animator.SetBool("isWalking", false);
-            canMove?.Invoke(false);
+            enemyAi.canFollow = false;
             animator.SetBool("isAttacking", true);
         }
     }
@@ -26,9 +27,19 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            animator.SetBool("isAttacking", false);
-            atacking = false;
+            StartCoroutine(AttackToIdle());
         }
+    }
+
+    private IEnumerator AttackToIdle()
+    {
+        yield return new WaitForSeconds(1);
+        
+        enemyAi.canFollow = true;
+        
+        animator.SetBool("isAttacking", false);
+        atacking = false;
+        yield break;
     }
 
 }
