@@ -6,26 +6,29 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+
+    private bool isOnRange = false;
+    public delegate bool CanMove(bool value);
+    public static CanMove canMove;
+    private bool atacking = false;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-
         if (other.tag == "Player")
         {
-            print("soy player");
-            
             animator.SetBool("isWalking", false);
+            canMove?.Invoke(false);
             animator.SetBool("isAttacking", true);
-        }
-        else
-        {
-            print("no soy player");
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        animator.SetBool("isAttacking", false);
+        if (other.tag == "Player")
+        {
+            animator.SetBool("isAttacking", false);
+            atacking = false;
+        }
     }
+
 }

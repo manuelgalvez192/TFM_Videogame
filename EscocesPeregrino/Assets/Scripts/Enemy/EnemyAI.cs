@@ -15,39 +15,58 @@ public class EnemyAI : MonoBehaviour
 
     private float distance;
     private Vector2 placeToGo;
+    private bool canFollow = true;
 
-    void Update()
+    private void Start()
     {
-        animator.SetBool("isWalking", false);
+        PlayerBasicAtack.canMove += ChangeMoveOption;
+    }
+
+    private bool ChangeMoveOption(bool value)
+    {
+        canFollow = value;
+        return canFollow;
+    }
+
+    private void OnDisable()
+    {
+        PlayerBasicAtack.canMove -= ChangeMoveOption;
+    }
+    
+    void FixedUpdate()
+    {
+        //print(canFollow);
+        if (canFollow)
+        {
+            animator.SetBool("isWalking", false);
         
-        distance = Vector2.Distance(transform.position, player.transform.position);
+            distance = Vector2.Distance(transform.position, player.transform.position);
 
-        Vector2 direction = player.transform.position - transform.position;
-        direction.Normalize();
+            Vector2 direction = player.transform.position - transform.position;
+            direction.Normalize();
 
-        if (direction.x < 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+            if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
 
-        if (distance <= detectionRange && distance > offset)
-        {
-            placeToGo = new Vector2(player.transform.position.x + offset, player.transform.position.y);
+            if (distance <= detectionRange && distance > offset)
+            {
+                placeToGo = new Vector2(player.transform.position.x + offset, player.transform.position.y);
 
-            transform.position = Vector2.MoveTowards(transform.position, placeToGo, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, placeToGo, speed * Time.deltaTime);
             
-            animator.SetBool("isWalking", true);
-        }
+                animator.SetBool("isWalking", true);
+            }
 
-        if (rb.velocity.x > speed * Time.deltaTime)
-        {
-            rb.velocity = new Vector2(speed * Time.deltaTime, speed * Time.deltaTime);
+            if (rb.velocity.x > speed * Time.deltaTime)
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime, speed * Time.deltaTime);
+            }
         }
-        
-        print(distance);
     }
 }
