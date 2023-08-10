@@ -17,22 +17,6 @@ public class EnemyAI : MonoBehaviour
     private Vector2 placeToGo;
     public bool canFollow = true;
 
-    private void Start()
-    {
-        PlayerBasicAtack.canMove += ChangeMoveOption;
-    }
-
-    private bool ChangeMoveOption(bool value)
-    {
-        canFollow = value;
-        return canFollow;
-    }
-
-    private void OnDisable()
-    {
-        PlayerBasicAtack.canMove -= ChangeMoveOption;
-    }
-    
     void FixedUpdate()
     {
         //print(canFollow);

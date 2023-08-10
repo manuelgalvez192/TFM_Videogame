@@ -9,8 +9,6 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private EnemyAI enemyAi;
 
     private bool isOnRange = false;
-    public delegate bool CanMove(bool value);
-    public static CanMove canMove;
     private bool atacking = false;
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -27,7 +25,10 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            if (transform.parent.gameObject.activeInHierarchy)
+            {
             StartCoroutine(AttackToIdle());
+            }
         }
     }
 

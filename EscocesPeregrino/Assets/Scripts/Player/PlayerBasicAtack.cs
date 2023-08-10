@@ -9,9 +9,11 @@ public class PlayerBasicAtack : MonoBehaviour
 
     [SerializeField] private GameObject hitbox;
     [SerializeField] private Animator animator;
+    public float playerDamage;
     
     private int comboCount;
     private bool atacking;
+
 
     public delegate bool CanMove(bool value);
     public static CanMove canMove;
