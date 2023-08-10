@@ -13,18 +13,17 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float detectionRange;
     [SerializeField] private float offset;
 
-    private float distance;
+    private float detectionDistance;
     private Vector2 placeToGo;
     public bool canFollow = true;
 
     void FixedUpdate()
     {
-        //print(canFollow);
         if (canFollow)
         {
             animator.SetBool("isWalking", false);
         
-            distance = Vector2.Distance(transform.position, player.transform.position);
+            detectionDistance = Vector2.Distance(transform.position, player.transform.position);
 
             Vector2 direction = player.transform.position - transform.position;
             direction.Normalize();
@@ -38,7 +37,7 @@ public class EnemyAI : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
             }
 
-            if (distance <= detectionRange && distance > offset)
+            if (detectionDistance <= detectionRange && detectionDistance > offset)
             {
                 placeToGo = new Vector2(player.transform.position.x + offset, player.transform.position.y);
 

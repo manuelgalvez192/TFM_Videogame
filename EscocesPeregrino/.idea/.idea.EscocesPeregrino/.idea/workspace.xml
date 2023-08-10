@@ -7,16 +7,9 @@
     <list default="true" id="23d8de2c-b261-41f3-91fb-4ff99eb8c711" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemie_Animations/Enemy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/BasicAtack1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/BasicAtack1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/BasicAtack2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/BasicAtack2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/BasicAtack3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/BasicAtack3.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBasicAtack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBasicAtack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TakeDamage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TakeDamage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLife.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +100,7 @@
       <workItem from="1691540885483" duration="3335000" />
       <workItem from="1691595908486" duration="1833000" />
       <workItem from="1691627175644" duration="4157000" />
+      <workItem from="1691693783648" duration="2699000" />
     </task>
     <servers />
   </component>

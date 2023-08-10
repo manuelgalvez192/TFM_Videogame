@@ -27,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
         {
             if (transform.parent.gameObject.activeInHierarchy)
             {
-            StartCoroutine(AttackToIdle());
+                StartCoroutine(AttackToIdle());
             }
         }
     }
