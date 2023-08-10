@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Manu.unity
     guid: 44044ad7c7a597143af966c1c988d28b
+  - enabled: 1
+    path: Assets/Scenes/DaniNivel.unity
+    guid: 42f116e80717d48469d77f048de3a47b
   m_configObjects: {}

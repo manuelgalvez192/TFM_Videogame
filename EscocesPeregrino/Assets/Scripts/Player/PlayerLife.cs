@@ -58,8 +58,9 @@ public class PlayerLife : MonoBehaviour
     }
     void Die()
     {
-        StartCoroutine("AberrationUpdate");
-        StartCoroutine("ColorGradientUpdate");
+        StartCoroutine(AberrationUpdate());
+        StartCoroutine(ColorGradientUpdate());
+        StartCoroutine(AnmAndChangeScene());
     }
 
     IEnumerator AberrationUpdate()
@@ -87,13 +88,18 @@ public class PlayerLife : MonoBehaviour
         {
             gradientX += Time.deltaTime*0.5f;
             gradientY = gradientCurve.Evaluate(gradientX);
-            print(gradientY);
             grading.temperature.value = gradientY * gradingMultiply;
             grading.tint.value = gradientY * gradingMultiply;
             yield return null;
         }
 
         yield break;
+    }
+    IEnumerator AnmAndChangeScene()
+    {
+        //meter animacion
+        yield return new WaitForSecondsRealtime(4);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 
 }

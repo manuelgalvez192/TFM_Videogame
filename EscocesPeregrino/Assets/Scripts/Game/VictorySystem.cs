@@ -26,8 +26,8 @@ public class VictorySystem : MonoBehaviour
     {
         float x = 0;
         float y = 0;
-        bool CanRun = false;
-        while(CanRun)
+        bool CanRun = true;
+        while (CanRun)
         {
             x += Time.deltaTime*vignetteSpeed;
              y = curveVignetteSpeed.Evaluate(x);
@@ -35,7 +35,6 @@ public class VictorySystem : MonoBehaviour
             CanRun = vignete.intensity.value <= 0.570755;
             yield return null;
         }
-        print("Fuera");
         canvas.gameObject.SetActive(true);
         x = 0;
         y = 0;
@@ -44,7 +43,6 @@ public class VictorySystem : MonoBehaviour
             x += Time.deltaTime * scaleSpeed;
             y = curveScaleSpeed.Evaluate(x);
             y *= scaleMultiplier;
-            print(x);
 
             canvas.localScale = new Vector3(y, y, y);
 
