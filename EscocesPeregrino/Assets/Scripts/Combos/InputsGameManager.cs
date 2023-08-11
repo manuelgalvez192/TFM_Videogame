@@ -67,6 +67,8 @@ public class InputsGameManager : MonoBehaviour
             coverPadButton = new PadInput();
             pickPadButton = new PadInput();
             pausePadButton = new PadInput();
+            moveMenuUpPadButton    =new PadInput();
+            moveMenuDownPadButton = new PadInput();
 
             attackPadButton.PadButton = playerGamePad.buttonWest;
             JumpPadButton.PadButton = playerGamePad.buttonSouth;
