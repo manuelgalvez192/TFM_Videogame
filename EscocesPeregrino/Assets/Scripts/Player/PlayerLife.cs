@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
@@ -10,6 +12,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private Slider playerLifeSlider;
     [SerializeField] float maxLife = 10;
     float currentLife;
+    [SerializeField] private EnemyAttack enemyDamage;
     [Header("Effects")]
     [SerializeField] PostProcessVolume postProcess;
 
@@ -23,6 +26,8 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] float gradingMultiply;
     [SerializeField] AnimationCurve gradientCurve;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private PlayerMovement canControl;
 
     void Start()
     {
@@ -32,6 +37,7 @@ public class PlayerLife : MonoBehaviour
         postProcess.profile.TryGetSettings(out aberration);
         postProcess.profile.TryGetSettings(out grading);
     }
+
     private void Update()
     {
        // aberration.intensity.value = gAmount;
@@ -49,6 +55,7 @@ public class PlayerLife : MonoBehaviour
             Die();
         playerLifeSlider.value = currentLife;
     }
+    
     public void GetHeal(float heal)
     {
         currentLife += heal;
@@ -56,6 +63,7 @@ public class PlayerLife : MonoBehaviour
             currentLife = maxLife;
         playerLifeSlider.value = currentLife;
     }
+    
     void Die()
     {
         StartCoroutine(AberrationUpdate());
@@ -80,6 +88,7 @@ public class PlayerLife : MonoBehaviour
 
         yield break;
     }
+    
     IEnumerator ColorGradientUpdate()
     {
         float gradientX = 0;
@@ -95,11 +104,38 @@ public class PlayerLife : MonoBehaviour
 
         yield break;
     }
+    
     IEnumerator AnmAndChangeScene()
     {
-        //meter animacion
+        //animator.SetTrigger("die");
         yield return new WaitForSecondsRealtime(4);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+       // UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "EnemyPunchHB")
+        {
+            animator.SetTrigger("takeDamage");
+            GetDamage(enemyDamage.enemyDamage);
+            StartCoroutine(CanControl());
+            
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "EnemyPunchHB")
+        {
+            
+        }
+    }
+
+    private IEnumerator CanControl()
+    {
+        print("entra");
+        canControl.canControl = false;
+        yield return new WaitForSeconds(2);
+        canControl.canControl = true;
+    }
 }

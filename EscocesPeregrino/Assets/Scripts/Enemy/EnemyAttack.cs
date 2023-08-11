@@ -7,6 +7,8 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private EnemyAI enemyAi;
+    [SerializeField] private GameObject enemyPunchHB;
+    public float enemyDamage;
 
     private bool isOnRange = false;
     private bool atacking = false;
@@ -18,6 +20,7 @@ public class EnemyAttack : MonoBehaviour
             animator.SetBool("isWalking", false);
             enemyAi.canFollow = false;
             animator.SetBool("isAttacking", true);
+            enemyPunchHB.SetActive(true);
         }
     }
 
@@ -28,6 +31,7 @@ public class EnemyAttack : MonoBehaviour
             if (transform.parent.gameObject.activeInHierarchy)
             {
                 StartCoroutine(AttackToIdle());
+                enemyPunchHB.SetActive(false);
             }
         }
     }
@@ -37,7 +41,6 @@ public class EnemyAttack : MonoBehaviour
         yield return new WaitForSeconds(1);
         
         enemyAi.canFollow = true;
-        
         animator.SetBool("isAttacking", false);
         atacking = false;
         yield break;

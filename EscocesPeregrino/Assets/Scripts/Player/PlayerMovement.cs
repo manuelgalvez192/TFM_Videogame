@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Rigidbody2D rb;
 
-    private bool canControl = true;
+    public bool canControl = true;
 
     private void Start()
     {

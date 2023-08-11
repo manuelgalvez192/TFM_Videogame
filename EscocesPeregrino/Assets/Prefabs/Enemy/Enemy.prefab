@@ -78,7 +78,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7336517455620480025}
-  - {fileID: 959376430600388065}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,6 +136,7 @@ Transform:
   - {fileID: 3933691840719518178}
   - {fileID: 6342872672692589887}
   - {fileID: 873324548560041982}
+  - {fileID: 959376430600388065}
   m_Father: {fileID: 1628507700935195524}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -278,6 +278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7568013689733089673}
   enemyAi: {fileID: 0}
+  enemyPunchHB: {fileID: 0}
+  enemyDamage: 0
 --- !u!70 &1910661629150431724
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -366,12 +368,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5451265344184549805}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0.281, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.019999996, y: -0.281, z: 0}
   m_LocalScale: {x: 0.70125, y: 0.106874995, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1628507700935195524}
+  m_Father: {fileID: 7336517455620480025}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4227794816120686410
