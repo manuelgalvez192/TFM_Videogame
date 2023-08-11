@@ -117,25 +117,15 @@ public class PlayerLife : MonoBehaviour
         if (other.tag == "EnemyPunchHB")
         {
             animator.SetTrigger("takeDamage");
-            GetDamage(enemyDamage.enemyDamage);
             StartCoroutine(CanControl());
-            
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "EnemyPunchHB")
-        {
-            
+            GetDamage(enemyDamage.enemyDamage);
         }
     }
 
     private IEnumerator CanControl()
     {
-        print("entra");
         canControl.canControl = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         canControl.canControl = true;
     }
 }
