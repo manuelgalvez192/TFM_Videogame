@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: e36d399d3264c8245a8132fae172630f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 9
+        width: 49
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd66d08df77101f4fb3280b2e8a6451b
+      internalID: -196153882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 8
+        width: 39
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97e67820ab6b1f419a22ae4a9c4ad58
+      internalID: 682967529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 8
+        width: 40
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3bf16a42d48214096ed1fcd0149aab
+      internalID: 1397144865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 9
+        width: 40
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d909f9246d86c478b70946a44b26ac
+      internalID: 155995470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_4
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 10
+        width: 38
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6b8e488aea47a4582fdb3dee2fb72e
+      internalID: 75632670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_5
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 11
+        width: 41
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4652b44fef871418b42a7d6d2c425c
+      internalID: 1975081877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_6
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 11
+        width: 41
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7cd6800dfca464b903a97e42e9e96e
+      internalID: -468932069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_7
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 11
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d8c7a6b75d9894488ccef495eef242
+      internalID: 104334578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_8
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 10
+        width: 35
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5662855f4e3bde4db1d245bd0c9fe04
+      internalID: 1580995652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_9
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 11
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2853e2a8e7363d3469d04d5b67184c5a
+      internalID: -2056604820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_10
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 13
+        width: 36
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c82018954ea134e83ef81333529d57
+      internalID: 1508174427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_11
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 13
+        width: 37
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a07c6f74d48184e9975bfab8aef2e3
+      internalID: -1466298309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_12
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 9
+        width: 47
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa81d425c36e55844adf3849e2817546
+      internalID: -1900117979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_13
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 9
+        width: 49
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520adda1f5a53f842873eb7b053dbc92
+      internalID: -655115004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_14
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 19
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4fa83611908c0440a99e2a0679392c2
+      internalID: -221875491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_15
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 19
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47afae66083500a479864e5bd4ac9a2a
+      internalID: 1607664234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_16
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 19
+        width: 39
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6578978ed43694e86320864217d32d
+      internalID: -1983880447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_17
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 23
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca30a3a2e876a4459eebafc371d3763
+      internalID: 1132308633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_18
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 27
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc71502908af4f4d8d3bde819533131
+      internalID: 1696452973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_19
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 30
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a29a2763972544888e4935798d110a
+      internalID: -2024431872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_20
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 28
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b664ed6ac6deb45b3e879f76e57d36
+      internalID: -1252638657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_21
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 21
+        width: 35
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328b63c01cdb39149bad9dadb111e28e
+      internalID: -308423280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_22
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 13
+        width: 34
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c45bfdd48f64f4286e6b3150e266ee
+      internalID: 2092184440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_23
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 14
+        width: 33
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08cceb74f0dba8429c892f29d1e5775
+      internalID: -1238802011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_24
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 14
+        width: 33
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5faea02f55a9b174fbb9515ac5174518
+      internalID: 122681139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScottPilgrimSpritesJumpCopy_25
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 9
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49408267cf654534196df57f6fde4daf
+      internalID: 1195028099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 032f2c3638b47c049ab9e9bb0536f435
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ScottPilgrimSpritesJumpCopy_21: -308423280
+      ScottPilgrimSpritesJumpCopy_2: 1397144865
+      ScottPilgrimSpritesJumpCopy_11: -1466298309
+      ScottPilgrimSpritesJumpCopy_18: 1696452973
+      ScottPilgrimSpritesJumpCopy_7: 104334578
+      ScottPilgrimSpritesJumpCopy_19: -2024431872
+      ScottPilgrimSpritesJumpCopy_3: 155995470
+      ScottPilgrimSpritesJumpCopy_13: -655115004
+      ScottPilgrimSpritesJumpCopy_14: -221875491
+      ScottPilgrimSpritesJumpCopy_22: 2092184440
+      ScottPilgrimSpritesJumpCopy_25: 1195028099
+      ScottPilgrimSpritesJumpCopy_16: -1983880447
+      ScottPilgrimSpritesJumpCopy_6: -468932069
+      ScottPilgrimSpritesJumpCopy_4: 75632670
+      ScottPilgrimSpritesJumpCopy_9: -2056604820
+      ScottPilgrimSpritesJumpCopy_8: 1580995652
+      ScottPilgrimSpritesJumpCopy_15: 1607664234
+      ScottPilgrimSpritesJumpCopy_20: -1252638657
+      ScottPilgrimSpritesJumpCopy_17: 1132308633
+      ScottPilgrimSpritesJumpCopy_12: -1900117979
+      ScottPilgrimSpritesJumpCopy_0: -196153882
+      ScottPilgrimSpritesJumpCopy_23: -1238802011
+      ScottPilgrimSpritesJumpCopy_5: 1975081877
+      ScottPilgrimSpritesJumpCopy_10: 1508174427
+      ScottPilgrimSpritesJumpCopy_24: 122681139
+      ScottPilgrimSpritesJumpCopy_1: 682967529
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
