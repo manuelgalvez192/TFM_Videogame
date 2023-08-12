@@ -35,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (canControl)
         {
-            rb.velocity = new Vector2(speed * Input.GetAxis("Horizontal"),rb.velocity.y);
+            rb.velocity = new Vector2(speed * InputsGameManager.instance.HorizontalAxis ,rb.velocity.y);
             
-            rb.velocity = new Vector2(rb.velocity.x, speed * Input.GetAxis("Vertical"));
+            rb.velocity = new Vector2(rb.velocity.x, speed * InputsGameManager.instance.VerticalAxis);
 
             if (rb.velocity.x > 0)
             {

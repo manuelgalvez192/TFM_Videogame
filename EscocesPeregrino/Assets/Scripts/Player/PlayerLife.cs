@@ -29,15 +29,12 @@ public class PlayerLife : MonoBehaviour
         playerLifeSlider.maxValue = maxLife;
         playerLifeSlider.value = maxLife;
         currentLife = maxLife;
+
         postProcess.profile.TryGetSettings(out aberration);
         postProcess.profile.TryGetSettings(out grading);
     }
     private void Update()
     {
-       // aberration.intensity.value = gAmount;
-       // grading.temperature .value= fgradingAmount;
-       // grading.tint .value= fgradingAmount;
-
         if (Input.GetKeyDown(KeyCode.Y))
             GetDamage(11);
     }
@@ -56,6 +53,7 @@ public class PlayerLife : MonoBehaviour
             currentLife = maxLife;
         playerLifeSlider.value = currentLife;
     }
+    #region Efectos Die
     void Die()
     {
         StartCoroutine(AberrationUpdate());
@@ -99,7 +97,8 @@ public class PlayerLife : MonoBehaviour
     {
         //meter animacion
         yield return new WaitForSecondsRealtime(4);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
+    #endregion
 
 }
