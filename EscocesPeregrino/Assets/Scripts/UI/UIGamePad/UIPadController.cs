@@ -21,7 +21,7 @@ public class UIPadController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField] UIPadButton attackButton;
     [SerializeField] UIPadButton coverButton;
     [SerializeField] UIPadButton dashButton;
-    private void Awake()
+    private void Start()
     {
         InputsGameManager.instance.UIController = this;
         jumpButton.ControllerParent = this;
