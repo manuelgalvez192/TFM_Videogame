@@ -10,6 +10,7 @@ public class PlayerLife : MonoBehaviour
 {
 
     [SerializeField] private Slider playerLifeSlider;
+    [SerializeField] private Text lifeText;
     [SerializeField] float maxLife = 10;
     float currentLife;
     [SerializeField] private EnemyAttack enemyDamage;
@@ -34,26 +35,24 @@ public class PlayerLife : MonoBehaviour
         playerLifeSlider.maxValue = maxLife;
         playerLifeSlider.value = maxLife;
         currentLife = maxLife;
+        lifeText.text = "x" + currentLife.ToString();
+
         postProcess.profile.TryGetSettings(out aberration);
         postProcess.profile.TryGetSettings(out grading);
     }
-
-    private void Update()
-    {
-       // aberration.intensity.value = gAmount;
-       // grading.temperature .value= fgradingAmount;
-       // grading.tint .value= fgradingAmount;
-
-        if (Input.GetKeyDown(KeyCode.Y))
-            GetDamage(11);
-    }
-
     public void GetDamage(float damage)
     {
         currentLife -= damage;
         if (currentLife <= 0)
+        {
+            currentLife = 0;
             Die();
+        }
+        else
+            animator.SetTrigger("takeDamage");
+
         playerLifeSlider.value = currentLife;
+        lifeText.text = "x" + currentLife.ToString();
     }
     
     public void GetHeal(float heal)
@@ -62,8 +61,9 @@ public class PlayerLife : MonoBehaviour
         if (currentLife >= maxLife)
             currentLife = maxLife;
         playerLifeSlider.value = currentLife;
+        lifeText.text = "x" + currentLife.ToString();
     }
-    
+
     void Die()
     {
         StartCoroutine(AberrationUpdate());
@@ -108,25 +108,28 @@ public class PlayerLife : MonoBehaviour
     
     IEnumerator AnmAndChangeScene()
     {
-        //animator.SetTrigger("die");
-        yield return new WaitForSecondsRealtime(4);
-       // UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        animator.SetTrigger("die");
+
+        yield return new WaitForSecondsRealtime(4f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "EnemyPunchHB")
-        {
-            animator.SetTrigger("takeDamage");
-            StartCoroutine(CanControl());
-            GetDamage(enemyDamage.enemyDamage);
-        }
-    }
 
     private IEnumerator CanControl()
     {
         canControl.canControl = false;
         yield return new WaitForSeconds(0.5f);
         canControl.canControl = true;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "EnemyPunchHB")
+        {
+            if (currentLife <=0)
+                return;
+            //animator.SetTrigger("takeDamage");
+            StartCoroutine(CanControl());
+            GetDamage(enemyDamage.enemyDamage);
+        }
     }
 }
