@@ -69,6 +69,7 @@ public class PlayerLife : MonoBehaviour
         StartCoroutine(AberrationUpdate());
         StartCoroutine(ColorGradientUpdate());
         StartCoroutine(AnmAndChangeScene());
+        canControl.canControl = false;
     }
 
     IEnumerator AberrationUpdate()
