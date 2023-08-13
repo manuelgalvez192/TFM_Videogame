@@ -12,16 +12,16 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private Slider playerLifeSlider;
     [SerializeField] private Text lifeText;
     [SerializeField] float maxLife = 10;
-    float currentLife;
+    [NonSerialized] public float currentLife;
     [SerializeField] private EnemyAttack enemyDamage;
     [Header("Effects")]
     [SerializeField] PostProcessVolume postProcess;
-
+    
     [Header("Aberrtation")]
     [SerializeField] ChromaticAberration aberration;
     [SerializeField] float aberrationMultiplier;
     [SerializeField] AnimationCurve aberrationCurve;
-
+    
     [Header("ColorGrading")]
     [SerializeField] ColorGrading grading;
     [SerializeField] float gradingMultiply;
@@ -29,6 +29,9 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerMovement canControl;
+    
+    public delegate void DisableActions();
+    public static DisableActions disableActions;
 
     void Start()
     {
@@ -45,6 +48,7 @@ public class PlayerLife : MonoBehaviour
         currentLife -= damage;
         if (currentLife <= 0)
         {
+            EnemyAI.canFollow = false;
             currentLife = 0;
             Die();
         }
@@ -69,9 +73,18 @@ public class PlayerLife : MonoBehaviour
         StartCoroutine(AberrationUpdate());
         StartCoroutine(ColorGradientUpdate());
         StartCoroutine(AnmAndChangeScene());
-        canControl.canControl = false;
+        StartCoroutine(TakeOutControl());
+        
     }
 
+    private IEnumerator TakeOutControl()
+    {
+        yield return new WaitForSeconds(1.1f);
+        
+        canControl.canControl = false;
+        disableActions?.Invoke();
+    }
+    
     IEnumerator AberrationUpdate()
     {
         float aberrationX = 0;
@@ -117,17 +130,17 @@ public class PlayerLife : MonoBehaviour
 
     private IEnumerator CanControl()
     {
-        canControl.canControl = false;
-        yield return new WaitForSeconds(0.5f);
-        canControl.canControl = true;
+        if (currentLife > 0)
+        {
+            canControl.canControl = false;
+            yield return new WaitForSeconds(0.5f);
+            canControl.canControl = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "EnemyPunchHB")
         {
-            if (currentLife <=0)
-                return;
-            //animator.SetTrigger("takeDamage");
             StartCoroutine(CanControl());
             GetDamage(enemyDamage.enemyDamage);
         }

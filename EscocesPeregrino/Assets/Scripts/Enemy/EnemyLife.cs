@@ -79,7 +79,7 @@ public class EnemyLife : MonoBehaviour
     private IEnumerator EnemyDeadAnimation()
     {
         animator.SetTrigger("isDead");
-        enemyAi.canFollow = false;
+        EnemyAI.canFollow = false;
         yield return new WaitForSeconds(5);
         selfEnemy.SetActive(false);
     }

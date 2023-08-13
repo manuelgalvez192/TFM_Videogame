@@ -8,17 +8,37 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private EnemyAI enemyAi;
     [SerializeField] private GameObject enemyPunchHB;
+    [SerializeField] private CapsuleCollider2D capsule;
+    [SerializeField] private PlayerLife currentLife;
     public float enemyDamage;
 
     private bool isOnRange = false;
     private bool atacking = false;
+
+    private void Start()
+    {
+        PlayerLife.disableActions += DisableEnemyActions;
+    }
     
+    private void DisableEnemyActions()
+    {
+        EnemyAI.canFollow = false;
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isWalking", false);
+        capsule.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        PlayerLife.disableActions -= DisableEnemyActions;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             animator.SetBool("isWalking", false);
-            enemyAi.canFollow = false;
+            EnemyAI.canFollow = false;
             animator.SetBool("isAttacking", true);
             enemyPunchHB.SetActive(true);
         }
@@ -38,12 +58,14 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator AttackToIdle()
     {
-        yield return new WaitForSeconds(1);
+        if (currentLife.currentLife > 0)
+        {
+            yield return new WaitForSeconds(1);
         
-        enemyAi.canFollow = true;
-        animator.SetBool("isAttacking", false);
-        atacking = false;
-        yield break;
+            EnemyAI.canFollow = true;
+            animator.SetBool("isAttacking", false);
+            atacking = false;
+            yield break;
+        }
     }
-
 }

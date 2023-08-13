@@ -12,13 +12,15 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float detectionRange;
     [SerializeField] private float offset;
+    
 
     private float detectionDistance;
     private Vector2 placeToGo;
-    public bool canFollow = true;
+    public static bool canFollow = true;
 
     void FixedUpdate()
     {
+        print(canFollow);
         if (canFollow)
         {
             animator.SetBool("isWalking", false);
