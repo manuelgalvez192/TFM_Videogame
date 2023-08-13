@@ -1854,7 +1854,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 930221121332049683, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: jumpPower
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2480332467621965376, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLifeSlider: {fileID: 973829353}
   lifeText: {fileID: 1155470112}
-  maxLife: 2
+  maxLife: 18
   enemyDamage: {fileID: 1248602952}
   postProcess: {fileID: 1114422740}
   aberration: {fileID: 0}

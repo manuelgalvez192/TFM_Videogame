@@ -111,7 +111,7 @@ public class PlayerLife : MonoBehaviour
         animator.SetTrigger("die");
 
         yield return new WaitForSecondsRealtime(4f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
 
