@@ -158,8 +158,8 @@ Camera:
   m_GameObject: {fileID: 979143811}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -236,13 +236,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230b516608adc1040a52dc4818c5c719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIController: {fileID: 1507965046822558311}
+  uiController: {fileID: 0}
   jumpKey: 32
   attackKey: 106
   dashKey: 107
   coverKey: 108
   pickKey: 101
   pauseKey: 112
+  moveMenuUpKey: 119
+  moveMenuDownKey: 115
 --- !u!4 &1307861125
 Transform:
   m_ObjectHideFlags: 0
@@ -675,17 +677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIControls
       objectReference: {fileID: 0}
+    - target: {fileID: 1507965046470045394, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
---- !u!114 &1507965046822558311 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1507965045710426385, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
-  m_PrefabInstance: {fileID: 1507965046822558310}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a261b021406088247ab56406a1291dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
