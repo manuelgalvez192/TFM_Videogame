@@ -17,20 +17,24 @@ public class VictorySystem : MonoBehaviour
     [SerializeField] float scaleMultiplier;
 
     [SerializeField] AnimationCurve curveScaleSpeed;
+    [SerializeField] private PlayerMovement canControl;
+    [SerializeField] private Animator _animator;
 
+    
     void Start()
     {
         postPorcesObject.profile.TryGetSettings(out vignete);
     }
     IEnumerator Win()
     {
+       
         float x = 0;
         float y = 0;
         bool CanRun = true;
         while (CanRun)
         {
             x += Time.deltaTime*vignetteSpeed;
-             y = curveVignetteSpeed.Evaluate(x);
+            y = curveVignetteSpeed.Evaluate(x);
             vignete.intensity.value = y;
             CanRun = vignete.intensity.value <= 0.570755;
             yield return null;
@@ -61,6 +65,8 @@ public class VictorySystem : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            canControl.canControl = false;
+            _animator.SetTrigger("victory");
             StartCoroutine("Win");
         }
     }

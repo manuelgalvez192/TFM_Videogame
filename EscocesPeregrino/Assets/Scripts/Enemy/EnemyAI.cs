@@ -20,7 +20,6 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(canFollow);
         if (canFollow)
         {
             animator.SetBool("isWalking", false);

@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float jumpPower;
     [SerializeField] private float floorLevel;
-    public bool canControl = true;
+    [NonSerialized] public bool canControl = true;
 
     private bool isGrounded;
     private float timeToBeGrounded = 0.72f;
@@ -39,8 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-      
-
         if(transform.localScale.y <= floorLevel ||isGrounded )
         {
             IsInGround();
@@ -51,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
         if (InputsGameManager.instance.JumpButtonDown)
         {
             animator.SetBool("isRunning", false);
