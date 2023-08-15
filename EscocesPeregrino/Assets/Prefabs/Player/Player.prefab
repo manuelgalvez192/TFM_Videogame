@@ -130,6 +130,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4185150040072458597}
   - component: {fileID: 930221121332049683}
+  - component: {fileID: 4747319534347619592}
+  - component: {fileID: 5324509881141678982}
   - component: {fileID: 3277626190893950128}
   - component: {fileID: 6520931318953661022}
   m_Layer: 0
@@ -175,6 +177,55 @@ MonoBehaviour:
   jumpPower: 2
   floorLevel: 0
   canControl: 1
+  isBlocking: 0
+--- !u!114 &4747319534347619592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329062689742753813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e320c67d80a9d419eeda6d1b019d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLifeSlider: {fileID: 0}
+  lifeText: {fileID: 0}
+  maxLife: 10
+  enemyDamage: {fileID: 0}
+  postProcess: {fileID: 0}
+  aberration: {fileID: 0}
+  aberrationMultiplier: 0
+  aberrationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  grading: {fileID: 0}
+  gradingMultiply: 0
+  gradientCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animator: {fileID: 0}
+  canControl: {fileID: 0}
+  isBlocking: 0
+--- !u!114 &5324509881141678982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329062689742753813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1bd932111dafb746bc8fd7e521a8a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &3277626190893950128
 SpriteRenderer:
   m_ObjectHideFlags: 0

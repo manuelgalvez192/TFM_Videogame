@@ -33,6 +33,8 @@ public class PlayerLife : MonoBehaviour
     public delegate void DisableActions();
     public static DisableActions disableActions;
 
+    public bool isBlocking;
+
     void Start()
     {
         playerLifeSlider.maxValue = maxLife;
@@ -42,21 +44,31 @@ public class PlayerLife : MonoBehaviour
 
         postProcess.profile.TryGetSettings(out aberration);
         postProcess.profile.TryGetSettings(out grading);
+
+        isBlocking = false;
     }
     public void GetDamage(float damage)
     {
-        currentLife -= damage;
-        if (currentLife <= 0)
+        if(!isBlocking)
         {
-            EnemyAI.canFollow = false;
-            currentLife = 0;
-            Die();
-        }
-        else
-            animator.SetTrigger("takeDamage");
+            currentLife -= damage;
+            if (currentLife <= 0)
+            {
+                EnemyAI.canFollow = false;
+                currentLife = 0;
+                Die();
+            }
+            else
+                animator.SetTrigger("takeDamage");
 
-        playerLifeSlider.value = currentLife;
-        lifeText.text = "x" + currentLife.ToString();
+            playerLifeSlider.value = currentLife;
+            lifeText.text = "x" + currentLife.ToString();
+        }
+        else if(isBlocking)
+        {
+
+        }
+       
     }
     
     public void GetHeal(float heal)

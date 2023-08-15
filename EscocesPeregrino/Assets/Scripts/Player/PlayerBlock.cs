@@ -5,20 +5,37 @@ using UnityEngine;
 public class PlayerBlock : MonoBehaviour
 {
 
-
-    private bool isBlocking;
+    PlayerMovement playerMovement;
+    PlayerLife playerLife;
+    Animator anim;
+    
     private bool canBlock;
+    private float timeToBlockAnim = 0.15f;
     // Start is called before the first frame update
     void Start()
     {
-        isBlocking = false;
+      
         canBlock = true;
+        anim = GetComponent<Animator>();
+        playerMovement= GetComponent<PlayerMovement>();
+        playerLife= GetComponent<PlayerLife>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(InputsGameManager.instance.CoverButtonDown)
+        {
+            BlockAttack();
+        }
+        else if(InputsGameManager.instance.CoverButtonUp)
+        {
+            playerMovement.isBlocking = false;
+            playerLife.isBlocking = false;
+            timeToBlockAnim = 0.15f;
+            anim.speed = 1;
+            anim.SetBool("isBlocking", false);
+        }
     }
 
 
@@ -26,7 +43,17 @@ public class PlayerBlock : MonoBehaviour
     {
         if(canBlock)
         {
-            //animacion de bloqueo
+            timeToBlockAnim -= Time.deltaTime;
+            playerMovement.isBlocking = true;
+            playerLife.isBlocking = true;
+            anim.SetBool("isBlocking", true);
+
+            if (timeToBlockAnim <= 0)
+            {
+                anim.speed = 0;
+            }
+            
+ 
 
         }
     }

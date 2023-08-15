@@ -19,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private float timeToBeGrounded = 0.72f;
 
+    public bool isBlocking;
+
     private void Start()
     {
         PlayerBasicAtack.canMove += ChangeMoveOption;
         isGrounded = true;
+        isBlocking = false;
        // floorLevel = transform.localScale.y;
     }
 
@@ -72,13 +75,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if(isGrounded)
+        if(!isBlocking)
         {
-            isGrounded= false;
-            rb.gravityScale = 0.3f;
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            //floorLevel = transform.localScale.y -1;
+            if (isGrounded)
+            {
+                isGrounded = false;
+                rb.gravityScale = 0.3f;
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                //floorLevel = transform.localScale.y -1;
+            }
         }
+        else if(isBlocking)
+        {
+
+        }
+       
     }
 
     private void IsInGround()
@@ -87,37 +98,46 @@ public class PlayerMovement : MonoBehaviour
         isGrounded= true;
         animator.SetBool("isRunning", false);
 
-        if (canControl)
+        if(!isBlocking)
         {
-            rb.velocity = new Vector2(speed *InputsGameManager.instance.HorizontalAxis, rb.velocity.y);
-
-            rb.velocity = new Vector2(rb.velocity.x, speed * InputsGameManager.instance.VerticalAxis);
-
-            if (rb.velocity.x > 0)
+            if (canControl)
             {
-                animator.SetBool("isRunning", true);
-                transform.localScale = new Vector2(1, transform.localScale.y);
+                rb.velocity = new Vector2(speed * InputsGameManager.instance.HorizontalAxis, rb.velocity.y);
+
+                rb.velocity = new Vector2(rb.velocity.x, speed * InputsGameManager.instance.VerticalAxis);
+
+                if (rb.velocity.x > 0)
+                {
+                    animator.SetBool("isRunning", true);
+                    transform.localScale = new Vector2(1, transform.localScale.y);
+                }
+                else
+                    if (rb.velocity.x < 0)
+                {
+                    animator.SetBool("isRunning", true);
+                    transform.localScale = new Vector2(-1, transform.localScale.y);
+                }
+
+                if (rb.velocity.y > 0 || rb.velocity.y < 0)
+                {
+                    animator.SetBool("isRunning", true);
+                }
+
+
+
             }
             else
-                if (rb.velocity.x < 0)
             {
-                animator.SetBool("isRunning", true);
-                transform.localScale = new Vector2(-1, transform.localScale.y);
+                rb.velocity = new Vector2(0, 0);
             }
-
-            if (rb.velocity.y > 0 || rb.velocity.y < 0)
-            {
-                animator.SetBool("isRunning", true);
-            }
-
-
-
+            // floorLevel = transform.localScale.y;
         }
-        else
+        else if(isBlocking)
         {
-            rb.velocity = new Vector2(0, 0);
+
         }
-        // floorLevel = transform.localScale.y;
+
+
 
     }
 }
