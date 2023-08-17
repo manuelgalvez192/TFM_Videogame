@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class PickeableObject : MonoBehaviour
 {
@@ -14,9 +14,10 @@ public class PickeableObject : MonoBehaviour
     [SerializeField] Color outlinerColor;
     [SerializeField] float maxOutliner;
     [SerializeField] float minOutliner;
-    public virtual void Start()
+    public virtual void Awake()
     {
         objMat = GetComponent<SpriteRenderer>().material;
+        objMat.color = Color.green;
         objMat.SetTexture("Texture", GetComponent<SpriteRenderer>().sprite.texture);
         objMat.SetColor("_OutColor", outlinerColor);
         objMat.SetFloat("_OutValue", 0);
@@ -30,7 +31,7 @@ public class PickeableObject : MonoBehaviour
     }
     public virtual void OnDropObject()
     {
-
+        Select();
     }
 
     public virtual void Select()
