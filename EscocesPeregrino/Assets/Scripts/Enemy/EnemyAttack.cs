@@ -17,6 +17,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
+        currentLife = PlayerSingleton.instance.playerLife;
         PlayerLife.disableActions += DisableEnemyActions;
     }
     

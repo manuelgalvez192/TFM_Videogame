@@ -3,8 +3,9 @@ Shader "Dani/OutlinerShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        [Space(10]
+        [Space(10)]
         _OutColor("OutLine Color",Color) = (1,1,1,1)
+        _InsideColor("Inside Color",Color) = (1,1,1,1)
         _OutValue("OutLine Value", Range(0,0.2)) = 0.2
             }
             SubShader
@@ -110,12 +111,15 @@ Shader "Dani/OutlinerShader"
 
                 sampler2D _MainTex;
                 float4 _MainTex_ST;
+                float4 _InsideColor;
+
 
                 v2f vert(appdata v)
                 {
                     v2f o;
                     o.vertex = UnityObjectToClipPos(v.vertex);
                     o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                    
                     return o;
                 }
 
@@ -123,8 +127,9 @@ Shader "Dani/OutlinerShader"
                 {
                     // sample the texture
                     fixed4 col = tex2D(_MainTex, i.uv);
+                    fixed4 finalColor = col * _InsideColor;
 
-                    return col;
+                    return finalColor;
                 }
                 ENDCG
             }
