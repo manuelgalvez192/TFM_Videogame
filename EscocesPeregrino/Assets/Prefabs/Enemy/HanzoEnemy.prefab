@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 1628507700935195524}
   - component: {fileID: 1628507700935195521}
   m_Layer: 0
-  m_Name: Enemy 1
+  m_Name: HanzoEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
