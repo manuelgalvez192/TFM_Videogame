@@ -11,9 +11,6 @@ public class MenuPlayerMovement : MonoBehaviour
     [SerializeField] float speedX;
     [SerializeField] float speedY;
     [SerializeField] float speedZ;
-    [SerializeField] float maxScale;
-    [SerializeField] float minScale;
-
     [SerializeField] Animator anim;
     void Start()
     {
@@ -26,6 +23,7 @@ public class MenuPlayerMovement : MonoBehaviour
         Movement();
         CheckLimits();
         SetAnimatorValues();
+
     }
 
 
@@ -48,14 +46,6 @@ public class MenuPlayerMovement : MonoBehaviour
         {
             transform.localPosition = new Vector3(transform.localPosition.x,limitYNeg);
         }
-        if(transform.localScale.x>maxScale)
-        {
-            transform.localScale = new Vector3(maxScale,maxScale);
-        }
-        else if (transform.localScale.x < minScale)
-        {
-            transform.localScale = new Vector3(minScale, minScale);
-        }
     }
     void SetAnimatorValues()
     {
@@ -66,11 +56,11 @@ public class MenuPlayerMovement : MonoBehaviour
 
         if(InputsGameManager.instance.AttackButtonDown)
         {
-            print("Attack");
+            anim.SetTrigger("Attack");
         }
         if (InputsGameManager.instance.JumpButton)
         {
-            print("Jump");
+            anim.SetTrigger("Jump");
         }
         if (InputsGameManager.instance.CoverButtonUp)
         {
@@ -81,7 +71,6 @@ public class MenuPlayerMovement : MonoBehaviour
     {
         transform.Translate(transform.right * InputsGameManager.instance.HorizontalAxis * speedX * Time.deltaTime);
         transform.Translate(transform.up * InputsGameManager.instance.VerticalAxis * speedY * Time.deltaTime);
-        transform.localScale = new Vector3(transform.localScale.x - InputsGameManager.instance.VerticalAxis * speedZ * Time.deltaTime, transform.localScale.y - Input.GetAxis("Vertical") * speedZ * Time.deltaTime);
 
         if (InputsGameManager.instance.HorizontalAxis > 0)
         {
