@@ -32,11 +32,11 @@ public class PlayerDie : MonoBehaviour
     
     void Die()
     {
-        StartCoroutine(AberrationUpdate());
-        StartCoroutine(ColorGradientUpdate());
-        StartCoroutine(AnmAndChangeScene());
-        StartCoroutine(TakeOutControl());
-        
+        //StartCoroutine(AberrationUpdate());
+        //StartCoroutine(ColorGradientUpdate());
+        //StartCoroutine(AnmAndChangeScene());
+        //StartCoroutine(TakeOutControl());
+        PostProcessingManager.instance.OnPlayerDie();
     }
     
     private IEnumerator TakeOutControl()

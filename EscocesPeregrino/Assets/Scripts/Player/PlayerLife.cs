@@ -31,6 +31,8 @@ public class PlayerLife : MonoBehaviour
             EnemyAI.canFollow = false;
             currentLife = 0;
             //die(); AQUI EL MORIR
+            PostProcessingManager.instance.OnPlayerDie();
+
         }
         else
             animator.SetTrigger("takeDamage");

@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLife: {fileID: 7914866354274215235}
-  playerBasicAttack: {fileID: 0}
+  playerBasicAttack: {fileID: 2664033887037610753}
+  playerAnimator: {fileID: 6520931318953661022}
 --- !u!1 &6329062689742753813
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +166,7 @@ GameObject:
   - component: {fileID: 930221121332049683}
   - component: {fileID: 3277626190893950128}
   - component: {fileID: 6520931318953661022}
+  - component: {fileID: 2664033887037610753}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -279,6 +281,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2664033887037610753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329062689742753813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee1f4cc0eae76747b78f39e992e05f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 8257791292594457816}
+  animator: {fileID: 6520931318953661022}
+  playerDamage: 5
 --- !u!1 &7419928574772062393
 GameObject:
   m_ObjectHideFlags: 0
