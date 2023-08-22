@@ -11,6 +11,7 @@ public class PlayerSingleton : MonoBehaviour
 
     [Header("Components")]
     public PlayerLife playerLife;
+    public PlayerBasicAtack playerBasicAttack;
 
     void Awake()
     {

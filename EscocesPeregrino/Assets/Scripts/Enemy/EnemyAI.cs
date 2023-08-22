@@ -18,6 +18,12 @@ public class EnemyAI : MonoBehaviour
     private Vector2 placeToGo;
     public static bool canFollow = true;
 
+
+    private void Start()
+    {
+        player = PlayerSingleton.instance.gameObject;
+    }
+
     void FixedUpdate()
     {
         if (canFollow)

@@ -21,6 +21,7 @@ public class EnemyLife : MonoBehaviour
     private void Start()
     {
         currentLife = maxLife;
+        playerDamage = PlayerSingleton.instance.playerBasicAttack;
     }
 
     private void Update()

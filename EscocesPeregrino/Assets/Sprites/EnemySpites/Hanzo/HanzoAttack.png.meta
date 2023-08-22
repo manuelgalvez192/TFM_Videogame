@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59aa970d040276e47a320ab5842962ef
+guid: 25cc7d12c5944524f829ed150b6c0c61
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyTakeDamage_0
+      name: HanzoAttack_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 72
-        height: 86
+        width: 54
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,41 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe762eac9b491e418cbbc62e6492f6a
-      internalID: -507950714
+      spriteID: 44f70a5932a87a0409c24a179b86d6eb
+      internalID: 854003206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_1
+      name: HanzoAttack_1
       rect:
         serializedVersion: 2
-        x: 76
-        y: 3
-        width: 59
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76e543d2175a03442bfd2456054bb13c
-      internalID: -935995808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyTakeDamage_2
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 4
+        x: 55
+        y: 0
         width: 56
-        height: 85
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61f57eef7568dda4ca5b233a5ce91049
-      internalID: -1520248704
+      spriteID: 6abf908a9fb831b45bb33b0a717dce1c
+      internalID: 550918161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_3
+      name: HanzoAttack_2
       rect:
         serializedVersion: 2
-        x: 203
+        x: 112
         y: 0
-        width: 74
-        height: 72
+        width: 100
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,41 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd908ef45db6db479e9568f6f498c2d
-      internalID: 48539578
+      spriteID: 725775df7170dee40a37ffffc865f14a
+      internalID: -41021024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_4
+      name: HanzoAttack_3
       rect:
         serializedVersion: 2
-        x: 277
-        y: 0
-        width: 70
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cac6a24dc7b3efa4db5628d86aca008a
-      internalID: -588935041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyTakeDamage_5
-      rect:
-        serializedVersion: 2
-        x: 347
+        x: 213
         y: 0
         width: 61
-        height: 82
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbb00a91721b8d643b49a621505512cd
-      internalID: 1887081934
+      spriteID: 4e1fe6879893b334cb0fdfb736b33966
+      internalID: 988900706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_6
+      name: HanzoAttack_4
       rect:
         serializedVersion: 2
-        x: 408
-        y: 5
-        width: 57
-        height: 76
+        x: 275
+        y: 0
+        width: 61
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +229,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a10724c6d409ec441bba6c2e98c706db
-      internalID: -1051906381
+      spriteID: 2c4e8d5627f8c584e8c1abd5135a7729
+      internalID: -667890305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HanzoAttack_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 57
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9ef5c32143a104688a7a778ca0df12
+      internalID: 624155633
       vertices: []
       indices: 
       edges: []
@@ -280,7 +259,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 80c824b20c8497c43af709da2a778e41
+    spriteID: 60b330ce5638dbf4782afa0af3562f75
     internalID: 0
     vertices: []
     indices: 
@@ -288,13 +267,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EnemyTakeDamage_1: -935995808
-      EnemyTakeDamage_2: -1520248704
-      EnemyTakeDamage_6: -1051906381
-      EnemyTakeDamage_4: -588935041
-      EnemyTakeDamage_5: 1887081934
-      EnemyTakeDamage_3: 48539578
-      EnemyTakeDamage_0: -507950714
+      HanzoAttack_0: 854003206
+      HanzoAttack_2: -41021024
+      HanzoAttack_3: 988900706
+      HanzoAttack_1: 550918161
+      HanzoAttack_5: 624155633
+      HanzoAttack_4: -667890305
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

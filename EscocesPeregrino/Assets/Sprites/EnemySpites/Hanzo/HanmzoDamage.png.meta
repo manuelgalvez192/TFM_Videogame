@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59aa970d040276e47a320ab5842962ef
+guid: f39132ae0e1369f4a9bc12e3b02856a2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyTakeDamage_0
+      name: HanmzoDamage_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 72
-        height: 86
+        width: 58
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe762eac9b491e418cbbc62e6492f6a
-      internalID: -507950714
+      spriteID: 61e360252e0e9ac4aa5aefad7d4b102b
+      internalID: -1222804999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_1
+      name: HanmzoDamage_1
       rect:
         serializedVersion: 2
-        x: 76
-        y: 3
-        width: 59
-        height: 79
+        x: 63
+        y: 0
+        width: 57
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76e543d2175a03442bfd2456054bb13c
-      internalID: -935995808
+      spriteID: 78d32c1318f3953448130aa213c69862
+      internalID: 1460977327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_2
+      name: HanmzoDamage_2
       rect:
         serializedVersion: 2
-        x: 135
-        y: 4
+        x: 123
+        y: 0
         width: 56
-        height: 85
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61f57eef7568dda4ca5b233a5ce91049
-      internalID: -1520248704
+      spriteID: e1e6b390e5145d848b05694e404035ef
+      internalID: 1674588740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_3
+      name: HanmzoDamage_3
       rect:
         serializedVersion: 2
-        x: 203
+        x: 182
         y: 0
-        width: 74
-        height: 72
+        width: 47
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd908ef45db6db479e9568f6f498c2d
-      internalID: 48539578
+      spriteID: e32a1d7633247ec41ae81663da40d4c2
+      internalID: -270340899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_4
+      name: HanmzoDamage_4
       rect:
         serializedVersion: 2
-        x: 277
+        x: 232
+        y: 0
+        width: 76
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa1ec3bdbd14c748ad5c9486f99e9d1
+      internalID: -929549700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HanmzoDamage_5
+      rect:
+        serializedVersion: 2
+        x: 311
         y: 0
         width: 70
-        height: 70
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cac6a24dc7b3efa4db5628d86aca008a
-      internalID: -588935041
+      spriteID: c66c4cc6e3dacca40b038deccfa78769
+      internalID: -577553890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_5
+      name: HanmzoDamage_6
       rect:
         serializedVersion: 2
-        x: 347
+        x: 391
         y: 0
-        width: 61
-        height: 82
+        width: 47
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbb00a91721b8d643b49a621505512cd
-      internalID: 1887081934
+      spriteID: cfd0b86ee1bf1ec438a9f380d8b714ab
+      internalID: -1872900840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyTakeDamage_6
+      name: HanmzoDamage_7
       rect:
         serializedVersion: 2
-        x: 408
-        y: 5
+        x: 445
+        y: 0
         width: 57
-        height: 76
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a10724c6d409ec441bba6c2e98c706db
-      internalID: -1051906381
+      spriteID: 243ded50599523046bf1b58e6f20329a
+      internalID: -1311360953
       vertices: []
       indices: 
       edges: []
@@ -280,7 +301,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 80c824b20c8497c43af709da2a778e41
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -288,13 +309,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EnemyTakeDamage_1: -935995808
-      EnemyTakeDamage_2: -1520248704
-      EnemyTakeDamage_6: -1051906381
-      EnemyTakeDamage_4: -588935041
-      EnemyTakeDamage_5: 1887081934
-      EnemyTakeDamage_3: 48539578
-      EnemyTakeDamage_0: -507950714
+      HanmzoDamage_2: 1674588740
+      HanmzoDamage_6: -1872900840
+      HanmzoDamage_4: -929549700
+      HanmzoDamage_3: -270340899
+      HanmzoDamage_0: -1222804999
+      HanmzoDamage_5: -577553890
+      HanmzoDamage_7: -1311360953
+      HanmzoDamage_1: 1460977327
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
