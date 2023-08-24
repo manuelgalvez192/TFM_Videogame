@@ -13,8 +13,7 @@ public class PlayerBasicAtack : MonoBehaviour
     
     private int comboCount;
     private bool atacking;
-
-
+    
     public delegate bool CanMove(bool value);
     public static CanMove canMove;
 

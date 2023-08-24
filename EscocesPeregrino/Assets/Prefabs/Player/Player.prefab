@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7268337275011253647}
   - component: {fileID: 2255958570709627351}
+  - component: {fileID: 7914866354274215235}
   m_Layer: 0
   m_Name: TakeDamageArea
   m_TagString: Untagged
@@ -48,6 +49,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.21121478}
   m_Size: {x: 0.28878522, y: 0.57757044}
   m_Direction: 0
+--- !u!114 &7914866354274215235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941541634419989347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e320c67d80a9d419eeda6d1b019d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLifeSlider: {fileID: 0}
+  lifeText: {fileID: 0}
+  maxLife: 18
+  enemyDamage: {fileID: 0}
+  animator: {fileID: 6520931318953661022}
 --- !u!1 &3448057974344562157
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,9 +77,10 @@ GameObject:
   - component: {fileID: 6139649673421744172}
   - component: {fileID: 2679453431987630118}
   - component: {fileID: 4847622417592140459}
+  - component: {fileID: 1428573302829672726}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +139,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.01, y: 0}
   m_Size: {x: 0.26, y: 0.56}
   m_Direction: 0
+--- !u!114 &1428573302829672726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3448057974344562157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baca58ebdc6a8e458b4013916a34474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLife: {fileID: 7914866354274215235}
+  playerBasicAttack: {fileID: 2664033887037610753}
+  playerAnimator: {fileID: 6520931318953661022}
 --- !u!1 &6329062689742753813
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +168,7 @@ GameObject:
   - component: {fileID: 5324509881141678982}
   - component: {fileID: 3277626190893950128}
   - component: {fileID: 6520931318953661022}
+  - component: {fileID: 2664033887037610753}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -176,56 +211,6 @@ MonoBehaviour:
   rb: {fileID: 2679453431987630118}
   jumpPower: 2
   floorLevel: 0
-  canControl: 1
-  isBlocking: 0
---- !u!114 &4747319534347619592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6329062689742753813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e320c67d80a9d419eeda6d1b019d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLifeSlider: {fileID: 0}
-  lifeText: {fileID: 0}
-  maxLife: 10
-  enemyDamage: {fileID: 0}
-  postProcess: {fileID: 0}
-  aberration: {fileID: 0}
-  aberrationMultiplier: 0
-  aberrationCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  grading: {fileID: 0}
-  gradingMultiply: 0
-  gradientCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  animator: {fileID: 0}
-  canControl: {fileID: 0}
-  isBlocking: 0
---- !u!114 &5324509881141678982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6329062689742753813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1bd932111dafb746bc8fd7e521a8a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &3277626190893950128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -298,6 +283,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2664033887037610753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329062689742753813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee1f4cc0eae76747b78f39e992e05f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 8257791292594457816}
+  animator: {fileID: 6520931318953661022}
+  playerDamage: 5
 --- !u!1 &7419928574772062393
 GameObject:
   m_ObjectHideFlags: 0

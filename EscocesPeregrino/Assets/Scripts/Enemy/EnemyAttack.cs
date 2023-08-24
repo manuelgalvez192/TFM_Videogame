@@ -17,7 +17,8 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        PlayerLife.disableActions += DisableEnemyActions;
+        currentLife = PlayerSingleton.instance.playerLife;
+        //PlayerLife.disableActions += DisableEnemyActions;
     }
     
     private void DisableEnemyActions()
@@ -30,7 +31,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerLife.disableActions -= DisableEnemyActions;
+        //PlayerLife.disableActions -= DisableEnemyActions;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

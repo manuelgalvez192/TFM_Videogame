@@ -18,9 +18,14 @@ public class EnemyAI : MonoBehaviour
     private Vector2 placeToGo;
     public static bool canFollow = true;
 
+
+    private void Start()
+    {
+        player = PlayerSingleton.instance.gameObject;
+    }
+
     void FixedUpdate()
     {
-        print(canFollow);
         if (canFollow)
         {
             animator.SetBool("isWalking", false);

@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="23d8de2c-b261-41f3-91fb-4ff99eb8c711" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EscocesPeregrino/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Manu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyLife.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerLife.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +13,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7704c91d097494c8f24c9c3811bafe93e000/68/a2b9886a/Graph.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/MenuControlsScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/TakeDamage.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2TU6xpUh07NDLr4UiRitmy4MEg9" />
   <component name="ProjectViewState">
@@ -46,7 +41,15 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Standalone Player.Standalone Player">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/pc\EscocesPeregrino.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\GitHub\TFM_Videogame\EscocesPeregrino\Builds\pc" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.1.21f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Manuel\Documents\GitHub\TFM_Videogame\EscocesPeregrino -debugCodeOptimization" />
@@ -106,6 +109,9 @@
       <workItem from="1691801821992" duration="475000" />
       <workItem from="1691866060679" duration="121000" />
       <workItem from="1691926310406" duration="3613000" />
+      <workItem from="1692050602390" duration="3145000" />
+      <workItem from="1692285563586" duration="427000" />
+      <workItem from="1692832845118" duration="506000" />
     </task>
     <servers />
   </component>

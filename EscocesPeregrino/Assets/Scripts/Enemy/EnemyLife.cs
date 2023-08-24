@@ -11,6 +11,7 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private EnemyAI enemyAi;
     [SerializeField] private PlayerBasicAtack playerDamage;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject healDrop;
     
     private float currentLife;
     private int numAnimation;
@@ -20,15 +21,12 @@ public class EnemyLife : MonoBehaviour
     private void Start()
     {
         currentLife = maxLife;
+        playerDamage = PlayerSingleton.instance.playerBasicAttack;
     }
 
     private void Update()
     {
-        if (currentLife <= 0)
-        {
-            isAlive = false;
-            StartCoroutine(EnemyDeadAnimation());
-        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +37,11 @@ public class EnemyLife : MonoBehaviour
             {
                 numAnimation = rnd.Next(1, 3);
                 currentLife -= playerDamage.playerDamage;
+                if (currentLife <= 0)
+                {
+                    isAlive = false;
+                    StartCoroutine(EnemyDeadAnimation());
+                }
 
                 if (numAnimation == 1)
                 {
@@ -80,7 +83,10 @@ public class EnemyLife : MonoBehaviour
     {
         animator.SetTrigger("isDead");
         EnemyAI.canFollow = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2.5f);
+        GameObject newDrop = Instantiate(healDrop, transform.position,transform.rotation);//TO DO:: Si se hace pool camboiar el spawn
+        newDrop.GetComponent<PickeableObject>().OnDropObject();
+        yield return new WaitForSeconds(2.5f);
         selfEnemy.SetActive(false);
     }
 }
