@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] ParticleSystem dustPS;
 
     [SerializeField] private float jumpPower;
     [SerializeField] private float floorLevel;
@@ -105,7 +106,8 @@ public class PlayerMovement : MonoBehaviour
             if (rb.velocity.y > 0 || rb.velocity.y < 0)
             {
                 animator.SetBool("isRunning", true);
-            }
+            }if (rb.velocity.magnitude != 0)
+                ThrowDust();
 
 
 
@@ -116,5 +118,9 @@ public class PlayerMovement : MonoBehaviour
         }
         // floorLevel = transform.localScale.y;
 
+    }
+    void ThrowDust()
+    {
+        dustPS.Play();
     }
 }
