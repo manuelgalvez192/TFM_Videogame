@@ -36,15 +36,16 @@ public class PlayerLife : MonoBehaviour
 
         }
         else
+        {
             animator.SetTrigger("takeDamage");
-
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
         }
-        else if(isBlocking)
-        {
-
-        }
+        
+        //else if(isBlocking)
+        //{
+        //
+        //}
        
     }
     
