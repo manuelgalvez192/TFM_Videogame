@@ -29,23 +29,19 @@ public class PlayerLife : MonoBehaviour
     {
         if(!isBlocking)
         {
-            EnemyAI.canFollow = false;
-            currentLife = 0;
-            //die(); AQUI EL MORIR
-            PostProcessingManager.instance.OnPlayerDie();
+            currentLife -= damage;
+            if (currentLife <= 0)
+            {
 
-        }
-        else
-        {
+                EnemyAI.canFollow = false;
+                currentLife = 0;
+                //die(); AQUI EL MORIR
+                PostProcessingManager.instance.OnPlayerDie();
+            }
             animator.SetTrigger("takeDamage");
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
         }
-        
-        //else if(isBlocking)
-        //{
-        //
-        //}
        
     }
     
