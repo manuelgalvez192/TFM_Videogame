@@ -66,6 +66,7 @@ MonoBehaviour:
   maxLife: 18
   enemyDamage: {fileID: 0}
   animator: {fileID: 6520931318953661022}
+  isBlocking: 0
 --- !u!1 &3448057974344562157
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +165,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4185150040072458597}
   - component: {fileID: 930221121332049683}
-  - component: {fileID: 4747319534347619592}
-  - component: {fileID: 5324509881141678982}
   - component: {fileID: 3277626190893950128}
   - component: {fileID: 6520931318953661022}
   - component: {fileID: 2664033887037610753}
@@ -211,6 +210,7 @@ MonoBehaviour:
   rb: {fileID: 2679453431987630118}
   jumpPower: 2
   floorLevel: 0
+  isBlocking: 0
 --- !u!212 &3277626190893950128
 SpriteRenderer:
   m_ObjectHideFlags: 0
