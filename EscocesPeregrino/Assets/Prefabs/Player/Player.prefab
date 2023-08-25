@@ -5027,6 +5027,7 @@ MonoBehaviour:
   playerLife: {fileID: 7914866354274215235}
   playerBasicAttack: {fileID: 2664033887037610753}
   playerAnimator: {fileID: 6520931318953661022}
+  playerMovement: {fileID: 930221121332049683}
 --- !u!1 &6329062689742753813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5083,6 +5084,7 @@ MonoBehaviour:
   rb: {fileID: 2679453431987630118}
   jumpPower: 1
   floorLevel: 0
+  isGrounded: 0
   isBlocking: 0
   dustMovementPS: {fileID: 1060045332078870262}
   dustJumpPS: {fileID: 7309057628307533977}

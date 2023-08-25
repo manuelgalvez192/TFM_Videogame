@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float floorLevel;
     [NonSerialized] public bool canControl = true;
 
-    private bool isGrounded;
+    public bool isGrounded;
     private float timeToBeGrounded = 0.72f;
 
     public bool isBlocking;

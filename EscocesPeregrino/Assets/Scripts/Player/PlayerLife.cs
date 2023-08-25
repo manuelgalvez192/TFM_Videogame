@@ -70,5 +70,14 @@ public class PlayerLife : MonoBehaviour
             StartCoroutine(CanControl());
             GetDamage(enemyDamage.enemyDamage);
         }
+
+        if(other.tag == "Laser")
+        {
+            if(PlayerSingleton.instance.playerMovement.isGrounded)
+            {
+                StartCoroutine(CanControl());
+                GetDamage(3);
+            }
+        }
     }
 }

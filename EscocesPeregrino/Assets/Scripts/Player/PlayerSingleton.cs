@@ -13,6 +13,7 @@ public class PlayerSingleton : MonoBehaviour
     public PlayerLife playerLife;
     public PlayerBasicAtack playerBasicAttack;
     public Animator playerAnimator;
+    public PlayerMovement playerMovement;
 
     void Awake()
     {
@@ -22,8 +23,4 @@ public class PlayerSingleton : MonoBehaviour
             Destroy(this);
     }
 
-    void Update()
-    {
-        
-    }
 }
