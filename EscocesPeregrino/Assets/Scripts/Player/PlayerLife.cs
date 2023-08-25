@@ -13,10 +13,12 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private EnemyAttack enemyDamage;
 
     [SerializeField] private Animator animator;
+    [SerializeField] ParticleSystem electricParticles;
     
     
 
     public bool isBlocking;
+
 
     void Start()
     {
@@ -37,6 +39,7 @@ public class PlayerLife : MonoBehaviour
                 currentLife = 0;
                 //die(); AQUI EL MORIR
                 PostProcessingManager.instance.OnPlayerDie();
+                
             }
             animator.SetTrigger("takeDamage");
             playerLifeSlider.value = currentLife;
@@ -77,6 +80,7 @@ public class PlayerLife : MonoBehaviour
             {
                 StartCoroutine(CanControl());
                 GetDamage(3);
+                electricParticles.Play();
             }
         }
     }
