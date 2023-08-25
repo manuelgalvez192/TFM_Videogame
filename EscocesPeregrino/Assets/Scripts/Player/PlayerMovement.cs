@@ -21,6 +21,12 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isBlocking;
 
+    [Header("Particle System")]
+    [SerializeField] ParticleSystem dustMovementPS;
+    [SerializeField] ParticleSystem dustJumpPS;
+    float movementDustCount;
+    [SerializeField] [Range(0, 0.1f)] float movementDustRate = 0.08f;
+
     private void Start()
     {
         PlayerBasicAtack.canMove += ChangeMoveOption;
@@ -66,7 +72,24 @@ public class PlayerMovement : MonoBehaviour
             {
                 isGrounded = true;
                 timeToBeGrounded = 0.72f;
+                ThrowJumpDust();
+                movementDustCount = 0;
             }
+        }
+        //Cosas de particulas
+        if (rb.velocity.magnitude > 1 && isGrounded)
+        {
+            movementDustCount += Time.deltaTime;
+            if (movementDustCount >= movementDustRate)
+            {
+                movementDustCount = 0;
+                ThrowMovementDust();
+            }
+        }
+        else
+        {
+            movementDustCount = 0;
+            StopMovementDust();
         }
     }
 
@@ -80,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.gravityScale = 0.3f;
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 //floorLevel = transform.localScale.y -1;
+                ThrowJumpDust();
             }
         }
         else if(isBlocking)
@@ -136,5 +160,17 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    }
+    void ThrowMovementDust()
+    {
+        dustMovementPS.Play();
+    }
+    void StopMovementDust()
+    {
+        dustMovementPS.Stop();
+    }
+    void ThrowJumpDust()
+    {
+        dustJumpPS.Play();
     }
 }
