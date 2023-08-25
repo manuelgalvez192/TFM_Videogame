@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: postPorcesObject
       value: 
       objectReference: {fileID: 1114422740}
+    - target: {fileID: 6440786234564098727, guid: 0e9ddea018e04a74790b9a34eedceb80, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6440786235248970573, guid: 0e9ddea018e04a74790b9a34eedceb80, type: 3}
       propertyPath: m_Name
       value: VictorySystemPrefab
@@ -11277,7 +11281,7 @@ PrefabInstance:
     - target: {fileID: 1860000252468829290, guid: f7591b400325ed342b5e1b016932e93a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e2fc4777e89e41d4a910064bdaf2a323, type: 3}
+      objectReference: {fileID: 21300000, guid: a14ce802e39b2774c9484945df12d579, type: 3}
     - target: {fileID: 1860000252468829290, guid: f7591b400325ed342b5e1b016932e93a, type: 3}
       propertyPath: m_SortingOrder
       value: -5
