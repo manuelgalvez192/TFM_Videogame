@@ -11,14 +11,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] ParticleSystem dustPS;
 
     [SerializeField] private float jumpPower;
     [SerializeField] private float floorLevel;
     [NonSerialized] public bool canControl = true;
-
     private bool isGrounded;
     private float timeToBeGrounded = 0.72f;
+    [Header("Particle System")]
+    [SerializeField] ParticleSystem dustMovementPS;
+    [SerializeField] ParticleSystem dustJumpPS;
+    float movementDustCount;
+    [SerializeField][Range(0,0.1f)] float movementDustRate;
 
     private void Start()
     {
@@ -40,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(transform.localScale.y <= floorLevel ||isGrounded )
+        if(transform.localScale.y <= floorLevel|| isGrounded)
         {
             IsInGround();
             animator.SetBool("isJumping", false);
@@ -64,7 +67,25 @@ public class PlayerMovement : MonoBehaviour
             {
                 isGrounded = true;
                 timeToBeGrounded = 0.72f;
+                //particulas salto
+                ThrowJumpDust();
+                movementDustCount = 0;
             }
+        }
+        //Cosas de particulas
+        if (rb.velocity.magnitude > 1 && isGrounded)
+        {
+            movementDustCount += Time.deltaTime;
+            if (movementDustCount >= movementDustRate)
+            {
+                movementDustCount = 0;
+                ThrowMovementDust();
+            }
+        }
+        else
+        {
+            movementDustCount = 0;
+            StopMovementDust();
         }
     }
 
@@ -76,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = 0.3f;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             //floorLevel = transform.localScale.y -1;
+            ThrowJumpDust();
         }
     }
 
@@ -106,8 +128,9 @@ public class PlayerMovement : MonoBehaviour
             if (rb.velocity.y > 0 || rb.velocity.y < 0)
             {
                 animator.SetBool("isRunning", true);
-            }if (rb.velocity.magnitude != 0)
-                ThrowDust();
+            }
+
+
 
 
 
@@ -116,11 +139,20 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(0, 0);
         }
+  
         // floorLevel = transform.localScale.y;
 
     }
-    void ThrowDust()
+    void ThrowMovementDust()
     {
-        dustPS.Play();
+        dustMovementPS.Play();
+    }
+    void StopMovementDust()
+    {
+        dustMovementPS.Stop();
+    }
+    void ThrowJumpDust()
+    {
+        dustJumpPS.Play();
     }
 }
