@@ -5,15 +5,10 @@ using UnityEngine;
 public class HanzoControl : BaseHanzo
 {
     public float TPOffset = 0.5f;
+    public float specialAttackPercent = 10;
     void Start()
     {
         base.Start();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-            ChangeState(HanzoState.SpecialAction);
     }
 
     protected override void ChangeState(HanzoState newState)
@@ -55,7 +50,8 @@ public class HanzoControl : BaseHanzo
                 ChangeState(HanzoState.Attacking);
             yield return null;
         }
-        ChangeState(HanzoState.Following);
+        int randAction = Random.Range(1, 101);
+        ChangeState(randAction <= specialAttackPercent ? HanzoState.SpecialAction : HanzoState.Following);
         yield break;
     }
     IEnumerator OnFollowPlayerState()
@@ -97,7 +93,7 @@ public class HanzoControl : BaseHanzo
 
         yield return new WaitForSeconds(attackRate);
 
-        ChangeState(DistanceToPlayer() < attackDistance ? HanzoState.Attacking : HanzoState.Waiting);
+        ChangeState(DistanceToPlayer() < attackDistance ? HanzoState.Attacking : HanzoState.CheckingLastPositon);
         yield break;
     }
     IEnumerator OnSpecialAttackState()
