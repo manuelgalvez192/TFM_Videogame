@@ -12,6 +12,7 @@ public class PlayerSingleton : MonoBehaviour
     [Header("Components")]
     public PlayerLife playerLife;
     public PlayerBasicAtack playerBasicAttack;
+    public PlayerMovement playerMovement;
     public Animator playerAnimator;
     public float playerAttackDamage;
 
