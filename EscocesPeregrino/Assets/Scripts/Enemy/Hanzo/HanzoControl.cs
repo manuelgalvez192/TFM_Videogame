@@ -6,10 +6,12 @@ public class HanzoControl : BaseHanzo
 {
     public float TPOffset = 0.5f;
     public float specialAttackPercent = 10;
+    [SerializeField] Collider2D collider;
     void Start()
     {
         base.Start();
     }
+
 
     protected override void ChangeState(HanzoState newState)
     {
@@ -101,7 +103,7 @@ public class HanzoControl : BaseHanzo
         animator.SetBool("isMoving", false);
         animator.SetTrigger("specialAttack");
 
-        yield return new WaitForSeconds(2.4f);
+        yield return new WaitForSeconds(1.1f);
         float rot;
         if (PlayerSingleton.instance.gameObject.transform.GetChild(0).transform.localScale.x < 0)
             rot = 1;
@@ -121,8 +123,12 @@ public class HanzoControl : BaseHanzo
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+        collider.enabled = false;
 
-        yield return new WaitForSeconds(2.4f);
+        yield return new WaitForSeconds(1.6f);
+        collider.enabled = true;
+
+        yield return new WaitForSeconds(1.6f);
         ChangeState(HanzoState.Attacking);
         yield break;
     }

@@ -242,6 +242,7 @@ MonoBehaviour:
   state: 0
   TPOffset: 0.4
   specialAttackPercent: 20
+  colliders: []
 --- !u!1 &7305203517169428586
 GameObject:
   m_ObjectHideFlags: 0
