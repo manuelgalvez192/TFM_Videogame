@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class HanzoControl : BaseHanzo
 {
+    public float TPOffset = 0.5f;
     void Start()
     {
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.O))
+            ChangeState(HanzoState.SpecialAction);
     }
+
     protected override void ChangeState(HanzoState newState)
     {
         base.ChangeState(newState);
@@ -25,12 +28,16 @@ public class HanzoControl : BaseHanzo
                 currentCorroutine = OnFollowPlayerState();
                 break;
             case HanzoState.CheckingLastPositon:
-                currentCorroutine = CheckingLasPlayerPosState();
+                currentCorroutine = OnCheckingLasPlayerPosState();
                 break;
             case HanzoState.Attacking:
-                currentCorroutine = AttackingState();
+                currentCorroutine = OnAttackingState();
+                break;
+            case HanzoState.GettingDamage:
+                currentCorroutine = OnDamageState();
                 break;
             case HanzoState.SpecialAction:
+                currentCorroutine = OnSpecialAttackState();
                 break;
             default:
                 break;
@@ -64,7 +71,7 @@ public class HanzoControl : BaseHanzo
         ChangeState(HanzoState.CheckingLastPositon);
         yield break;
     }
-    IEnumerator CheckingLasPlayerPosState()
+    IEnumerator OnCheckingLasPlayerPosState()
     {
         animator.SetBool("isMoving", true);
         Vector2 lastPlayerPosition = player.position;
@@ -78,7 +85,7 @@ public class HanzoControl : BaseHanzo
         ChangeState(HanzoState.Waiting);
         yield break;
     }
-    IEnumerator AttackingState()
+    IEnumerator OnAttackingState()
     {
         animator.SetBool("isMoving", false);
         animator.SetTrigger("attack");
@@ -92,6 +99,57 @@ public class HanzoControl : BaseHanzo
 
         ChangeState(DistanceToPlayer() < attackDistance ? HanzoState.Attacking : HanzoState.Waiting);
         yield break;
+    }
+    IEnumerator OnSpecialAttackState()
+    {
+        animator.SetBool("isMoving", false);
+        animator.SetTrigger("specialAttack");
+
+        yield return new WaitForSeconds(2.4f);
+        float rot;
+        if (PlayerSingleton.instance.gameObject.transform.GetChild(0).transform.localScale.x < 0)
+            rot = 1;
+        else
+            rot = -1;
+        transform.position = new Vector2(PlayerSingleton.instance.gameObject.transform.position.x + TPOffset*rot ,PlayerSingleton.instance.gameObject.transform.position.y);
+
+        Vector2 playerDir = player.position - transform.position;
+
+        //playerDir.Normalize();
+
+        if (playerDir.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        yield return new WaitForSeconds(2.4f);
+        ChangeState(HanzoState.Attacking);
+        yield break;
+    }
+    IEnumerator OnDamageState()
+    {
+        animator.SetTrigger("damage");
+        yield return new WaitForSeconds(0.9f);
+        ChangeState(HanzoState.Waiting);
+
+        yield break;
+    }
+
+    public override void GetDamage()
+    {
+        StopCoroutine(currentCorroutine);
+        base.GetDamage();
+        ChangeState(HanzoState.GettingDamage);
+    }
+    public override void Die()
+    {
+        base.Die();
+        StopCoroutine(currentCorroutine);
+        animator.SetTrigger("die");
     }
 
 }

@@ -5,20 +5,22 @@ using System.Threading.Tasks;
 
 public class BaseHanzo : MonoBehaviour
 {
-    protected Transform player;
+    [Header("Components")]
     Rigidbody2D rb;
     [SerializeField] protected Animator animator;
+    [SerializeField] protected GameObject attackCollision;
+
+    protected Transform player;
     [SerializeField] protected float speed;
     [SerializeField] protected float detectionRange;
     [SerializeField] protected float offset;
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float attackRate;
-    [SerializeField] protected GameObject attackCollision;
 
     bool allowedToMove = true;
     protected bool followingPlayer;
 
-    protected enum HanzoState { Waiting, Following,CheckingLastPositon, Attacking, SpecialAction }
+    protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction }
     [SerializeField]protected HanzoState state = HanzoState.Waiting;
     protected IEnumerator currentCorroutine;
 
@@ -29,9 +31,12 @@ public class BaseHanzo : MonoBehaviour
         attackCollision.SetActive(false);
         ChangeState(HanzoState.Waiting);
     }
+    private void OnEnable()
+    {
+        animator.SetTrigger("Reset");
+    }
 
-   
-    
+
     protected void FollowPlayer()
     {
         //animator.SetBool("isMoving", true);
@@ -73,14 +78,22 @@ public class BaseHanzo : MonoBehaviour
     {
         return Vector2.Distance(transform.position, player.position);
     }
-    protected virtual void Attack()
-    {
-
-    }
     protected virtual void ChangeState(HanzoState newState)
     {
         if(currentCorroutine!=null)
             StopCoroutine(currentCorroutine);
         state = newState;
+    }
+    protected virtual void Attack()
+    {
+
+    }
+    public virtual void GetDamage()
+    {
+
+    }
+    public virtual void Die()
+    {
+
     }
 }

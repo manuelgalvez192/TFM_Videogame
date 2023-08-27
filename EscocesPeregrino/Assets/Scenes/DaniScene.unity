@@ -128,6 +128,110 @@ CapsuleCollider2D:
   m_CorrespondingSourceObject: {fileID: 1910661629150431724, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
   m_PrefabInstance: {fileID: 941520940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &102152692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102152694}
+  - component: {fileID: 102152693}
+  - component: {fileID: 102152695}
+  m_Layer: 0
+  m_Name: DamageArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &102152693
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102152692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0020338893, y: -0.09570342}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.58747184, y: 0.57959116}
+  m_EdgeRadius: 0
+--- !u!4 &102152694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102152692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 971117564}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102152695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102152692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7ca6ee92a08ea4a9a9fd42438e04c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 20
+  currentLife: 0
+  damagedTag: PlayerPunchHB
+  DieAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 971117566}
+        m_TargetAssemblyTypeName: HanzoControl, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DamageAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 971117566}
+        m_TargetAssemblyTypeName: HanzoControl, Assembly-CSharp
+        m_MethodName: GetDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &245582009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3448057974344562157, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
@@ -919,6 +1023,7 @@ Transform:
   m_Children:
   - {fileID: 1814567658}
   - {fileID: 1284354919}
+  - {fileID: 102152694}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -935,13 +1040,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1814567656}
+  attackCollision: {fileID: 1284354917}
   speed: 3
   detectionRange: 2
   offset: 0.3
   attackDistance: 0.3
   attackRate: 1.5
-  attackCollision: {fileID: 1284354917}
   state: 0
+  TPOffset: 0.4
 --- !u!114 &973829353 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1938885735514527873, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
@@ -1084,7 +1190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1284354918
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1355,11 +1461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594929238381362708, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60.374
+      value: 60.374023
       objectReference: {fileID: 0}
     - target: {fileID: 7594929238381362708, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -67.6
+      value: -67.6001
       objectReference: {fileID: 0}
     - target: {fileID: 9185912542535367537, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
       propertyPath: m_FontData.m_MaxSize
@@ -1628,12 +1734,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -41021024, guid: 25cc7d12c5944524f829ed150b6c0c61, type: 3}
+  m_Sprite: {fileID: -1311360953, guid: f39132ae0e1369f4a9bc12e3b02856a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.57, y: 0.85}
+  m_Size: {x: 0.57, y: 0.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
