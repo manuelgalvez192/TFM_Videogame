@@ -13,7 +13,7 @@ public class PlayerSingleton : MonoBehaviour
     public PlayerLife playerLife;
     public PlayerBasicAtack playerBasicAttack;
     public Animator playerAnimator;
-    public PlayerMovement playerMovement;
+    public float playerAttackDamage;
 
     void Awake()
     {
@@ -21,6 +21,11 @@ public class PlayerSingleton : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+        playerAttackDamage = playerBasicAttack.playerDamage;
     }
 
+    void Update()
+    {
+        
+    }
 }
