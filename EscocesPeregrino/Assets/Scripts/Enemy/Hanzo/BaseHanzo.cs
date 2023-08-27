@@ -5,33 +5,36 @@ using System.Threading.Tasks;
 
 public class BaseHanzo : MonoBehaviour
 {
-    Transform player;
+    protected Transform player;
     Rigidbody2D rb;
-    [SerializeField] private Animator animator;
+    [SerializeField] protected Animator animator;
     [SerializeField] protected float speed;
     [SerializeField] protected float detectionRange;
     [SerializeField] protected float offset;
+    [SerializeField] protected float attackDistance;
+    [SerializeField] protected float attackRate;
+    [SerializeField] protected GameObject attackCollision;
 
     bool allowedToMove = true;
-    Vector2 lastPlayerPosition;
-    Vector2 lastEnemyPosition;
-    void Start()
+    protected bool followingPlayer;
+
+    protected enum HanzoState { Waiting, Following,CheckingLastPositon, Attacking, SpecialAction }
+    [SerializeField]protected HanzoState state = HanzoState.Waiting;
+    protected IEnumerator currentCorroutine;
+
+    protected void Start()
     {
         player = PlayerSingleton.instance.transform;
         rb = GetComponent<Rigidbody2D>();
+        attackCollision.SetActive(false);
+        ChangeState(HanzoState.Waiting);
     }
 
-    void Update()
-    {
-        //if (!allowedToMove)
-        //    return;
-        //
-        if (DistanceToPlayer() < detectionRange)
-            FollowPlayer();
-    }
+   
     
     protected void FollowPlayer()
     {
+        //animator.SetBool("isMoving", true);
         Vector2 playerDir = player.position - transform.position;
 
         playerDir.Normalize();
@@ -45,10 +48,26 @@ public class BaseHanzo : MonoBehaviour
         {
             transform.rotation =  Quaternion.Euler(0, 0, 0);
         }
-        if(DistanceToPlayer()>detectionRange)
             
-        lastEnemyPosition = transform.position;
     }
+    protected void MoveToPoint(Vector2 target)
+    {
+        //animator.SetBool("isMoving", true);
+        Vector2 playerDir = target - (Vector2)transform.position;
+
+        playerDir.Normalize();
+
+        rb.MovePosition(rb.position + playerDir * speed * Time.deltaTime);
+        if (playerDir.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
 
     protected float DistanceToPlayer()
     {
@@ -57,5 +76,11 @@ public class BaseHanzo : MonoBehaviour
     protected virtual void Attack()
     {
 
+    }
+    protected virtual void ChangeState(HanzoState newState)
+    {
+        if(currentCorroutine!=null)
+            StopCoroutine(currentCorroutine);
+        state = newState;
     }
 }
