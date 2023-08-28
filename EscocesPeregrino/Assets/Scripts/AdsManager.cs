@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GoogleMobileAds.Api; 
+using GoogleMobileAds.Api;
 
 public class AdsManager : MonoBehaviour
 {
@@ -22,8 +22,6 @@ public class AdsManager : MonoBehaviour
     const string bannerId = "ca-app-pub-3940256099942544/6300978111";
     const string interId = "ca-app-pub-3940256099942544/1033173712";
     const string rewardVideoId = "ca-app-pub-3940256099942544/5224354917";
-    public GameObject Testigo;
-    public GameObject RecompensaPObjeto;
     #endregion
 
     void Awake()
@@ -35,43 +33,18 @@ public class AdsManager : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        /*MobileAds.Initialize((initStatus) =>
-        {
-            Dictionary<string, AdapterStatus> map = initStatus.getAdapterStatusMap();
-            foreach (KeyValuePair<string, AdapterStatus> keyValuePair in map)
-            {
-                string className = keyValuePair.Key;
-                AdapterStatus status = keyValuePair.Value;
-                switch (status.InitializationState)
-                {
-                    case AdapterState.NotReady:
-                        // The adapter initialization did not complete.
-                        MonoBehaviour.print("Adapter: " + className + " not ready.");
-                        break;
-                    case AdapterState.Ready:
-                        // The adapter was successfully initialized.
-                        MonoBehaviour.print("Adapter: " + className + " is initialized.");
-                        break;
-                }
-            }
-        });*/
         MobileAds.RaiseAdEventsOnUnityMainThread = true;
 
-        MobileAds.Initialize((InitializationStatus initStatus) =>
-        {
-            print("Anuncios listos para generar turbo siuuuu");
-        });
+        MobileAds.Initialize((InitializationStatus initStatus) => { });
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     #region Banner
-    public void LoadBannerAdd()
+    /// <summary>
+    /// Lanza un anuncio horizontal chiquitin en la parte de abajo de la pantalla
+    /// </summary>
+    public void ThrowBannerAdd()
     {
-        DestroyBannerAdd();
+        CloseBannerAdd();
         //crear banner
         bannerAd = new BannerView(bannerId, AdSize.Banner, AdPosition.Bottom);
 
@@ -79,11 +52,11 @@ public class AdsManager : MonoBehaviour
         ListenToBannerEvents();
 
         //Cargar el banner
-        if(bannerAd==null)
+        if (bannerAd == null)
         {
             if (bannerAd != null)
             {
-                DestroyBannerAdd();
+                CloseBannerAdd();
             }
             bannerAd = new BannerView(bannerId, AdSize.Banner, AdPosition.Bottom);
         }
@@ -93,12 +66,15 @@ public class AdsManager : MonoBehaviour
         print("LoadingBannerAd!!");
         bannerAd.LoadAd(request);//show add
     }
-    public void DestroyBannerAdd()
+    /// <summary>
+    /// Cierra si hay algun banner
+    /// </summary>
+    public void CloseBannerAdd()
     {
-        if(bannerAd!=null)
+        if (bannerAd != null)
         {
             bannerAd.Destroy();
-        bannerAd = null;
+            bannerAd = null;
 
         }
 
@@ -120,8 +96,8 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad is estimated to have earned money.
         bannerAd.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log("Banner view paid {0} {1}."+
-                adValue.Value+
+            Debug.Log("Banner view paid {0} {1}." +
+                adValue.Value +
                 adValue.CurrencyCode);
         };
         // Raised when an impression is recorded for an ad.
@@ -149,36 +125,53 @@ public class AdsManager : MonoBehaviour
     #endregion
 
     #region intersticial
-
-    public void LoadIntersticialAdd()
+    /// <summary>
+    /// Lanza un anuncio en formato imagen que ocupa toda la pantalla y se puede cerrar
+    /// </summary>
+    public void ThrowInterstitialAd()
     {
+        StartCoroutine(ThorwingInterstitialAD());
+    }
+    IEnumerator ThorwingInterstitialAD()
+    {
+        bool isLoad = false;
+
         DestroyIntersticialAd();
-        //create
+        //creating
         AdRequest request = new AdRequest();
         request.Keywords.Add("unity-admob-sample");
 
         InterstitialAd.Load(interId, request, (InterstitialAd ad, LoadAdError error) =>
-          {
-              if(error!=null||ad == null)
-              {
-                  print("Failed to load intersticial ad");
-                  return;
-              }
-              else
-              {
-                  print("intersticial ad loaded succesfull");
-                  interAd = ad;
-                  InterstitialAdEvent(interAd);
-              }
-          });
-        //showing
+        {
+            if (error != null || ad == null)
+            {
+                print("Failed to load intersticial ad");
+                return;
+            }
+            else
+            {
+                print("intersticial ad loaded succesfull");
+                interAd = ad;
+                InterstitialAdEvent(interAd);
+                isLoad = true;
+            }
+        });
 
-        if(interAd!=null&&interAd.CanShowAd())
+        while(!isLoad)
+        {
+            yield return null;
+        }
+
+        //showing
+        if (interAd != null && interAd.CanShowAd())
         {
             interAd.Show();
         }
+
+        yield break;
     }
-    public void DestroyIntersticialAd()
+
+    void DestroyIntersticialAd()
     {
         if (interAd != null)
         {
@@ -191,8 +184,8 @@ public class AdsManager : MonoBehaviour
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log("Interstitial ad paid {0} {1}."+
-                adValue.Value+
+            Debug.Log("Interstitial ad paid {0} {1}." +
+                adValue.Value +
                 adValue.CurrencyCode);
         };
         // Raised when an impression is recorded for an ad.
@@ -226,36 +219,50 @@ public class AdsManager : MonoBehaviour
     #endregion
 
     #region RewardVideo
-    public void LoadRewardedAd()
+    /// <summary>
+    /// Lanza un anuncio en formato video que se puede cerrar cuando acaba, lanza un evento al final para obtenmer recompensas
+    /// </summary>
+    public void ThrowVideoRewardAd()
     {
-        if(rewardVideoAd!=null)
+        StartCoroutine(ThrowingRewardVideo());
+    }
+    IEnumerator ThrowingRewardVideo()
+    {
+        bool isLoad = false;
+        if (rewardVideoAd != null)
         {
             rewardVideoAd.Destroy();
             rewardVideoAd = null;
         }
-
+        //loading ad
         AdRequest request = new AdRequest();
         request.Keywords.Add("unity-admob-sample");
 
-        RewardedAd.Load(rewardVideoId,request,(RewardedAd ad, LoadAdError error)=>
+        RewardedAd.Load(rewardVideoId, request, (RewardedAd ad, LoadAdError error) =>
         {
-            if(error!=null||ad==null)
+            if (error != null || ad == null)
             {
-                print("Failed to load Rewarded ad");
+                //print("Failed to load Rewarded ad");
                 return;
             }
             else
             {
-                print("loading Rewarded ad Successfull");
-                Testigo.SetActive(true);
+                //print("loading Rewarded ad Successfull");
                 rewardVideoAd = ad;
                 RewardedAdEvents(ad);
+                isLoad = true;
             }
         });
+        while (!isLoad)
+        {
+            yield return null;
 
-       
+        }
+
+        ShowVideoRewardAd();
+        yield break;
     }
-    public void ShowVRewardAd()
+    void ShowVideoRewardAd()
     {
         //showing
         if (rewardVideoAd != null)
@@ -267,14 +274,15 @@ public class AdsManager : MonoBehaviour
         }
         else
             print("AD is nopt ready");
+        //print("Showing");
     }
     public void RewardedAdEvents(RewardedAd ad)
     {
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log("Rewarded ad paid {0} {1}."+
-                adValue.Value+
+            Debug.Log("Rewarded ad paid {0} {1}." +
+                adValue.Value +
                 adValue.CurrencyCode);
         };
         // Raised when an impression is recorded for an ad.
@@ -304,7 +312,7 @@ public class AdsManager : MonoBehaviour
                            "with error : " + error);
         };
     }
-    
+
     #endregion
 
     #region RewardEvents
@@ -312,7 +320,6 @@ public class AdsManager : MonoBehaviour
     void GetRewarded()
     {
         print("HAS OBTENIDO UN PONI AMARILLO");
-        RecompensaPObjeto.SetActive(true);
     }
 
     #endregion
