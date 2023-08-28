@@ -13,10 +13,12 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private EnemyAttack enemyDamage;
 
     [SerializeField] private Animator animator;
+    [SerializeField] ParticleSystem electricParticles;
     
     
 
     public bool isBlocking;
+
 
     void Start()
     {
@@ -29,21 +31,19 @@ public class PlayerLife : MonoBehaviour
     {
         if(!isBlocking)
         {
-            EnemyAI.canFollow = false;
-            currentLife = 0;
-            //die(); AQUI EL MORIR
-            PostProcessingManager.instance.OnPlayerDie();
+            currentLife -= damage;
+            if (currentLife <= 0)
+            {
 
-        }
-        else
+                EnemyAI.canFollow = false;
+                currentLife = 0;
+                //die(); AQUI EL MORIR
+                PostProcessingManager.instance.OnPlayerDie();
+                
+            }
             animator.SetTrigger("takeDamage");
-
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
-        }
-        else if(isBlocking)
-        {
-
         }
        
     }
@@ -72,6 +72,16 @@ public class PlayerLife : MonoBehaviour
         {
             StartCoroutine(CanControl());
             GetDamage(enemyDamage.enemyDamage);
+        }
+
+        if(other.tag == "Laser")
+        {
+            if(PlayerSingleton.instance.playerMovement.isGrounded)
+            {
+                StartCoroutine(CanControl());
+                GetDamage(3);
+                electricParticles.Play();
+            }
         }
     }
 }

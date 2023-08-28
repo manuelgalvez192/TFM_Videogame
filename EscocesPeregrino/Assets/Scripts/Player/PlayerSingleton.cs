@@ -12,7 +12,9 @@ public class PlayerSingleton : MonoBehaviour
     [Header("Components")]
     public PlayerLife playerLife;
     public PlayerBasicAtack playerBasicAttack;
+    public PlayerMovement playerMovement;
     public Animator playerAnimator;
+    public float playerAttackDamage;
 
     void Awake()
     {
@@ -20,6 +22,7 @@ public class PlayerSingleton : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+        playerAttackDamage = playerBasicAttack.playerDamage;
     }
 
     void Update()
