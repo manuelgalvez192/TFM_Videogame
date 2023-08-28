@@ -96,4 +96,10 @@ public class BaseHanzo : MonoBehaviour
     {
 
     }
+    public virtual void StopBehaviour()
+    {
+        StopCoroutine(currentCorroutine);
+        animator.speed = 0;
+    }
+
 }

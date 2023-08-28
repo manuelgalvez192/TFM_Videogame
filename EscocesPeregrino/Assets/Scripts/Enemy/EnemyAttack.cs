@@ -69,4 +69,8 @@ public class EnemyAttack : MonoBehaviour
             yield break;
         }
     }
+    public void StopBehavior()
+    {
+        DisableEnemyActions();
+    }
 }

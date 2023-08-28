@@ -14,6 +14,8 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] ParticleSystem electricParticles;
+
+    [SerializeField] GameEvent GE_onPlayerDieEvent;
     
     
 
@@ -39,6 +41,7 @@ public class PlayerLife : MonoBehaviour
                 currentLife = 0;
                 //die(); AQUI EL MORIR
                 PostProcessingManager.instance.OnPlayerDie();
+                GE_onPlayerDieEvent.Raise();
                 
             }
             animator.SetTrigger("takeDamage");

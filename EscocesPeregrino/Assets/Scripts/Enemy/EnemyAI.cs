@@ -59,4 +59,8 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
+    public void StopBehaviour()
+    {
+        canFollow = false;
+    }
 }

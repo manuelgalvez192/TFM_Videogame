@@ -67,6 +67,7 @@ MonoBehaviour:
   enemyDamage: {fileID: 0}
   animator: {fileID: 6520931318953661022}
   electricParticles: {fileID: 6138868065206060327}
+  GE_onPlayerDieEvent: {fileID: 11400000, guid: 655805c9cea9db84a9279da2cc750b10, type: 2}
   isBlocking: 0
 --- !u!1 &2617272630377138533
 GameObject:
@@ -4975,7 +4976,7 @@ Transform:
   - {fileID: 5051099540241723853}
   - {fileID: 7409381513328026298}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2679453431987630118
 Rigidbody2D:
