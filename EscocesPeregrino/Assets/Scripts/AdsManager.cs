@@ -259,11 +259,6 @@ public class AdsManager : MonoBehaviour
 
         }
 
-        ShowVideoRewardAd();
-        yield break;
-    }
-    void ShowVideoRewardAd()
-    {
         //showing
         if (rewardVideoAd != null)
         {
@@ -274,8 +269,59 @@ public class AdsManager : MonoBehaviour
         }
         else
             print("AD is nopt ready");
-        //print("Showing");
+        yield break;
     }
+    public void ThrowVideoRewardAd(GameEvent eventToRaise)
+    {
+        StartCoroutine(ThrowingRewardVideo(eventToRaise));
+    }
+    IEnumerator ThrowingRewardVideo(GameEvent eventToRaise)
+    {
+        bool isLoad = false;
+        if (rewardVideoAd != null)
+        {
+            rewardVideoAd.Destroy();
+            rewardVideoAd = null;
+        }
+        //loading ad
+        AdRequest request = new AdRequest();
+        request.Keywords.Add("unity-admob-sample");
+
+        RewardedAd.Load(rewardVideoId, request, (RewardedAd ad, LoadAdError error) =>
+        {
+            if (error != null || ad == null)
+            {
+                //print("Failed to load Rewarded ad");
+                return;
+            }
+            else
+            {
+                //print("loading Rewarded ad Successfull");
+                rewardVideoAd = ad;
+                RewardedAdEvents(ad);
+                isLoad = true;
+            }
+        });
+        while (!isLoad)
+        {
+            yield return null;
+
+        }
+        //showing
+        if (rewardVideoAd != null)
+        {
+            rewardVideoAd.Show((Reward reward) =>
+            {
+                //GetRewarded();
+                eventToRaise.Raise();
+            });
+        }
+        else
+            print("AD is nopt ready");
+
+        yield break;
+    }
+   
     public void RewardedAdEvents(RewardedAd ad)
     {
         // Raised when the ad is estimated to have earned money.

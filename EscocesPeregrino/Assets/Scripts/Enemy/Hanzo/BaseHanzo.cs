@@ -101,5 +101,10 @@ public class BaseHanzo : MonoBehaviour
         StopCoroutine(currentCorroutine);
         animator.speed = 0;
     }
+    public virtual void OnPlayerResucite()
+    {
+        ChangeState(HanzoState.Waiting);
+        animator.speed = 1;
+    }
 
 }
