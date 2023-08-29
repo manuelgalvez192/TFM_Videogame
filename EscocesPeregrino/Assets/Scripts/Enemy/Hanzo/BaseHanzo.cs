@@ -104,6 +104,7 @@ public class BaseHanzo : MonoBehaviour
     public virtual void OnPlayerResucite()
     {
         ChangeState(HanzoState.Waiting);
+        animator.SetTrigger("reset");
         animator.speed = 1;
     }
 

@@ -21,8 +21,12 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] GameEvent GE_onPlayerDieEvent;
     bool hasDied = false;
     [SerializeField] GameObject SecondChancePanel;
-    
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+            GetDamage(1000);
+    }
 
 
 
@@ -41,11 +45,11 @@ public class PlayerLife : MonoBehaviour
             if (currentLife <= 0)
             {
                 currentLife = 0;
-                //PostProcessingManager.instance.OnPlayerDie();
+                PostProcessingManager.instance.OnPlayerDie();
                 EnemyAI.canFollow = false;
                 //die(); AQUI EL MORIR
                 GE_onPlayerDieEvent.Raise();
-
+                PlayerSingleton.instance.playerMovement.StopMovement();
                 if(!hasDied)
                 {
                     hasDied = true;
@@ -110,6 +114,6 @@ public class PlayerLife : MonoBehaviour
     {
         StopAllCoroutines();
         Start();
-        //PlayerSingleton.instance.playerMovement.
+        PlayerSingleton.instance.playerMovement.canControl = true;
     }
 }
