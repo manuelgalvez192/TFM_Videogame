@@ -14,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D col2D;
 
     [SerializeField] private Transform render;
-    [SerializeField,Range(0.01f,0.05f)]private float jumpPower =0.02f;
+    [SerializeField,Range(0.1f,1)]private float jumpPower =0.35f;
+    [SerializeField]AnimationCurve jumpCurve;
     [SerializeField] private float floorLevel;
     /*[NonSerialized]*/ public bool canControl = true;
 
@@ -92,14 +93,13 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = false;
 
                 StartCoroutine(JumpBehaviour());
-                ThrowJumpDust();
             }
         }
     }
 
     IEnumerator JumpBehaviour()
     {
-        float currenthigh=0;
+        /*float currenthigh=0;
         col2D.enabled= false;
         while (currenthigh<=0.4)
         {
@@ -122,9 +122,32 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isJumping", false);
         ThrowJumpDust();
         movementDustCount = 0;
+        yield break;*/
+
+        col2D.enabled = false;
+        isGrounded = false;
+        float currentHeight = 0;
+        float maxTime = jumpCurve[jumpCurve.length - 1].time;
+        float elapsedTime = 0;
+        ThrowJumpDust();
+
+
+        while (elapsedTime <= maxTime)
+        {
+            currentHeight = jumpCurve.Evaluate(elapsedTime) * jumpPower;
+            render.localPosition = new Vector2(render.localPosition.x, currentHeight);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        isGrounded = true;
+        col2D.enabled = true;
+        render.localPosition = Vector2.zero;
+        ThrowJumpDust();
+
         yield break;
     }
-
+   
     private void IsInGround()
     {
         rb.gravityScale = 0;
