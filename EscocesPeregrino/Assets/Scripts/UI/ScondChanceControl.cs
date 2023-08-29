@@ -25,7 +25,6 @@ public class ScondChanceControl : MonoBehaviour
             currentFillAmount = Mathf.Lerp(0, 1, elapsedTime / timeToCkick);
             elapsedTime+=Time.deltaTime;
             timeCircle.fillAmount = currentFillAmount;
-            print(elapsedTime);
             yield return null;
         }
         GoMenu();

@@ -121,7 +121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7305203515986174713
 Transform:
   m_ObjectHideFlags: 0
@@ -144,7 +144,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7305203515986174715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7305203515460143990}
-  attackCollision: {fileID: 7305203515986174715}
+  attackCollision: {fileID: 7305203515986174712}
   speed: 3
   detectionRange: 2
   offset: 0.3
@@ -244,7 +244,7 @@ MonoBehaviour:
   state: 0
   TPOffset: 0.4
   specialAttackPercent: 20
-  collider: {fileID: 0}
+  collider: {fileID: 7305203517169428587}
 --- !u!114 &5018669790729966052
 MonoBehaviour:
   m_ObjectHideFlags: 0
