@@ -162,7 +162,7 @@ MonoBehaviour:
   lifeText: {fileID: 0}
   maxLife: 18
   enemyDamage: {fileID: 0}
-  animator: {fileID: 6520931318953661022}
+  animator: {fileID: 2162832084452580250}
   electricParticles: {fileID: 6138868065206060327}
   isBlocking: 0
   GE_onPlayerDieEvent: {fileID: 11400000, guid: 655805c9cea9db84a9279da2cc750b10, type: 2}
@@ -5849,8 +5849,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4185150040072458597}
   - component: {fileID: 930221121332049683}
-  - component: {fileID: 3277626190893950128}
-  - component: {fileID: 6520931318953661022}
   - component: {fileID: 2664033887037610753}
   - component: {fileID: 1851128901}
   m_Layer: 0
@@ -5899,83 +5897,12 @@ MonoBehaviour:
   render: {fileID: 7409381513328026298}
   jumpPower: 0.01
   floorLevel: 0
+  canControl: 1
   isGrounded: 0
   isBlocking: 0
   dustMovementPS: {fileID: 1060045332078870262}
   dustJumpPS: {fileID: 7309057628307533977}
   movementDustRate: 0.08
---- !u!212 &3277626190893950128
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6329062689742753813}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1992025261, guid: 5234594a9a4b05c42b0c9bfaa6c82777, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.4, y: 0.63}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!95 &6520931318953661022
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6329062689742753813}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ac8e05387fc16b48bce4a93cfd9be0b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2664033887037610753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5989,7 +5916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 8257791292594457816}
-  animator: {fileID: 6520931318953661022}
+  animator: {fileID: 2162832084452580250}
   playerDamage: 5
 --- !u!114 &1851128901
 MonoBehaviour:
