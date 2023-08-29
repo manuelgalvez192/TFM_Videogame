@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLifeSlider: {fileID: 0}
   lifeText: {fileID: 0}
-  maxLife: 18
+  maxLife: 2
   enemyDamage: {fileID: 0}
   animator: {fileID: 2162832084452580250}
   electricParticles: {fileID: 6138868065206060327}
@@ -5316,7 +5316,7 @@ Transform:
   - {fileID: 5051099540241723853}
   - {fileID: 7409381513328026298}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2679453431987630118
 Rigidbody2D:
@@ -5896,7 +5896,40 @@ MonoBehaviour:
   rb: {fileID: 2679453431987630118}
   col2D: {fileID: 2255958570709627351}
   render: {fileID: 7409381513328026298}
-  jumpPower: 0.01
+  jumpPower: 1
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.5580935
+      outSlope: 4.5580935
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.045131993
+    - serializedVersion: 3
+      time: 0.3499343
+      value: 1.0000238
+      inSlope: 0.021376316
+      outSlope: 0.021376316
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.108344264
+    - serializedVersion: 3
+      time: 0.70007324
+      value: 0
+      inSlope: -4.580528
+      outSlope: -4.580528
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.02786436
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   floorLevel: 0
   canControl: 1
   isGrounded: 0

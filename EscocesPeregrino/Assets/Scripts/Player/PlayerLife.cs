@@ -22,11 +22,6 @@ public class PlayerLife : MonoBehaviour
     bool hasDied = false;
     [SerializeField] GameObject SecondChancePanel;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-            GetDamage(1000);
-    }
 
 
 
@@ -88,6 +83,7 @@ public class PlayerLife : MonoBehaviour
             PlayerDie.canControl = false;
             yield return new WaitForSeconds(0.5f);
             PlayerDie.canControl = true;
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
