@@ -48,8 +48,6 @@ public class PlayerMovement : MonoBehaviour
         PlayerBasicAtack.canMove -= ChangeMoveOption;
     }
 
-  
-
     private void Update()
     {
         if (InputsGameManager.instance.JumpButtonDown)
