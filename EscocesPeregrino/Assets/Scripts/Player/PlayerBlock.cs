@@ -7,7 +7,7 @@ public class PlayerBlock : MonoBehaviour
 
     PlayerMovement playerMovement;
     PlayerLife playerLife;
-    Animator anim;
+    [SerializeField] Animator anim;
     
     private bool canBlock;
     private float timeToBlockAnim = 0.15f;
@@ -16,9 +16,9 @@ public class PlayerBlock : MonoBehaviour
     {
       
         canBlock = true;
-        anim = GetComponent<Animator>();
+    
         playerMovement= GetComponent<PlayerMovement>();
-        playerLife= GetComponent<PlayerLife>();
+        playerLife= PlayerSingleton.instance.playerLife;
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class PlayerBlock : MonoBehaviour
     {
         if(InputsGameManager.instance.CoverButtonDown)
         {
+            print("A");
             BlockAttack();
         }
         else if(InputsGameManager.instance.CoverButtonUp)

@@ -65,7 +65,7 @@ MonoBehaviour:
   lifeText: {fileID: 0}
   maxLife: 18
   enemyDamage: {fileID: 0}
-  animator: {fileID: 6520931318953661022}
+  animator: {fileID: 2162832084452580250}
   electricParticles: {fileID: 6138868065206060327}
   GE_onPlayerDieEvent: {fileID: 11400000, guid: 655805c9cea9db84a9279da2cc750b10, type: 2}
   isBlocking: 0
@@ -5184,6 +5184,7 @@ GameObject:
   - component: {fileID: 6520931318953661022}
   - component: {fileID: 2664033887037610753}
   - component: {fileID: 1851128901}
+  - component: {fileID: 1339195682144765021}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -5351,6 +5352,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1339195682144765021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329062689742753813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1bd932111dafb746bc8fd7e521a8a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2162832084452580250}
 --- !u!1 &7419928574772062393
 GameObject:
   m_ObjectHideFlags: 0

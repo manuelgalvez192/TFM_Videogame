@@ -48,6 +48,10 @@ public class PlayerLife : MonoBehaviour
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
         }
+        else if(isBlocking)
+        {
+
+        }
        
     }
     
