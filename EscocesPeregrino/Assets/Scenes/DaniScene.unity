@@ -2511,6 +2511,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 930221121332049683, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
+      propertyPath: jumpPower
+      value: 0.66
+      objectReference: {fileID: 0}
     - target: {fileID: 3448057974344562157, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2724,78 +2728,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: dieGradingMultiplier
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[1].time
-      value: 0.27160537
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[1].value
-      value: 0.8075551
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[2].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[0].inSlope
-      value: 2.9732661
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[1].inSlope
-      value: 1.1283009
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[2].inSlope
-      value: 0.2642042
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[0].outSlope
-      value: 2.9732661
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[1].outSlope
-      value: 1.1283009
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[2].outSlope
-      value: 0.2642042
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[0].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[1].outWeight
-      value: 0.054378387
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[1].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4791774828247020697, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
-      propertyPath: diegradingCurve.m_Curve.Array.data[2].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 4791774828247020698, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
       propertyPath: m_RootOrder
       value: 13

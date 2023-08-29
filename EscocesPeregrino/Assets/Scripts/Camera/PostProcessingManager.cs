@@ -45,7 +45,8 @@ public class PostProcessingManager : MonoBehaviour
     {
         StartCoroutine(AberrationUpdate());
         StartCoroutine(ColorGradientUpdate());
-        StartCoroutine(AnmAndChangeScene());
+        //StartCoroutine(AnmAndChangeScene());
+        playerAnimator.SetTrigger("die");
         //StartCoroutine(TakeOutControl());
     }
     private IEnumerator TakeOutControl()
@@ -92,11 +93,49 @@ public class PostProcessingManager : MonoBehaviour
 
     IEnumerator AnmAndChangeScene()
     {
-        playerAnimator.SetTrigger("die");
 
         yield return new WaitForSeconds(4f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
     #endregion
+
+    public void ResetComponent()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ResetColorGrading());
+        StartCoroutine(ResetChromaticAberration());
+    }
+    IEnumerator ResetColorGrading()
+    {
+        float gradientX = diegradingCurve[diegradingCurve.length - 1].time;
+        float gradientY = 0;
+        while (gradientX > 0)
+        {
+            gradientX -= Time.deltaTime * 0.5f;
+            gradientY = diegradingCurve.Evaluate(gradientX);
+            cGrading.temperature.value = gradientY * dieGradingMultiplier;
+            cGrading.tint.value = gradientY * dieGradingMultiplier;
+            yield return null;
+        }
+        yield break;
+    }
+    IEnumerator ResetChromaticAberration()
+    {
+        float aberrationX = dieAberrationCurve[dieAberrationCurve.length - 1].time;
+        float aberrationY = 0;
+        bool canRun = true;
+        while (canRun)
+        {
+            aberrationX -= Time.deltaTime;
+            if (aberrationX < 0)
+                canRun = false; 
+
+            aberrationY = dieAberrationCurve.Evaluate(aberrationX);
+            cAberration.intensity.value = aberrationY * dieAberrationMultiplier;
+            yield return null;
+        }
+        yield break;
+    }
+
 
 }
