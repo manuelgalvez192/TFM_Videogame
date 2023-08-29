@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D col2D;
 
     [SerializeField] private Transform render;
-    [SerializeField] private float jumpPower;
+    [SerializeField,Range(0.01f,0.05f)]private float jumpPower =0.02f;
     [SerializeField] private float floorLevel;
-    [NonSerialized] public bool canControl = true;
+    /*[NonSerialized]*/ public bool canControl = true;
 
     public bool isGrounded;
     private float timeToBeGrounded = 0.72f;
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem dustMovementPS;
     [SerializeField] ParticleSystem dustJumpPS;
     float movementDustCount;
-    [SerializeField] [Range(0, 0.1f)] float movementDustRate = 0.08f;
+    [SerializeField,Range(0, 0.1f)] float movementDustRate = 0.08f;
 
     private void Start()
     {
@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!canControl)
+            return;
         if (InputsGameManager.instance.JumpButtonDown)
         {
             animator.SetBool("isRunning", false);
@@ -59,18 +61,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         
         }
-        /*if (!isGrounded)
-        {
-            timeToBeGrounded -= Time.deltaTime;
-            if (timeToBeGrounded <= 0)
-            {
-                isGrounded = true;
-                timeToBeGrounded = 0.72f;
-                ThrowJumpDust();
-                movementDustCount = 0;
-            }
-        }*/
-
         if (transform.localScale.y <= floorLevel || isGrounded)
         {
             IsInGround();
@@ -100,19 +90,11 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 isGrounded = false;
-                //rb.gravityScale = 0.3f;
-                // rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-                //floorLevel = transform.localScale.y -1;
-                
+
                 StartCoroutine(JumpBehaviour());
                 ThrowJumpDust();
             }
         }
-        else if(isBlocking)
-        {
-
-        }
-       
     }
 
     IEnumerator JumpBehaviour()
@@ -190,6 +172,11 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    }
+    public void StopMovement()
+    {
+        canControl = false;
+        rb.velocity = Vector2.zero;
     }
     void ThrowMovementDust()
     {

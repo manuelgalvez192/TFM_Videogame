@@ -15,11 +15,19 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] ParticleSystem electricParticles;
 
-    [SerializeField] GameEvent GE_onPlayerDieEvent;
-    
-    
-
     public bool isBlocking;
+
+    [Header("Video for extra life")]
+    [SerializeField] GameEvent GE_onPlayerDieEvent;
+    bool hasDied = false;
+    [SerializeField] GameObject SecondChancePanel;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+            GetDamage(1000);
+    }
+
 
 
     void Start()
@@ -36,14 +44,23 @@ public class PlayerLife : MonoBehaviour
             currentLife -= damage;
             if (currentLife <= 0)
             {
-
-                EnemyAI.canFollow = false;
                 currentLife = 0;
-                //die(); AQUI EL MORIR
                 PostProcessingManager.instance.OnPlayerDie();
+                EnemyAI.canFollow = false;
+                //die(); AQUI EL MORIR
                 GE_onPlayerDieEvent.Raise();
-                
+                PlayerSingleton.instance.playerMovement.StopMovement();
+                if(!hasDied)
+                {
+                    hasDied = true;
+                    SecondChancePanel.SetActive(true);
+                }
+                else 
+                {
+                    StartCoroutine(GoMenuAfterDie());
+                }
             }
+
             animator.SetTrigger("takeDamage");
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
@@ -90,5 +107,17 @@ public class PlayerLife : MonoBehaviour
                 electricParticles.Play();
             }
         }
+    }
+    IEnumerator GoMenuAfterDie()
+    {
+        yield return new WaitForSeconds(4);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        yield break;
+    }
+    public void ResetComponent()
+    {
+        StopAllCoroutines();
+        Start();
+        PlayerSingleton.instance.playerMovement.canControl = true;
     }
 }

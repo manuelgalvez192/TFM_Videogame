@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 7305203516738749031}
   - component: {fileID: 7305203516738749024}
   - component: {fileID: 5018669790729966052}
+  - component: {fileID: 8734387447897534145}
   m_Layer: 0
   m_Name: HanzoEnemy
   m_TagString: Untagged
@@ -263,6 +264,34 @@ MonoBehaviour:
       - m_Target: {fileID: 7305203516738749024}
         m_TargetAssemblyTypeName: BaseHanzo, Assembly-CSharp
         m_MethodName: StopBehaviour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8734387447897534145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305203516738749030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34c38d1c8e0754b834e67f02de90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 1b12d937d20dd77468e35de49b0b2987, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7305203516738749024}
+        m_TargetAssemblyTypeName: BaseHanzo, Assembly-CSharp
+        m_MethodName: OnPlayerResucite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
