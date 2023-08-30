@@ -39,10 +39,10 @@ public class PlayerLife : MonoBehaviour
             currentLife -= damage;
             if (currentLife <= 0)
             {
+                animator.SetTrigger("die");
                 currentLife = 0;
                 PostProcessingManager.instance.OnPlayerDie();
                 EnemyAI.canFollow = false;
-                //die(); AQUI EL MORIR
                 GE_onPlayerDieEvent.Raise();
                 PlayerSingleton.instance.playerMovement.StopMovement();
                 if(!hasDied)
@@ -55,8 +55,11 @@ public class PlayerLife : MonoBehaviour
                     StartCoroutine(GoMenuAfterDie());
                 }
             }
+            else
+            {
+                animator.SetTrigger("takeDamage");
+            }
 
-            animator.SetTrigger("takeDamage");
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
         }
@@ -113,7 +116,16 @@ public class PlayerLife : MonoBehaviour
     public void ResetComponent()
     {
         StopAllCoroutines();
+        StartCoroutine(ResetComponentWait());
+        
+    }
+    IEnumerator ResetComponentWait()
+    {
         Start();
+        yield return new WaitForSeconds(1.5f);
+        animator.SetTrigger("reset");
+        yield return new WaitForSeconds(1.5f);
         PlayerSingleton.instance.playerMovement.canControl = true;
+        yield break;
     }
 }

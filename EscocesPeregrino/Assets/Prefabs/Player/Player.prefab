@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8986420897084862567}
   - component: {fileID: 2298520910579306800}
   - component: {fileID: 4821509512824013225}
-  - component: {fileID: 4739414621951460244}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -81,21 +80,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.4
---- !u!114 &4739414621951460244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356193676242706595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9670d168a69614a47853666e2c069daa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeCircle: {fileID: 846967565238889093}
-  timeToCkick: 5
-  onPlayerResucite: {fileID: 11400000, guid: 1b12d937d20dd77468e35de49b0b2987, type: 2}
 --- !u!1 &1941541634419989347
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLifeSlider: {fileID: 0}
   lifeText: {fileID: 0}
-  maxLife: 2
+  maxLife: 4
   enemyDamage: {fileID: 0}
   animator: {fileID: 2162832084452580250}
   electricParticles: {fileID: 6138868065206060327}
@@ -397,7 +381,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4739414621951460244}
+      - m_Target: {fileID: 7279097923922615929}
         m_TargetAssemblyTypeName: ScondChanceControl, Assembly-CSharp
         m_MethodName: GoMenu
         m_Mode: 1
@@ -5316,7 +5300,7 @@ Transform:
   - {fileID: 5051099540241723853}
   - {fileID: 7409381513328026298}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2679453431987630118
 Rigidbody2D:
@@ -5368,7 +5352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLife: {fileID: 7914866354274215235}
-  playerBasicAttack: {fileID: 0}
+  playerBasicAttack: {fileID: 5799724551216947619}
   playerMovement: {fileID: 930221121332049683}
   playerAnimator: {fileID: 2162832084452580250}
   playerAttackDamage: 0
@@ -5616,7 +5600,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4739414621951460244}
+      - m_Target: {fileID: 7279097923922615929}
         m_TargetAssemblyTypeName: ScondChanceControl, Assembly-CSharp
         m_MethodName: GetReward
         m_Mode: 1
@@ -5765,6 +5749,7 @@ GameObject:
   - component: {fileID: 4542761504089678054}
   - component: {fileID: 8552564735990058139}
   - component: {fileID: 4132406672445424804}
+  - component: {fileID: 7279097923922615929}
   m_Layer: 0
   m_Name: SecondChanceCanvas
   m_TagString: Untagged
@@ -5855,6 +5840,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7279097923922615929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071996842648617298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9670d168a69614a47853666e2c069daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeCircle: {fileID: 846967565238889093}
+  timeToCkick: 5
+  panel: {fileID: 1356193676242706595}
+  onPlayerResucite: {fileID: 11400000, guid: 1b12d937d20dd77468e35de49b0b2987, type: 2}
 --- !u!1 &6329062689742753813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5910,7 +5911,7 @@ MonoBehaviour:
   rb: {fileID: 2679453431987630118}
   col2D: {fileID: 2255958570709627351}
   render: {fileID: 7409381513328026298}
-  jumpPower: 1
+  jumpPower: 0.4
   jumpCurve:
     serializedVersion: 2
     m_Curve:

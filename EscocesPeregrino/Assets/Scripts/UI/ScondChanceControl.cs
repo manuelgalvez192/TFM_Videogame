@@ -7,12 +7,13 @@ public class ScondChanceControl : MonoBehaviour
 {
     [SerializeField] Image timeCircle;
     [SerializeField] float timeToCkick = 5;
+    [SerializeField] GameObject panel;
     IEnumerator currentBehavior;
     [SerializeField] GameEvent onPlayerResucite;
     void OnEnable()
     {
-        currentBehavior = SecondChangeBehaviour();
-        StartCoroutine(currentBehavior);
+        panel.SetActive(false);
+        Invoke("ActivePanel", 1f);
     }
 
     IEnumerator SecondChangeBehaviour()
@@ -38,6 +39,12 @@ public class ScondChanceControl : MonoBehaviour
     {
         StopCoroutine(currentBehavior);
         AdsManager.instance.ThrowVideoRewardAd(onPlayerResucite);
+    }
+    void ActivePanel()
+    {
+        panel.SetActive(true);
+        currentBehavior = SecondChangeBehaviour();
+        StartCoroutine(currentBehavior);
     }
 
 }
