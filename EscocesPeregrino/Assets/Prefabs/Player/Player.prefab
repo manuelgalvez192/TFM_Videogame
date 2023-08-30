@@ -5316,7 +5316,7 @@ Transform:
   - {fileID: 5051099540241723853}
   - {fileID: 7409381513328026298}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2679453431987630118
 Rigidbody2D:
@@ -5368,7 +5368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLife: {fileID: 7914866354274215235}
-  playerBasicAttack: {fileID: 2664033887037610753}
+  playerBasicAttack: {fileID: 0}
   playerMovement: {fileID: 930221121332049683}
   playerAnimator: {fileID: 2162832084452580250}
   playerAttackDamage: 0
@@ -5383,6 +5383,7 @@ GameObject:
   - component: {fileID: 7409381513328026298}
   - component: {fileID: 6693440188676621245}
   - component: {fileID: 2162832084452580250}
+  - component: {fileID: 5799724551216947619}
   m_Layer: 0
   m_Name: JumpRender
   m_TagString: Untagged
@@ -5477,6 +5478,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5799724551216947619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681559683723559122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee1f4cc0eae76747b78f39e992e05f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 8257791292594457816}
+  animator: {fileID: 2162832084452580250}
+  playerDamage: 5
 --- !u!1 &3792963656551084642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,9 +5865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4185150040072458597}
   - component: {fileID: 930221121332049683}
-  - component: {fileID: 2664033887037610753}
   - component: {fileID: 1851128901}
-  - component: {fileID: 1339195682144765021}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -5937,21 +5951,6 @@ MonoBehaviour:
   dustMovementPS: {fileID: 1060045332078870262}
   dustJumpPS: {fileID: 7309057628307533977}
   movementDustRate: 0.08
---- !u!114 &2664033887037610753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6329062689742753813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee1f4cc0eae76747b78f39e992e05f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitbox: {fileID: 8257791292594457816}
-  animator: {fileID: 2162832084452580250}
-  playerDamage: 5
 --- !u!114 &1851128901
 MonoBehaviour:
   m_ObjectHideFlags: 0

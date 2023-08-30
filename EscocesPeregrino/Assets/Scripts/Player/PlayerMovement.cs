@@ -57,10 +57,10 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
             animator.SetBool("isJumping",true);
-            Jump();
         
+            Jump();
         }
-        if (transform.localScale.y <= floorLevel || isGrounded)
+        if (isGrounded)
         {
             IsInGround();
             animator.SetBool("isJumping", false);
