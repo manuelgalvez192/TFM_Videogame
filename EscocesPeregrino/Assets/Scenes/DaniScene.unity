@@ -1232,7 +1232,7 @@ MonoBehaviour:
   attackKey: 106
   dashKey: 107
   coverKey: 108
-  pickKey: 108
+  pickKey: 101
   pauseKey: 112
   moveMenuUpKey: 119
   moveMenuDownKey: 115

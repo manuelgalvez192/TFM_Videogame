@@ -26,7 +26,6 @@ public class PlayerBlock : MonoBehaviour
     {
         if(InputsGameManager.instance.CoverButtonDown)
         {
-            print("A");
             BlockAttack();
         }
         else if(InputsGameManager.instance.CoverButtonUp)
