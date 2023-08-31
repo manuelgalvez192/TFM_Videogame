@@ -51,34 +51,42 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!canControl)
-            return;
-        if (InputsGameManager.instance.JumpButtonDown)
+        if (canControl)
         {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isJumping",true);
-        
-            Jump();
-        }
-        if (isGrounded)
-        {
-            IsInGround();
-            animator.SetBool("isJumping", false);
-        }
-        //Cosas de particulas
-        if (rb.velocity.magnitude > 1 && isGrounded)
-        {
-            movementDustCount += Time.deltaTime;
-            if (movementDustCount >= movementDustRate)
+            if (InputsGameManager.instance.JumpButtonDown)
+            {
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", true);
+
+                Jump();
+            }
+
+            if (isGrounded)
+            {
+                IsInGround();
+                animator.SetBool("isJumping", false);
+            }
+
+            //Cosas de particulas
+            if (rb.velocity.magnitude > 1 && isGrounded)
+            {
+                movementDustCount += Time.deltaTime;
+                if (movementDustCount >= movementDustRate)
+                {
+                    movementDustCount = 0;
+                    ThrowMovementDust();
+                }
+            }
+            else
             {
                 movementDustCount = 0;
-                ThrowMovementDust();
+                StopMovementDust();
             }
         }
         else
         {
-            movementDustCount = 0;
-            StopMovementDust();
+            rb.velocity = new Vector2(0, 0);
+            animator.SetBool("isRunning", false);
         }
     }
 
