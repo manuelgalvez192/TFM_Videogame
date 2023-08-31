@@ -129,18 +129,370 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 136
+        height: 82
+      alignment: 9
+      pivot: {x: 0.43357092, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4e0d5c8be2667498ca90eddaa7d121
+      internalID: 506846167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 87
+        height: 82
+      alignment: 9
+      pivot: {x: 0.6935832, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f322e11560ea53d42a937785e22643ad
+      internalID: -176672935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_2
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 0
+        width: 88
+        height: 82
+      alignment: 9
+      pivot: {x: 0.68884903, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a589965d528860e4eb14a4ea36d3cef9
+      internalID: 2014959890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 88
+        height: 82
+      alignment: 9
+      pivot: {x: 0.686314, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4f03fa0aefed541b23f2c7f668c230
+      internalID: -141831819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_4
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 0
+        width: 50
+        height: 82
+      alignment: 9
+      pivot: {x: 0.45092407, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fcbbebd53d497448352e97980d4bc0
+      internalID: 722783455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_5
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 0
+        width: 64
+        height: 82
+      alignment: 9
+      pivot: {x: 0.7004142, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399d621a1cfe73b4eb9d0230bbe4ddce
+      internalID: 2007025083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_6
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 0
+        width: 67
+        height: 82
+      alignment: 9
+      pivot: {x: 0.74637526, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20cb2cb4ac111cb4dba89ee41c84b956
+      internalID: -855156984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_7
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 0
+        width: 102
+        height: 82
+      alignment: 9
+      pivot: {x: 0.44532567, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e215068f6eca45245b9f338a4c5c464c
+      internalID: 245890501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_8
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 0
+        width: 71
+        height: 82
+      alignment: 9
+      pivot: {x: 0.66808736, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ec0fb1fd990904b86fd232e5eab7ee
+      internalID: 1511366434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_9
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 0
+        width: 76
+        height: 82
+      alignment: 9
+      pivot: {x: 0.69665366, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c7338e791d87543874fa78c41a22af
+      internalID: 1276012641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_10
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 0
+        width: 72
+        height: 82
+      alignment: 9
+      pivot: {x: 0.6580073, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d96227a4e60d614598e8e7d25644b5a
+      internalID: -1302941790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_11
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 0
+        width: 129
+        height: 82
+      alignment: 9
+      pivot: {x: 0.400569, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3439315147fc545ac49a528afbe94e
+      internalID: -1783892341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_12
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 0
+        width: 93
+        height: 82
+      alignment: 9
+      pivot: {x: 0.26493588, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae0a7aec89179c4f8a3da0254ffb4b3
+      internalID: 84738752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_13
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 0
+        width: 53
+        height: 82
+      alignment: 9
+      pivot: {x: 0.6283719, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d4a84ebce371a4382c5e6940bac880
+      internalID: -671010712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_14
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 0
+        width: 67
+        height: 82
+      alignment: 9
+      pivot: {x: 0.7634259, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7438b9977f8f541b1a124464a35cd5
+      internalID: 1546166869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTripleAttack_15
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 0
+        width: 60
+        height: 82
+      alignment: 9
+      pivot: {x: 0.7655599, y: 0.2646882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cdc591cbe882ee4c8330dcc93ca9ffe
+      internalID: -1217656765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b302dc764905f3844889b4c59b23efd7
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RoxxaneTripleAttack_6: -855156984
+      RoxxaneTripleAttack_4: 722783455
+      RoxxaneTripleAttack_8: 1511366434
+      RoxxaneTripleAttack_2: 2014959890
+      RoxxaneTripleAttack_5: 2007025083
+      RoxxaneTripleAttack_14: 1546166869
+      RoxxaneTripleAttack_11: -1783892341
+      RoxxaneTripleAttack_9: 1276012641
+      RoxxaneTripleAttack_13: -671010712
+      RoxxaneTripleAttack_1: -176672935
+      RoxxaneTripleAttack_12: 84738752
+      RoxxaneTripleAttack_3: -141831819
+      RoxxaneTripleAttack_10: -1302941790
+      RoxxaneTripleAttack_0: 506846167
+      RoxxaneTripleAttack_7: 245890501
+      RoxxaneTripleAttack_15: -1217656765
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

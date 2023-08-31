@@ -129,18 +129,194 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RoxxaneRun_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 73
+        height: 63
+      alignment: 9
+      pivot: {x: 0.7078707, y: 0.3546948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8d9d728781cd843bf7e49e3bff7a66
+      internalID: 229370795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneRun_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 79
+        height: 63
+      alignment: 9
+      pivot: {x: 0.6720421, y: 0.3564095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cf11b1c3a17ee4dbeecd8b55a4843f
+      internalID: -1795154488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneRun_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 76
+        height: 63
+      alignment: 9
+      pivot: {x: 0.64634365, y: 0.3546948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0505485682fcd1d408e29dd94ad6df2e
+      internalID: -719809828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneRun_3
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 0
+        width: 76
+        height: 63
+      alignment: 9
+      pivot: {x: 0.644353, y: 0.3546948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca37093463ceae46bb198da5b340c78
+      internalID: 737939149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneRun_4
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 0
+        width: 73
+        height: 63
+      alignment: 9
+      pivot: {x: 0.6938585, y: 0.35469478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6112c7dcfe31de41a133312c4799d03
+      internalID: 705138987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneRun_5
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 0
+        width: 79
+        height: 63
+      alignment: 9
+      pivot: {x: 0.669563, y: 0.3546948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a8b04cd0860ea4f9736a8a3054607d
+      internalID: 2002309089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneRun_6
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 77
+        height: 63
+      alignment: 9
+      pivot: {x: 0.6459081, y: 0.3546948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fcf0bf89cd0a0498a20f83d559747c
+      internalID: 2036052608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneRun_7
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 76
+        height: 63
+      alignment: 9
+      pivot: {x: 0.644985, y: 0.3546948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3adf2b72c92c36442861e44ee5a47328
+      internalID: -1100643545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ece977e715cf8eb438246a386b06b06e
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RoxxaneRun_2: -719809828
+      RoxxaneRun_6: 2036052608
+      RoxxaneRun_0: 229370795
+      RoxxaneRun_5: 2002309089
+      RoxxaneRun_1: -1795154488
+      RoxxaneRun_4: 705138987
+      RoxxaneRun_7: -1100643545
+      RoxxaneRun_3: 737939149
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

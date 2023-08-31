@@ -129,18 +129,437 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RoxxaneTp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 122
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecbdbac5e1764bc428e4e3d4db8c6cda
+      internalID: 700295679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 122
+        width: 40
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d011f0f7f02982a4796ad73902910b4e
+      internalID: 1234366341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 122
+        width: 37
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d481789ac612fc42bfb5d8391bb8097
+      internalID: 98521572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_3
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 122
+        width: 38
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13caa7849b6fbf47a9cb408d339b518
+      internalID: -919771413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 122
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4166ff5af798654e8bbdd0ff17687a3
+      internalID: 1010631679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_5
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 122
+        width: 91
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91b3fe05fa1ce1418b940ea23c64f64
+      internalID: -965701248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 122
+        width: 100
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440c3682cb7831d4c93a7c80cae3607b
+      internalID: -1086307192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_7
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 122
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8ec95038b05294d9d2a8bedc542b7a
+      internalID: -1217903753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_8
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 122
+        width: 85
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4c05d9283336848adafaf4b6622a36
+      internalID: 766505494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_9
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 122
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657487fb7f42e25458b839b47c7a2f1e
+      internalID: -1599571049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_10
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 122
+        width: 68
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73828b9f5e11ba4468fd9696d3565068
+      internalID: 344416045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_11
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 122
+        width: 77
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a4c90cbb2df5243b233589a281dd9d
+      internalID: -1434339282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_12
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 122
+        width: 57
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ce114d47a1af74a8e87835ae445719
+      internalID: -1027595566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_13
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 46
+        height: 109
+      alignment: 9
+      pivot: {x: 0.40876865, y: 0.379684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d086a00ff446321408891ef997fa17e1
+      internalID: 465669295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_14
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 82
+        height: 109
+      alignment: 9
+      pivot: {x: 0.49680105, y: 0.33396393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b42510e25ed404fb62d68f1a77adb7
+      internalID: 65720919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_15
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 0
+        width: 77
+        height: 109
+      alignment: 9
+      pivot: {x: 0.52043784, y: 0.3435892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1dcc149536f7bc46b1a94ac1550fa4b
+      internalID: 299225385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_16
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 95
+        height: 109
+      alignment: 9
+      pivot: {x: 0.43649837, y: 0.32674494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077f732839d95d542907237b78f11632
+      internalID: 28089046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 94
+        height: 109
+      alignment: 9
+      pivot: {x: 0.42466152, y: 0.32433864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7e6938fe1b7bf43ac5b77127ff67fb
+      internalID: 136779515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneTp_18
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 0
+        width: 32
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a7673aa35a5644fac9e7d1b2a9da63
+      internalID: 2004985952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f28d117e09d40ca41949ef037fe18344
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RoxxaneTp_14: 65720919
+      RoxxaneTp_6: -1086307192
+      RoxxaneTp_10: 344416045
+      RoxxaneTp_7: -1217903753
+      RoxxaneTp_4: 1010631679
+      RoxxaneTp_19: -1983760946
+      RoxxaneTp_16: 28089046
+      RoxxaneTp_11: -1434339282
+      RoxxaneTp_12: -1027595566
+      RoxxaneTp_1: 1234366341
+      RoxxaneTp_2: 98521572
+      RoxxaneTp_3: -919771413
+      RoxxaneTp_5: -965701248
+      RoxxaneTp_13: 465669295
+      RoxxaneTp_17: 136779515
+      RoxxaneTp_9: -1599571049
+      RoxxaneTp_0: 700295679
+      RoxxaneTp_18: 2004985952
+      RoxxaneTp_15: 299225385
+      RoxxaneTp_8: 766505494
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
