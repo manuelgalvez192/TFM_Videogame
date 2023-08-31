@@ -35,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
         PlayerBasicAtack.canMove += ChangeMoveOption;
         isGrounded = true;
         isBlocking = false;
-       // floorLevel = transform.localScale.y;
+        // floorLevel = transform.localScale.y;
     }
+
 
     private bool ChangeMoveOption(bool value)
     {

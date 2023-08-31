@@ -20,7 +20,7 @@ public class BaseHanzo : MonoBehaviour
     bool allowedToMove = true;
     protected bool followingPlayer;
 
-    protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction }
+    protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction, SpecialAction2 }
     [SerializeField]protected HanzoState state = HanzoState.Waiting;
     protected IEnumerator currentCorroutine;
 
@@ -64,6 +64,25 @@ public class BaseHanzo : MonoBehaviour
         playerDir.Normalize();
 
         rb.MovePosition(rb.position + playerDir * speed * Time.deltaTime);
+
+        if (playerDir.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+    protected void MoveToPoint(Vector2 target, float voidSpeed)
+    {
+        //animator.SetBool("isMoving", true);
+        Vector2 playerDir = target - (Vector2)transform.position;
+
+        playerDir.Normalize();
+
+        rb.MovePosition(rb.position + playerDir * voidSpeed * Time.deltaTime);
+
         if (playerDir.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, -180, 0);
