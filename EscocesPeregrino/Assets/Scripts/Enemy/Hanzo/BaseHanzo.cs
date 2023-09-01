@@ -106,10 +106,10 @@ public class BaseHanzo : MonoBehaviour
             StopCoroutine(currentCorroutine);
         state = newState;
     }
-    protected virtual void Attack()
-    {
-
-    }
+    //protected virtual void Attack()
+    //{
+    //
+    //}
     public virtual void GetDamage()
     {
 

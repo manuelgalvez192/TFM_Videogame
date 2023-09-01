@@ -34,8 +34,10 @@ public class RoxxaneControl : BaseHanzo
             case HanzoState.CheckingLastPositon:
                 break;
             case HanzoState.GettingDamage:
+                currentCorroutine = OnDamageState();
                 break;
             case HanzoState.Attacking:
+                currentCorroutine = OnAttackingState();
                 break;
             case HanzoState.SpecialAction://tripleAttack
                 currentCorroutine = OnTripleAttackState();
@@ -118,7 +120,7 @@ public class RoxxaneControl : BaseHanzo
                     else
                     {
                         int randProb = Random.Range(0, 10);
-                        if(randProb>0)//aqui va la probablifdad de hacer el ataque tocho
+                        if(randProb>5)//aqui va la probablifdad de hacer el ataque tocho
                         {
                             ChangeState(HanzoState.SpecialAction);
                         }
@@ -141,6 +143,10 @@ public class RoxxaneControl : BaseHanzo
         while(DistanceToPlayer() < longAttackDistance - (longAttackDistance / 3))
         {
             FollowPlayer();
+            if(DistanceToPlayer()<attackDistance)
+            {
+                 ChangeState(HanzoState.Attacking);
+            }
             yield return null;
         }
         ChangeState(HanzoState.Following);
@@ -243,6 +249,14 @@ public class RoxxaneControl : BaseHanzo
         trunk.gameObject.SetActive(false);
         yield break;
     }
+    IEnumerator OnAttackingState()
+    {
+        animator.SetBool("isMoving", false);
+        animator.SetTrigger("attack");
+        yield return new WaitForSeconds(attackRate);
+
+        ChangeState(DistanceToPlayer() < attackDistance ? HanzoState.Attacking : HanzoState.Waiting);
+    }
     public void ActiveAttackCollision()
     {
         attackCollision.enabled = true;
@@ -273,4 +287,26 @@ public class RoxxaneControl : BaseHanzo
         ChangeState(HanzoState.Following);
     }
     #endregion
+    public override void GetDamage()
+    {
+        StopCoroutine(currentCorroutine);
+        base.GetDamage();
+        ChangeState(HanzoState.GettingDamage);
+    }
+    IEnumerator OnDamageState()
+    {
+        animator.SetTrigger("reset");
+        animator.SetTrigger("damage");
+        yield return new WaitForSeconds(0.9f);
+        ChangeState(HanzoState.Waiting);
+
+        yield break;
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        StopCoroutine(currentCorroutine);
+        animator.SetTrigger("die");
+    }
 }
