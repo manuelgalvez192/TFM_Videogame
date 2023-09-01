@@ -779,7 +779,7 @@ PrefabInstance:
     - target: {fileID: 6440786234564098725, guid: 0e9ddea018e04a74790b9a34eedceb80, type: 3}
       propertyPath: _animator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1095470559}
     - target: {fileID: 6440786234564098725, guid: 0e9ddea018e04a74790b9a34eedceb80, type: 3}
       propertyPath: canControl
       value: 
@@ -1659,6 +1659,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
   m_PrefabInstance: {fileID: 3133327152336531703}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1095470559 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2162832084452580250, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
+  m_PrefabInstance: {fileID: 3133327152336531703}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1114422740 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4791774828247020699, guid: 2fd4fe78eb1b66543bcb0080fa04d993, type: 3}
@@ -2009,6 +2014,7 @@ MonoBehaviour:
   state: 0
   longAttackDistance: 1.5
   longAttackCollider: {fileID: 94412158}
+  specialAttackSpeed: 0
 --- !u!1 &1659485886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6426517670499584903, guid: 9e5b8fd58fc80f146b834e6309f037fe, type: 3}
