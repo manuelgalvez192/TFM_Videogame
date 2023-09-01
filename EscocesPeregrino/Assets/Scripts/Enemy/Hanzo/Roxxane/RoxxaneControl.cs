@@ -154,6 +154,14 @@ public class RoxxaneControl : BaseHanzo
     {
         animator.SetBool("isMoving", false);
         animator.SetTrigger("longAttack");//tiempo total de animacion 1s
+        while (true)
+            yield return null;
+        yield break;
+    }
+    IEnumerator OnLongAttackState44()
+    {
+        animator.SetBool("isMoving", false);
+        animator.SetTrigger("longAttack");//tiempo total de animacion 1s
 
         yield return new WaitForSeconds(0.4f);
         longAttackCollider.enabled = true;
@@ -170,6 +178,30 @@ public class RoxxaneControl : BaseHanzo
         yield break;
     }
     IEnumerator OnTripleAttackState()
+    {
+        animator.SetTrigger("specialAttack");
+        Quaternion currentRot = transform.rotation;
+        while (DistanceToPlayer() > 0.25f)
+        {
+            MoveToPoint(player.position, specialAttackSpeed);
+            yield return null;
+        }
+        animator.SetTrigger("tripleAttack");
+        float nexTime = 0.65f;
+        while (nexTime >= 0)
+        {
+            nexTime -= Time.deltaTime;
+            MoveToPoint(player.position, 0.5f);
+            transform.rotation = currentRot;
+            yield return null;
+        }
+        //damageCollision.enabled = false;
+        //yield return new WaitForSeconds(0.45f);
+        //StartCoroutine(HidingTrunk());
+        //transform.position = new Vector2(longAttackDistance, transform.position.y) + (Vector2)player.position;
+        //ChangeState(HanzoState.Following);
+    }
+    IEnumerator OnTripleAttackState44()
     {
         animator.SetTrigger("specialAttack");
         Quaternion currentRot = transform.rotation;
@@ -210,6 +242,35 @@ public class RoxxaneControl : BaseHanzo
         }
         trunk.gameObject.SetActive(false);
         yield break;
+    }
+    public void ActiveAttackCollision()
+    {
+        attackCollision.enabled = true;
+        attackCollision.size = new Vector2(0, longAttackCollider.size.y);
+        attackCollision.size = new Vector2(0.41f, longAttackCollider.size.y);
+    }
+    public void DeactiveAttackCollision()
+    {
+        attackCollision.enabled = false;
+    }
+    public void ActiveLongAttackCollision()
+    {
+        longAttackCollider.enabled = true;
+        longAttackCollider.size = new Vector2(0, longAttackCollider.size.y);
+        longAttackCollider.size = new Vector2(2.2f, longAttackCollider.size.y);
+    }
+    public void DeactiveLongAttackCollision()
+    {
+        longAttackCollider.enabled = false;
+    }
+    public void TPOnAnimation()
+    {
+        StartCoroutine(HidingTrunk());
+        transform.position = new Vector2(longAttackDistance, transform.position.y) + (Vector2)player.position;
+    }
+    public void FinishAttack()
+    {
+        ChangeState(HanzoState.Following);
     }
     #endregion
 }
