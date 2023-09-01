@@ -120,7 +120,7 @@ public class RoxxaneControl : BaseHanzo
                     else
                     {
                         int randProb = Random.Range(0, 10);
-                        if(randProb>5)//aqui va la probablifdad de hacer el ataque tocho
+                        if(randProb>7)//aqui va la probablifdad de hacer el ataque tocho
                         {
                             ChangeState(HanzoState.SpecialAction);
                         }
@@ -295,7 +295,6 @@ public class RoxxaneControl : BaseHanzo
     }
     IEnumerator OnDamageState()
     {
-        animator.SetTrigger("reset");
         animator.SetTrigger("damage");
         yield return new WaitForSeconds(0.9f);
         ChangeState(HanzoState.Waiting);
