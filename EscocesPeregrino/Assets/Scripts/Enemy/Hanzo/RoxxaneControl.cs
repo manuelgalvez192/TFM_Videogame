@@ -8,10 +8,14 @@ public class RoxxaneControl : BaseHanzo
     IEnumerator currentFollowingCorroutine;
     bool isPlayerClose = false;
     [SerializeField] BoxCollider2D longAttackCollider;
+    [SerializeField] BoxCollider2D damageCollision;
     [SerializeField] float specialAttackSpeed;
+    [SerializeField] SpriteRenderer trunk;
     void Start()
     {
         base.Start();
+        trunk.transform.parent = null;
+        trunk.gameObject.SetActive(false);
     }
 
     protected override void ChangeState(HanzoState newState)
@@ -107,7 +111,7 @@ public class RoxxaneControl : BaseHanzo
                 if(timeAttack < 0)
                 {
                     timeAttack = attackRate;
-                    if(Mathf.Abs(newPos.y - transform.position.y) < 0.01f)
+                    if(Mathf.Abs(newPos.y - transform.position.y) < 0.1f)
                     {
                         ChangeState(HanzoState.SpecialAction2);
                     }
@@ -165,19 +169,47 @@ public class RoxxaneControl : BaseHanzo
 
         yield break;
     }
-
     IEnumerator OnTripleAttackState()
     {
         animator.SetTrigger("specialAttack");
-
-        while(DistanceToPlayer()<0.03f)
+        Quaternion currentRot = transform.rotation;
+        while(DistanceToPlayer()> 0.25f)
         {
             MoveToPoint(player.position, specialAttackSpeed);
             yield return null;
         }
         animator.SetTrigger("tripleAttack");
-        yield return new WaitForSeconds(0.55f);
-        Time.timeScale = 0;
+        float nexTime = 0.65f;
+        while(nexTime>=0)
+        {
+            nexTime -= Time.deltaTime;
+            MoveToPoint(player.position, 0.5f);
+            transform.rotation = currentRot;
+            yield return null;
+        }
+        damageCollision.enabled = false;
+        yield return new WaitForSeconds(0.45f);
+        StartCoroutine(HidingTrunk());
+        transform.position = new Vector2(longAttackDistance,transform.position.y)+(Vector2)player.position;
+        ChangeState(HanzoState.Following);
+    }
+    IEnumerator HidingTrunk()
+    {
+        trunk.transform.position = transform.position;
+        trunk.transform.rotation = transform.rotation;
+        trunk.gameObject.SetActive(true);
+        trunk.color = new Color(trunk.color.r, trunk.color.g, trunk.color.b, 1);
+
+        yield return new WaitForSeconds(1);
+        float alpha = 1;
+        while(alpha >0)
+        {
+            alpha -= Time.deltaTime;
+            trunk.color = new Color(trunk.color.r, trunk.color.g, trunk.color.b, alpha);
+            yield return null;
+        }
+        trunk.gameObject.SetActive(false);
+        yield break;
     }
     #endregion
 }

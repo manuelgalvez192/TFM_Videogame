@@ -58,7 +58,6 @@ public class BaseHanzo : MonoBehaviour
     }
     protected void MoveToPoint(Vector2 target,bool canRotate = true)
     {
-        //animator.SetBool("isMoving", true);
         Vector2 playerDir = target - (Vector2)transform.position;
 
         playerDir.Normalize();
@@ -80,7 +79,6 @@ public class BaseHanzo : MonoBehaviour
     }
     protected void MoveToPoint(Vector2 target, float voidSpeed)
     {
-        //animator.SetBool("isMoving", true);
         Vector2 playerDir = target - (Vector2)transform.position;
 
         playerDir.Normalize();
