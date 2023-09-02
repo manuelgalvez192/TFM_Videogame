@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 public class BaseHanzo : MonoBehaviour
 {
     [Header("Components")]
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
     [SerializeField] protected Animator animator;
     [SerializeField] protected BoxCollider2D attackCollision;
     protected float attackCollisionSize;
@@ -20,7 +20,7 @@ public class BaseHanzo : MonoBehaviour
     bool allowedToMove = true;
     protected bool followingPlayer;
 
-    protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction }
+    protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction, SpecialAction2 }
     [SerializeField]protected HanzoState state = HanzoState.Waiting;
     protected IEnumerator currentCorroutine;
 
@@ -56,14 +56,35 @@ public class BaseHanzo : MonoBehaviour
         }
             
     }
-    protected void MoveToPoint(Vector2 target)
+    protected void MoveToPoint(Vector2 target,bool canRotate = true)
     {
-        //animator.SetBool("isMoving", true);
         Vector2 playerDir = target - (Vector2)transform.position;
 
         playerDir.Normalize();
 
         rb.MovePosition(rb.position + playerDir * speed * Time.deltaTime);
+        if(canRotate)
+        {
+            if (playerDir.x < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, -180, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+
+        }
+
+    }
+    protected void MoveToPoint(Vector2 target, float voidSpeed)
+    {
+        Vector2 playerDir = target - (Vector2)transform.position;
+
+        playerDir.Normalize();
+
+        rb.MovePosition(rb.position + playerDir * voidSpeed * Time.deltaTime);
+
         if (playerDir.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, -180, 0);
@@ -85,10 +106,10 @@ public class BaseHanzo : MonoBehaviour
             StopCoroutine(currentCorroutine);
         state = newState;
     }
-    protected virtual void Attack()
-    {
-
-    }
+    //protected virtual void Attack()
+    //{
+    //
+    //}
     public virtual void GetDamage()
     {
 

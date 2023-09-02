@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1d18eec11a5e8354388ccdb1cc9f4503
+guid: 0598c553ab9ed774e9ad2936d79159f0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,18 +129,150 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RoxxaneIdle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 55
+        height: 58
+      alignment: 9
+      pivot: {x: 0.34031266, y: 0.35335425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe196b9377c7aa643b1a36229fd9a8c6
+      internalID: 923599730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneIdle_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 0
+        width: 56
+        height: 58
+      alignment: 9
+      pivot: {x: 0.34811687, y: 0.3756699}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2706f6fa0bcded41a302d9d6a49233f
+      internalID: 1330658790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneIdle_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 57
+        height: 58
+      alignment: 9
+      pivot: {x: 0.37186658, y: 0.370888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a6102a4ccbcf44a83507131188e2d5
+      internalID: 1693769816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneIdle_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 58
+        height: 58
+      alignment: 9
+      pivot: {x: 0.3740758, y: 0.369294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1a29f6aba25214a891ccd776555621
+      internalID: -1225474922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneIdle_4
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 0
+        width: 57
+        height: 58
+      alignment: 9
+      pivot: {x: 0.35078135, y: 0.35335425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e4618fa62401340a21c4e03a12439d
+      internalID: 165971725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneIdle_5
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 0
+        width: 57
+        height: 58
+      alignment: 9
+      pivot: {x: 0.3475374, y: 0.35973015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d14648c4710a64183365e29f4698db
+      internalID: -733720970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 80758110abb817b41a683f3a47edfc9e
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RoxxaneIdle_1: 1330658790
+      RoxxaneIdle_4: 165971725
+      RoxxaneIdle_3: -1225474922
+      RoxxaneIdle_2: 1693769816
+      RoxxaneIdle_0: 923599730
+      RoxxaneIdle_5: -733720970
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

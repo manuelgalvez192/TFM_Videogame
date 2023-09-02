@@ -11,7 +11,7 @@ public class HanzoControl : BaseHanzo
     {
         base.Start();
     }
-    
+
     protected override void ChangeState(HanzoState newState)
     {
         base.ChangeState(newState);
@@ -38,7 +38,6 @@ public class HanzoControl : BaseHanzo
             default:
                 break;
         }
-        //state = newState;
         StartCoroutine(currentCorroutine);
     }
 
