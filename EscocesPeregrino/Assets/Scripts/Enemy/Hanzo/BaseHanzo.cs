@@ -107,6 +107,10 @@ public class BaseHanzo : MonoBehaviour
         ChangeState(HanzoState.Waiting);
         animator.SetTrigger("reset");
         animator.speed = 1;
+        if(DistanceToPlayer()<=1.5)
+        {
+            rb.position = new Vector2(PlayerSingleton.instance.gameObject.transform.position.x + 3, rb.position.y);
+        }
     }
 
 }

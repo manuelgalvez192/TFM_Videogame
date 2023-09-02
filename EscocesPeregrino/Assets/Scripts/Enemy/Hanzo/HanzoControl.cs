@@ -86,7 +86,7 @@ public class HanzoControl : BaseHanzo
     {
         animator.SetBool("isMoving", false);
         animator.SetTrigger("attack");
-        yield return new WaitForSeconds(0.2f);//los tiempos se cambian segun la animacion
+        yield return new WaitForSeconds(0.25f);//los tiempos se cambian segun la animacion
         attackCollision.size = new Vector2(0, attackCollision.size.y);
         attackCollision.enabled = true;
         float newSize = 0;
@@ -99,7 +99,7 @@ public class HanzoControl : BaseHanzo
         attackCollision.size = new Vector2(attackCollisionSize, attackCollision.size.y);
 
 
-        yield return new WaitForSeconds(0.14f);
+        yield return new WaitForSeconds(0.13f);
         attackCollision.enabled = false;
 
         yield return new WaitForSeconds(attackRate);
