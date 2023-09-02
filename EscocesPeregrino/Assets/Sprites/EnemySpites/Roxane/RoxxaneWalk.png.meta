@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1d18eec11a5e8354388ccdb1cc9f4503
+guid: 52d3b80ca2d0f5a4db6becb1fcec5ff9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,18 +129,150 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RoxxaneWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 49
+        height: 87
+      alignment: 9
+      pivot: {x: 0.55804414, y: 0.2369817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e214b407ecf9b844aa093a59e96aef4
+      internalID: -586244089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneWalk_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 43
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5300651, y: 0.27858913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36e66655c698cb4895b73e600367443
+      internalID: -1537556169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneWalk_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 44
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5852075, y: 0.28601906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398a6d0e3d97a084e9ef22baf360135b
+      internalID: 1428177917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneWalk_3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 48
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5565602, y: 0.24441162}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94495b38aca85448836af8be5602410
+      internalID: -1760904839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneWalk_4
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 43
+        height: 87
+      alignment: 9
+      pivot: {x: 0.53607816, y: 0.28601906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1331865acc3354e9de8dbe1ba8741d
+      internalID: -939267427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoxxaneWalk_5
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 54
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5119708, y: 0.2667013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2014ab31de62b604f8f3a496b563dea7
+      internalID: -1794404113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7b9bf601117949a48928e8ec5d5b3e5c
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RoxxaneWalk_0: -586244089
+      RoxxaneWalk_3: -1760904839
+      RoxxaneWalk_1: -1537556169
+      RoxxaneWalk_2: 1428177917
+      RoxxaneWalk_5: -1794404113
+      RoxxaneWalk_4: -939267427
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

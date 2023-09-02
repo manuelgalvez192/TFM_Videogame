@@ -345,7 +345,7 @@ public class InputsGameManager : MonoBehaviour
             {
                 coverInput = uiController.CoverButtonDown;
                 if (coverInput)
-                    return coverInput; return coverInput;
+                    return coverInput;
             }
             coverInput = false;
 
@@ -357,7 +357,6 @@ public class InputsGameManager : MonoBehaviour
                 coverInput = Input.GetKeyDown(coverKey);
 #endif
             return coverInput;
-
         }
 
     }
@@ -369,7 +368,7 @@ public class InputsGameManager : MonoBehaviour
             {
                 coverInput = uiController.CoverButtonUp;
                 if (coverInput)
-                    return coverInput; return coverInput;
+                    return coverInput;
             }
             coverInput = false;
 
@@ -381,9 +380,9 @@ public class InputsGameManager : MonoBehaviour
                 coverInput = Input.GetKeyUp(coverKey);
 #endif
             return coverInput;
-
         }
     }
+    
     public bool PickButton
     {
         get

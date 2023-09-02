@@ -32,7 +32,6 @@ public class UIPadButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         isPressed = false;
         hasBeenPressed = false;
         img.color = new Vector4(img.color.r, img.color.g, img.color.b, onUnpressedAlpha);
-        //startPicking = false;
     }
 
 
