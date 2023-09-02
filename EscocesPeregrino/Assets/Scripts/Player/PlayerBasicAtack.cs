@@ -37,6 +37,7 @@ public class PlayerBasicAtack : MonoBehaviour
         {
             if(PlayerSingleton.instance.playerMovement.isGrounded)
             {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
                 canMove?.Invoke(false);
                 hitbox.SetActive(true);
                 atacking = true;

@@ -3834,7 +3834,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &912769886
 MonoBehaviour:
@@ -4329,7 +4329,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1110134718}
   - component: {fileID: 1110134717}
-  - component: {fileID: 1110134716}
   - component: {fileID: 1110134719}
   m_Layer: 0
   m_Name: Main Camera
@@ -4338,14 +4337,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1110134716
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110134715}
-  m_Enabled: 1
 --- !u!20 &1110134717
 Camera:
   m_ObjectHideFlags: 0
