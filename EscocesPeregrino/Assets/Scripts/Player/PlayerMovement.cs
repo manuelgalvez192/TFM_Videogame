@@ -196,7 +196,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(isBlocking)
         {
-
+            rb.velocity = new Vector2(0, 0);
         }
 
 
