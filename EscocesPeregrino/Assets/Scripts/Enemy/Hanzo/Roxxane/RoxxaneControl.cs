@@ -20,6 +20,7 @@ public class RoxxaneControl : BaseHanzo
 
     protected override void ChangeState(HanzoState newState)
     {
+        animator.speed = 1;
         base.ChangeState(newState);
         if (currentFollowingCorroutine != null)
             StopCoroutine(currentFollowingCorroutine);
@@ -32,6 +33,7 @@ public class RoxxaneControl : BaseHanzo
                 currentCorroutine = OnFollowingState();
                 break;
             case HanzoState.CheckingLastPositon:
+                currentCorroutine = OnCheckingLasPlayerPosState();
                 break;
             case HanzoState.GettingDamage:
                 currentCorroutine = OnDamageState();
@@ -46,9 +48,10 @@ public class RoxxaneControl : BaseHanzo
                 currentCorroutine = OnLongAttackState();
                 break;
             default:
+                currentCorroutine = OnWaitingState();
                 break;
         }
-        StartCoroutine(currentCorroutine);
+            StartCoroutine(currentCorroutine);
     }
     IEnumerator OnWaitingState()
     {
@@ -80,25 +83,21 @@ public class RoxxaneControl : BaseHanzo
     {
         isPlayerClose = false;
         float timeAttack = attackRate;
-        while(DistanceToPlayer() > longAttackDistance - (longAttackDistance/3))
+        while (DistanceToPlayer() > longAttackDistance - (longAttackDistance / 3))
         {
-            Vector2 dir = player.position - transform.position;
+            Vector2 playerDir = player.position - transform.position;//fireccion hacia el jugador
 
-            Vector2 newPos = new Vector2( dir.x < 0 ? longAttackDistance : -longAttackDistance,0) + (Vector2)player.position;
-            float dist = Vector2.Distance(newPos, transform.position);
+            Vector2 newPos = new Vector2(playerDir.x < 0 ? longAttackDistance : -longAttackDistance, 0) + (Vector2)player.position;//punto al que tiene que moverse
+
             float distX = Mathf.Abs(newPos.x - transform.position.x);
-            if (dist>0.1f)
-            {
-                animator.SetBool("isMoving",true);
-                MoveToPoint(newPos,true);
+            float dist = Vector2.Distance(newPos, transform.position);
 
-            }
-            else
+            if(Vector2.Distance(transform.position,newPos)>0.1f)//si esta lejos d3 ese punto nos movemos, sino esperamos
             {
-                if (Mathf.Abs(newPos.y - transform.position.y) < 0.01f)
-                    animator.SetBool("isMoving", false);
+                animator.SetBool("isMoving", true);
+                MoveToPoint(newPos);
 
-                if (dir.x < 0)
+                if(playerDir.x<0)//rotacion hacia el jugador
                 {
                     transform.rotation = Quaternion.Euler(0, -180, 0);
                 }
@@ -106,37 +105,48 @@ public class RoxxaneControl : BaseHanzo
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
+
+                Vector2 enemyToPoint = newPos - (Vector2)transform.position;//cosas par air hacia alante o hacia atras en la animcacion
+                if (enemyToPoint.x > 0)
+                    animator.SetBool("isGoingBack",true);
+                else
+                    animator.SetBool("isGoingBack",false);
+
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
             }
 
-            if( distX < 0.11f)
+            if (distX < 0.11f)
             {
-                if(timeAttack < 0)
+                if (timeAttack < 0)
                 {
                     timeAttack = attackRate;
-                    if(Mathf.Abs(newPos.y - transform.position.y) < 0.1f)
+                    if (Mathf.Abs(newPos.y - transform.position.y) < 0.1f)
                     {
                         ChangeState(HanzoState.SpecialAction2);
                     }
                     else
                     {
                         int randProb = Random.Range(0, 10);
-                        if(randProb>7)//aqui va la probablifdad de hacer el ataque tocho
+                        if (randProb > 6)//aqui va la probablifdad de hacer el ataque tocho
                         {
                             ChangeState(HanzoState.SpecialAction);
                         }
                     }
                 }
-
-
                 timeAttack -= Time.deltaTime;
             }
-            
+
+
 
             yield return null;
         }
         ChangeState(HanzoState.Following);
         yield break;
     }
+   
     IEnumerator FollowingPlayer()
     {
         isPlayerClose = true;
@@ -152,6 +162,20 @@ public class RoxxaneControl : BaseHanzo
         ChangeState(HanzoState.Following);
         yield break;
     }
+    IEnumerator OnCheckingLasPlayerPosState()
+    {
+        animator.SetBool("isMoving", true);
+        Vector2 lastPlayerPosition = player.position;
+        while (Vector2.Distance(lastPlayerPosition, transform.position) > 0.01f)
+        {
+            MoveToPoint(lastPlayerPosition);
+            if (DistanceToPlayer() < detectionRange)
+                ChangeState(HanzoState.Following);
+            yield return null;
+        }
+        ChangeState(HanzoState.Waiting);
+        yield break;
+    }
 
     #endregion
 
@@ -164,25 +188,7 @@ public class RoxxaneControl : BaseHanzo
             yield return null;
         yield break;
     }
-    IEnumerator OnLongAttackState44()
-    {
-        animator.SetBool("isMoving", false);
-        animator.SetTrigger("longAttack");//tiempo total de animacion 1s
-
-        yield return new WaitForSeconds(0.4f);
-        longAttackCollider.enabled = true;
-        longAttackCollider.size = new Vector2(0, longAttackCollider.size.y);
-        longAttackCollider.size = new Vector2(2.2f, longAttackCollider.size.y);
-
-        yield return new WaitForSeconds(0.1f);
-        longAttackCollider.enabled = false;
-
-        yield return new WaitForSeconds(0.6f);
-        ChangeState(HanzoState.Following);
-
-
-        yield break;
-    }
+    
     IEnumerator OnTripleAttackState()
     {
         animator.SetTrigger("specialAttack");
@@ -201,11 +207,6 @@ public class RoxxaneControl : BaseHanzo
             transform.rotation = currentRot;
             yield return null;
         }
-        //damageCollision.enabled = false;
-        //yield return new WaitForSeconds(0.45f);
-        //StartCoroutine(HidingTrunk());
-        //transform.position = new Vector2(longAttackDistance, transform.position.y) + (Vector2)player.position;
-        //ChangeState(HanzoState.Following);
     }
     IEnumerator OnTripleAttackState44()
     {
@@ -280,7 +281,7 @@ public class RoxxaneControl : BaseHanzo
     public void TPOnAnimation()
     {
         StartCoroutine(HidingTrunk());
-        transform.position = new Vector2(longAttackDistance, transform.position.y) + (Vector2)player.position;
+        rb.position = new Vector2(longAttackDistance,0) + (Vector2)player.position;
     }
     public void FinishAttack()
     {

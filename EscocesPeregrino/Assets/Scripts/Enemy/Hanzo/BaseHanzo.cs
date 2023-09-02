@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 public class BaseHanzo : MonoBehaviour
 {
     [Header("Components")]
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
     [SerializeField] protected Animator animator;
     [SerializeField] protected BoxCollider2D attackCollision;
     protected float attackCollisionSize;
