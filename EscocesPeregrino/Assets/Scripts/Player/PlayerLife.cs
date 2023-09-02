@@ -14,10 +14,15 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] ParticleSystem electricParticles;
-    
-    
 
     public bool isBlocking;
+
+    [Header("Video for extra life")]
+    [SerializeField] GameEvent GE_onPlayerDieEvent;
+    bool hasDied = false;
+    [SerializeField] GameObject SecondChancePanel;
+
+
 
 
     void Start()
@@ -34,16 +39,33 @@ public class PlayerLife : MonoBehaviour
             currentLife -= damage;
             if (currentLife <= 0)
             {
-
-                EnemyAI.canFollow = false;
+                animator.SetTrigger("die");
                 currentLife = 0;
-                //die(); AQUI EL MORIR
                 PostProcessingManager.instance.OnPlayerDie();
-                
+                EnemyAI.canFollow = false;
+                GE_onPlayerDieEvent.Raise();
+                PlayerSingleton.instance.playerMovement.StopMovement();
+                if(!hasDied)
+                {
+                    hasDied = true;
+                    SecondChancePanel.SetActive(true);
+                }
+                else 
+                {
+                    StartCoroutine(GoMenuAfterDie());
+                }
             }
-            animator.SetTrigger("takeDamage");
+            else
+            {
+                animator.SetTrigger("takeDamage");
+            }
+
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
+        }
+        else if(isBlocking)
+        {
+
         }
        
     }
@@ -64,6 +86,7 @@ public class PlayerLife : MonoBehaviour
             PlayerDie.canControl = false;
             yield return new WaitForSeconds(0.5f);
             PlayerDie.canControl = true;
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -83,5 +106,26 @@ public class PlayerLife : MonoBehaviour
                 electricParticles.Play();
             }
         }
+    }
+    IEnumerator GoMenuAfterDie()
+    {
+        yield return new WaitForSeconds(4);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        yield break;
+    }
+    public void ResetComponent()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ResetComponentWait());
+        
+    }
+    IEnumerator ResetComponentWait()
+    {
+        Start();
+        yield return new WaitForSeconds(1.5f);
+        animator.SetTrigger("reset");
+        yield return new WaitForSeconds(1.5f);
+        PlayerSingleton.instance.playerMovement.canControl = true;
+        yield break;
     }
 }

@@ -3,7 +3,14 @@ guid: 63e320c67d80a9d419eeda6d1b019d04
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerLifeSlider: {instanceID: 0}
+  - lifeText: {instanceID: 0}
+  - enemyDamage: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - electricParticles: {instanceID: 0}
+  - GE_onPlayerDieEvent: {fileID: 11400000, guid: 655805c9cea9db84a9279da2cc750b10, type: 2}
+  - SecondChancePanel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

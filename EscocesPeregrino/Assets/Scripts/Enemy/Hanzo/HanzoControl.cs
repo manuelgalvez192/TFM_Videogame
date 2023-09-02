@@ -11,8 +11,7 @@ public class HanzoControl : BaseHanzo
     {
         base.Start();
     }
-
-
+    
     protected override void ChangeState(HanzoState newState)
     {
         base.ChangeState(newState);
@@ -87,11 +86,21 @@ public class HanzoControl : BaseHanzo
     {
         animator.SetBool("isMoving", false);
         animator.SetTrigger("attack");
-        yield return new WaitForSeconds(0.15f);//los tiempos se cambian segun la animacion
-        attackCollision.SetActive(true);
+        yield return new WaitForSeconds(0.25f);//los tiempos se cambian segun la animacion
+        attackCollision.size = new Vector2(0, attackCollision.size.y);
+        attackCollision.enabled = true;
+        float newSize = 0;
 
-        yield return new WaitForSeconds(0.5f);
-        attackCollision.SetActive(false);
+        while(newSize <= attackCollisionSize)
+        {
+            newSize += 0.05f;
+            attackCollision.size = new Vector2(newSize, attackCollision.size.y);
+        }
+        attackCollision.size = new Vector2(attackCollisionSize, attackCollision.size.y);
+
+
+        yield return new WaitForSeconds(0.13f);
+        attackCollision.enabled = false;
 
         yield return new WaitForSeconds(attackRate);
 
@@ -103,7 +112,7 @@ public class HanzoControl : BaseHanzo
         animator.SetBool("isMoving", false);
         animator.SetTrigger("specialAttack");
 
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(2.06f); // tiempo en desaparecer
         float rot;
         if (PlayerSingleton.instance.gameObject.transform.GetChild(0).transform.localScale.x < 0)
             rot = 1;
@@ -112,8 +121,6 @@ public class HanzoControl : BaseHanzo
         transform.position = new Vector2(PlayerSingleton.instance.gameObject.transform.position.x + TPOffset*rot ,PlayerSingleton.instance.gameObject.transform.position.y);
 
         Vector2 playerDir = player.position - transform.position;
-
-        //playerDir.Normalize();
 
         if (playerDir.x < 0)
         {
@@ -125,7 +132,7 @@ public class HanzoControl : BaseHanzo
         }
         collider.enabled = false;
 
-        yield return new WaitForSeconds(1.6f);
+        yield return new WaitForSeconds(1.3f);
         collider.enabled = true;
 
         yield return new WaitForSeconds(1.6f);

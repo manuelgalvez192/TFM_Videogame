@@ -8,8 +8,8 @@ public class BaseHanzo : MonoBehaviour
     [Header("Components")]
     Rigidbody2D rb;
     [SerializeField] protected Animator animator;
-    [SerializeField] protected GameObject attackCollision;
-
+    [SerializeField] protected BoxCollider2D attackCollision;
+    protected float attackCollisionSize;
     protected Transform player;
     [SerializeField] protected float speed;
     [SerializeField] protected float detectionRange;
@@ -28,12 +28,13 @@ public class BaseHanzo : MonoBehaviour
     {
         player = PlayerSingleton.instance.transform;
         rb = GetComponent<Rigidbody2D>();
-        attackCollision.SetActive(false);
+        attackCollision.enabled = false;
+        attackCollisionSize = attackCollision.size.x;
         ChangeState(HanzoState.Waiting);
     }
     private void OnEnable()
     {
-        animator.SetTrigger("Reset");
+        animator.SetTrigger("reset");
     }
 
 
@@ -96,4 +97,20 @@ public class BaseHanzo : MonoBehaviour
     {
 
     }
+    public virtual void StopBehaviour()
+    {
+        StopCoroutine(currentCorroutine);
+        animator.speed = 0;
+    }
+    public virtual void OnPlayerResucite()
+    {
+        ChangeState(HanzoState.Waiting);
+        animator.SetTrigger("reset");
+        animator.speed = 1;
+        if(DistanceToPlayer()<=1.5)
+        {
+            rb.position = new Vector2(PlayerSingleton.instance.gameObject.transform.position.x + 3, rb.position.y);
+        }
+    }
+
 }

@@ -14,9 +14,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider2D col2D;
 
     [SerializeField] private Transform render;
-    [SerializeField] private float jumpPower;
+    [SerializeField,Range(0.1f,1)]private float jumpPower =0.35f;
+    [SerializeField]AnimationCurve jumpCurve;
     [SerializeField] private float floorLevel;
-    [NonSerialized] public bool canControl = true;
+    /*[NonSerialized]*/ public bool canControl = true;
 
     public bool isGrounded;
     private float timeToBeGrounded = 0.72f;
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem dustMovementPS;
     [SerializeField] ParticleSystem dustJumpPS;
     float movementDustCount;
-    [SerializeField] [Range(0, 0.1f)] float movementDustRate = 0.08f;
+    [SerializeField,Range(0, 0.1f)] float movementDustRate = 0.08f;
 
     private void Start()
     {
@@ -48,48 +49,45 @@ public class PlayerMovement : MonoBehaviour
         PlayerBasicAtack.canMove -= ChangeMoveOption;
     }
 
-  
-
     private void Update()
     {
-        if (InputsGameManager.instance.JumpButtonDown)
+        print(canControl);
+        if (canControl)
         {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isJumping",true);
-            Jump();
-        
-        }
-        /*if (!isGrounded)
-        {
-            timeToBeGrounded -= Time.deltaTime;
-            if (timeToBeGrounded <= 0)
+            if (InputsGameManager.instance.JumpButtonDown)
             {
-                isGrounded = true;
-                timeToBeGrounded = 0.72f;
-                ThrowJumpDust();
-                movementDustCount = 0;
-            }
-        }*/
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", true);
 
-        if (transform.localScale.y <= floorLevel || isGrounded)
-        {
-            IsInGround();
-            animator.SetBool("isJumping", false);
-        }
-        //Cosas de particulas
-        if (rb.velocity.magnitude > 1 && isGrounded)
-        {
-            movementDustCount += Time.deltaTime;
-            if (movementDustCount >= movementDustRate)
+                Jump();
+            }
+
+            if (isGrounded)
+            {
+                IsInGround();
+                animator.SetBool("isJumping", false);
+            }
+
+            //Cosas de particulas
+            if (rb.velocity.magnitude > 1 && isGrounded)
+            {
+                movementDustCount += Time.deltaTime;
+                if (movementDustCount >= movementDustRate)
+                {
+                    movementDustCount = 0;
+                    ThrowMovementDust();
+                }
+            }
+            else
             {
                 movementDustCount = 0;
-                ThrowMovementDust();
+                StopMovementDust();
             }
         }
         else
         {
-            movementDustCount = 0;
-            StopMovementDust();
+            rb.velocity = new Vector2(0, 0);
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -100,24 +98,15 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 isGrounded = false;
-                //rb.gravityScale = 0.3f;
-                // rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-                //floorLevel = transform.localScale.y -1;
-                
+
                 StartCoroutine(JumpBehaviour());
-                ThrowJumpDust();
             }
         }
-        else if(isBlocking)
-        {
-
-        }
-       
     }
 
     IEnumerator JumpBehaviour()
     {
-        float currenthigh=0;
+        /*float currenthigh=0;
         col2D.enabled= false;
         while (currenthigh<=0.4)
         {
@@ -140,9 +129,32 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isJumping", false);
         ThrowJumpDust();
         movementDustCount = 0;
+        yield break;*/
+
+        col2D.enabled = false;
+        isGrounded = false;
+        float currentHeight = 0;
+        float maxTime = jumpCurve[jumpCurve.length - 1].time;
+        float elapsedTime = 0;
+        ThrowJumpDust();
+
+
+        while (elapsedTime <= maxTime)
+        {
+            currentHeight = jumpCurve.Evaluate(elapsedTime) * jumpPower;
+            render.localPosition = new Vector2(render.localPosition.x, currentHeight);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        isGrounded = true;
+        col2D.enabled = true;
+        render.localPosition = Vector2.zero;
+        ThrowJumpDust();
+
         yield break;
     }
-
+   
     private void IsInGround()
     {
         rb.gravityScale = 0;
@@ -185,11 +197,16 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(isBlocking)
         {
-
+            rb.velocity = new Vector2(0, 0);
         }
 
 
 
+    }
+    public void StopMovement()
+    {
+        canControl = false;
+        rb.velocity = Vector2.zero;
     }
     void ThrowMovementDust()
     {

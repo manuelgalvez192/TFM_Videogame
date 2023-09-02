@@ -346,7 +346,7 @@ AnimationClip:
   - time: 0.5
     functionName: FinishCombo
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 9100000, guid: 8ac8e05387fc16b48bce4a93cfd9be0b, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

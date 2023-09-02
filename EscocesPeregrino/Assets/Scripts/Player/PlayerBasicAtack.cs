@@ -35,10 +35,18 @@ public class PlayerBasicAtack : MonoBehaviour
     {
         if (!atacking)
         {
-            canMove?.Invoke(false);
-            hitbox.SetActive(true);
-            atacking = true;
-            animator.SetTrigger("" + comboCount);
+            if(PlayerSingleton.instance.playerMovement.isGrounded)
+            {
+                canMove?.Invoke(false);
+                hitbox.SetActive(true);
+                atacking = true;
+                animator.SetTrigger("" + comboCount);
+
+            }
+            else
+            {
+                //patada voladora siuuuuuuuu
+            }
         }
     }
     

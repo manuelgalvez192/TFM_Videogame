@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:EscocesPeregrino/Assets/Sprites/SePuedeBorrar.jpg.meta
-guid: ea3950ad45342a14ca8712a696a804ba
-========
-guid: 008c2c02f517cab4b93b9c28a43ec683
->>>>>>>> playerAtack:EscocesPeregrino/Assets/Sprites/ScottPilgrimSprites.png.meta
+guid: 544d7d690c4eec042b383c559586bb1d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,11 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<<< HEAD:EscocesPeregrino/Assets/Sprites/SePuedeBorrar.jpg.meta
   spriteMode: 1
-========
-  spriteMode: 2
->>>>>>>> playerAtack:EscocesPeregrino/Assets/Sprites/ScottPilgrimSprites.png.meta
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -114,7 +106,6 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-<<<<<<<< HEAD:EscocesPeregrino/Assets/Sprites/SePuedeBorrar.jpg.meta
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -127,8 +118,6 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-========
->>>>>>>> playerAtack:EscocesPeregrino/Assets/Sprites/ScottPilgrimSprites.png.meta
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1

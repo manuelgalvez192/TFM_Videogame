@@ -490,6 +490,18 @@ public class InputsGameManager : MonoBehaviour
             return moveMenuDownInput;
         }
     }
+
+
+    public void ResetInputs()
+    {
+        horizontalAxis = 0;
+        verticalAxis = 0;
+        attackInput=false;
+        jumpInput  =false;
+        dashInput  =false;
+        coverInput =false;
+        pickInput = false;
+    }
 }
 
 [System.Serializable]
