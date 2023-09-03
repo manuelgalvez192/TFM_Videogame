@@ -19,10 +19,12 @@ public class ChangeScene : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.CompareTag("Player"))
+        if(collision.CompareTag("Player"))
         {
+            Debug.Log("Inside");
             SceneManager.LoadScene(changeLevel);
         }
     }
