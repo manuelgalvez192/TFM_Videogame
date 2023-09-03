@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1279864461924210289}
   m_Layer: 0
   m_Name: TakeDamageArea
-  m_TagString: Untagged
+  m_TagString: LifeComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLifeSlider: {fileID: 0}
   lifeText: {fileID: 0}
-  maxLife: 4
+  maxLife: 50
   enemyDamage: {fileID: 0}
   animator: {fileID: 2162832084452580250}
   electricParticles: {fileID: 6138868065206060327}
@@ -5354,7 +5354,8 @@ MonoBehaviour:
   playerBasicAttack: {fileID: 5799724551216947619}
   playerMovement: {fileID: 930221121332049683}
   playerAnimator: {fileID: 2162832084452580250}
-  playerAttackDamage: 0
+  playerAttackDamage: 2
+  rayParticles: {fileID: 6138868065206060327}
 --- !u!1 &3681559683723559122
 GameObject:
   m_ObjectHideFlags: 0
@@ -6230,6 +6231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2480332467621965376}
   - component: {fileID: 5128125741962643144}
+  - component: {fileID: 85108662}
   m_Layer: 0
   m_Name: PunchHitbox
   m_TagString: PlayerPunchHB
@@ -6268,6 +6270,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &85108662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257791292594457816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d81724733f54b245b4f2bfc6d3aa314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerCollision: 1
+  damageAmount: 2
+  otherActions:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8422225528460120325
 GameObject:
   m_ObjectHideFlags: 0

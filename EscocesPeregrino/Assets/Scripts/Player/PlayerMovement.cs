@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        print(canControl);
         if (canControl)
         {
             if (InputsGameManager.instance.JumpButtonDown)
