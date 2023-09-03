@@ -186,6 +186,10 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetBool("isRunning", true);
                 }
 
+                if(rb.velocity.x != 0 || rb.velocity.x !=0)
+                {
+                    StartCoroutine(WaitTimeToFootStepSound());
+                }
 
 
             }
@@ -219,5 +223,11 @@ public class PlayerMovement : MonoBehaviour
     void ThrowJumpDust()
     {
         dustJumpPS.Play();
+    }
+    private IEnumerator WaitTimeToFootStepSound()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
+        yield return new WaitForSeconds(1f);
+       
     }
 }
