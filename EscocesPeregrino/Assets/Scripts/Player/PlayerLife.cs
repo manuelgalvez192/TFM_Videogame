@@ -34,6 +34,7 @@ public class PlayerLife : MonoBehaviour
     }
     public void GetDamage(float damage)
     {
+        StartCoroutine(CanControl());
         if(!isBlocking)
         {
             currentLife -= damage;
@@ -89,14 +90,14 @@ public class PlayerLife : MonoBehaviour
             
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "EnemyPunchHB")
         {
             StartCoroutine(CanControl());
             GetDamage(enemyDamage.enemyDamage);
         }
-
+        
         if(other.tag == "Laser")
         {
             if(PlayerSingleton.instance.playerMovement.isGrounded)
@@ -106,7 +107,7 @@ public class PlayerLife : MonoBehaviour
                 electricParticles.Play();
             }
         }
-    }
+    }*/
     IEnumerator GoMenuAfterDie()
     {
         yield return new WaitForSeconds(4);

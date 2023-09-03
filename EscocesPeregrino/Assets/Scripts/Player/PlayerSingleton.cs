@@ -15,6 +15,7 @@ public class PlayerSingleton : MonoBehaviour
     public PlayerMovement playerMovement;
     public Animator playerAnimator;
     public float playerAttackDamage;
+    [SerializeField] ParticleSystem rayParticles;
 
     void Awake()
     {
@@ -24,9 +25,10 @@ public class PlayerSingleton : MonoBehaviour
             Destroy(this);
         playerAttackDamage = playerBasicAttack.playerDamage;
     }
-
-    void Update()
+    public void PlayRayParticles()
     {
-        
+        rayParticles.Play();
     }
 }
+
+

@@ -17,7 +17,7 @@ public class LifeComponent : MonoBehaviour
         currentLife = maxLife;
     }
 
-    void GetDamage(float Damage)
+    public void GetDamage(float Damage)
     {
         currentLife -= Damage;
         if(currentLife<=0)
@@ -27,11 +27,11 @@ public class LifeComponent : MonoBehaviour
         else
             DamageAction.Invoke();
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag ==damagedTag)
-        {
-            GetDamage(PlayerSingleton.instance.playerAttackDamage);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if(other.tag ==damagedTag)
+    //    {
+    //        GetDamage(PlayerSingleton.instance.playerAttackDamage);
+    //    }
+    //}
 }

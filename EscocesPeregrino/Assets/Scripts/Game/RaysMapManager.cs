@@ -59,5 +59,9 @@ public class RaysMapManager : MonoBehaviour
             isPlayerIn = false;
         }
     }
+    public void PlayRayParticles()
+    {
+        PlayerSingleton.instance.PlayRayParticles();
+    }
 }
 

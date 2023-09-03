@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerPunchHB
   - EnemyPunchHB
+  - Laser
+  - LifeComponent
   layers:
   - Default
   - TransparentFX
