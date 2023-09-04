@@ -226,7 +226,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator WaitTimeToFootStepSound()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
+        //AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
         yield return new WaitForSeconds(1f);
        
     }
