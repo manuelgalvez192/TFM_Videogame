@@ -2046,6 +2046,34 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 745021955308161196, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 530857699}
+    - target: {fileID: 745021955308161196, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: exitButton
+      value: 
+      objectReference: {fileID: 1308123857}
+    - target: {fileID: 745021955308161196, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: resumeButton
+      value: 
+      objectReference: {fileID: 1659485886}
+    - target: {fileID: 745021955308161196, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: exitButtonScaleX
+      value: 0.22496
+      objectReference: {fileID: 0}
+    - target: {fileID: 745021955308161196, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: exitButtonScaleY
+      value: 0.62498
+      objectReference: {fileID: 0}
+    - target: {fileID: 745021955308161196, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: resumeButtonScaleX
+      value: 0.22496
+      objectReference: {fileID: 0}
+    - target: {fileID: 745021955308161196, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: resumeButtonScaleY
+      value: 0.62498
+      objectReference: {fileID: 0}
     - target: {fileID: 1507965046322904731, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2133,6 +2161,26 @@ PrefabInstance:
     - target: {fileID: 1507965046322904735, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
       propertyPath: m_Name
       value: UIControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911041968061398930, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779206407783932572, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 790936464}
+    - target: {fileID: 6779206407783932572, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779206407783932572, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: pauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779206407783932572, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
