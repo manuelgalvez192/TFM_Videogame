@@ -11,6 +11,7 @@ public class RoxxaneControl : BaseHanzo
     [SerializeField] BoxCollider2D damageCollision;
     [SerializeField] float specialAttackSpeed;
     [SerializeField] SpriteRenderer trunk;
+    [SerializeField] private GameObject collision;
     void Start()
     {
         base.Start();
@@ -305,6 +306,7 @@ public class RoxxaneControl : BaseHanzo
 
     public override void Die()
     {
+        collision.SetActive(false);
         base.Die();
         StopCoroutine(currentCorroutine);
         animator.SetTrigger("die");

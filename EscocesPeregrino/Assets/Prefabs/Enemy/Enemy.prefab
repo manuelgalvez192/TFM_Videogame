@@ -66,6 +66,7 @@ MonoBehaviour:
   enemyAi: {fileID: 772806968628441091}
   playerDamage: {fileID: 0}
   animator: {fileID: 7568013689733089673}
+  collision: {fileID: 7476692219413400807}
   healDrop: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
 --- !u!1 &1628507700935195523
 GameObject:

@@ -7,6 +7,7 @@ public class HanzoControl : BaseHanzo
     public float TPOffset = 0.5f;
     public float specialAttackPercent = 10;
     [SerializeField] Collider2D collider;
+    [SerializeField] private GameObject collision;
     void Start()
     {
         base.Start();
@@ -155,6 +156,7 @@ public class HanzoControl : BaseHanzo
     }
     public override void Die()
     {
+        collision.SetActive(false);
         base.Die();
         StopCoroutine(currentCorroutine);
         animator.SetTrigger("die");
