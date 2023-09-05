@@ -78,6 +78,7 @@ public class MenuPlayerMovement : MonoBehaviour
         if (InputsGameManager.instance.HorizontalAxis != 0 || InputsGameManager.instance.VerticalAxis != 0)
         {
             anim.SetBool("isRunning", true);
+            if(isGrounded)
             ThrowMovementDust();
         }
         else
@@ -124,6 +125,7 @@ public class MenuPlayerMovement : MonoBehaviour
         float elapsedTime = 0;
         anim.SetBool("isGrounded", false);
         ThrowJumpDust();
+        StopMovementDust();
 
 
         while (elapsedTime <= maxTime)
@@ -138,6 +140,7 @@ public class MenuPlayerMovement : MonoBehaviour
         anim.SetBool("isGrounded", true);
         render.localPosition = Vector2.zero;
         ThrowJumpDust();
+
 
         yield break;
     }
