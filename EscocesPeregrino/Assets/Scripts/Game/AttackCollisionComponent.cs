@@ -15,10 +15,13 @@ public class AttackCollisionComponent : MonoBehaviour
         {
             if(isPlayerCollision)
             {
+                //FDaño enemigo
                 other.GetComponent<LifeComponent>().GetDamage(damageAmount);
+                //lanzar sonido
             }
             else
             {
+                //daño jugador
                 other.GetComponent<PlayerLife>().GetDamage(damageAmount);
             }
             otherActions.Invoke();

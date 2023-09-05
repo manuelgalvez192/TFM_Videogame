@@ -12,6 +12,7 @@ public class JoystickControl : MonoBehaviour
     float currentDistance;
     [Header("Funcionality")]
     [SerializeField]UIPadController controller;
+    [SerializeField] float responseSpeed = 10;
 
     void Update()
     {
@@ -38,11 +39,16 @@ public class JoystickControl : MonoBehaviour
             nextCircle.rectTransform.localPosition = newPos / 2;
         }
     }
-
     void SetAxis()
     {
-        controller.HorizontalAxis = GetAxisMagnitude(lastHandle.rectTransform.localPosition.x);
-        controller.VerticalAxis = GetAxisMagnitude(lastHandle.rectTransform.localPosition.y);
+        float hor = GetAxisMagnitude(lastHandle.rectTransform.localPosition.x);
+        float ver = GetAxisMagnitude(lastHandle.rectTransform.localPosition.y);
+        controller.HorizontalAxis= Mathf.Lerp(controller.HorizontalAxis, hor, responseSpeed * Time.deltaTime);
+        controller.VerticalAxis = Mathf.Lerp(controller.VerticalAxis, ver, responseSpeed * Time.deltaTime);
+
+        //controller.HorizontalAxis = GetAxisMagnitude(lastHandle.rectTransform.localPosition.x);
+        //controller.VerticalAxis = GetAxisMagnitude(lastHandle.rectTransform.localPosition.y);
+        
     }
 
     float GetAxisMagnitude(float magnitude)
