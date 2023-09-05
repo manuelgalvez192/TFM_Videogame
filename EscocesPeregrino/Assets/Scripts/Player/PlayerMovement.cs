@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private float timeToBeGrounded = 0.72f;
 
     public bool isBlocking;
+    private bool isRunning;
+    private bool playingStepsSounds;
 
     [Header("Particle System")]
     [SerializeField] ParticleSystem dustMovementPS;
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerBasicAtack.canMove += ChangeMoveOption;
         isGrounded = true;
         isBlocking = false;
+        playingStepsSounds=false;
         // floorLevel = transform.localScale.y;
     }
 
@@ -89,6 +92,9 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
             animator.SetBool("isRunning", false);
         }
+
+        isRunning = animator.GetBool("isRunning");
+        
     }
 
     private void Jump()
@@ -100,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = false;
 
                 StartCoroutine(JumpBehaviour());
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJump,this.transform.position);
             }
         }
     }
@@ -188,9 +195,10 @@ public class PlayerMovement : MonoBehaviour
 
                 if(rb.velocity.x != 0 || rb.velocity.x !=0)
                 {
-                    StartCoroutine(WaitTimeToFootStepSound());
+                    
                 }
 
+               
 
             }
             else
@@ -226,8 +234,20 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator WaitTimeToFootStepSound()
     {
-        //AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
-        yield return new WaitForSeconds(1f);
+        while(isRunning)
+        {
+            if (!playingStepsSounds)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
+                playingStepsSounds = true;
+            }
+
+        }
+        if (!isRunning)
+        {
+            playingStepsSounds = false;
+        }
+        yield return null;
        
     }
 }

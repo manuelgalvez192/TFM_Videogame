@@ -58,6 +58,20 @@ MonoBehaviour:
       Data3: 1472931761
       Data4: -1628122648
     Path: event:/PunchsSFX
+  <playerNoHit>k__BackingField:
+    Guid:
+      Data1: 203962333
+      Data2: 1206865458
+      Data3: -1541545544
+      Data4: 479876699
+    Path: event:/PunchNoHit
+  <playerJump>k__BackingField:
+    Guid:
+      Data1: -2135643058
+      Data2: 1148709267
+      Data3: -1027415107
+      Data4: -493455788
+    Path: event:/Jump
   <menuClick>k__BackingField:
     Guid:
       Data1: 1876372714

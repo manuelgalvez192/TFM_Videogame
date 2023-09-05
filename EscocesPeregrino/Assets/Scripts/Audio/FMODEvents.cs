@@ -8,6 +8,8 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference playerFootsteps { get; private set; }
     [field: SerializeField] public EventReference playerHit { get; private set; }
+    [field: SerializeField] public EventReference playerNoHit { get; private set; }
+    [field: SerializeField] public EventReference playerJump { get; private set; }
 
     [field: Header ("Menu SFX")]
     [field: SerializeField] public EventReference menuClick { get; private set; }

@@ -13,6 +13,7 @@ public class PlayerBasicAtack : MonoBehaviour
     
     private int comboCount;
     private bool atacking;
+    private bool enemyHit;
     
     public delegate bool CanMove(bool value);
     public static CanMove canMove;
@@ -20,6 +21,7 @@ public class PlayerBasicAtack : MonoBehaviour
     void Start()
     {
         atacking = false;
+        enemyHit = false;
         comboCount = 0;
     }
 
@@ -37,11 +39,19 @@ public class PlayerBasicAtack : MonoBehaviour
         {
             if(PlayerSingleton.instance.playerMovement.isGrounded)
             {
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
+                
                 canMove?.Invoke(false);
                 hitbox.SetActive(true);
                 atacking = true;
                 animator.SetTrigger("" + comboCount);
+                if(enemyHit)
+                {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
+                }
+                else if(!enemyHit)
+                {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerNoHit, this.transform.position);
+                }
 
             }
             else
@@ -67,5 +77,14 @@ public class PlayerBasicAtack : MonoBehaviour
         canMove?.Invoke(true);
         atacking = false;
         hitbox.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit");
+            enemyHit = true;
+        }
     }
 }
