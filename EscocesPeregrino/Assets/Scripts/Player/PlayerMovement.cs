@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]AnimationCurve jumpCurve;
     [SerializeField] private float floorLevel;
     /*[NonSerialized]*/ public bool canControl = true;
+    [SerializeField] Transform shadowRender;
+    [SerializeField] float shadowMultiplyJump;
+    [SerializeField] float shadowMultiplyRunning;
+    float currentShadowSinusState;
+    Vector3 shadowStartScale;
 
     public bool isGrounded;
     private float timeToBeGrounded = 0.72f;
@@ -39,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         isBlocking = false;
         playingStepsSounds=false;
         // floorLevel = transform.localScale.y;
+        shadowStartScale = shadowRender.localScale;
     }
 
 
@@ -52,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerBasicAtack.canMove -= ChangeMoveOption;
     }
-
     private void Update()
     {
         if (canControl)
@@ -144,16 +149,19 @@ public class PlayerMovement : MonoBehaviour
         float maxTime = jumpCurve[jumpCurve.length - 1].time;
         float elapsedTime = 0;
         ThrowJumpDust();
+        
 
 
         while (elapsedTime <= maxTime)
         {
-            currentHeight = jumpCurve.Evaluate(elapsedTime) * jumpPower;
+            currentHeight = jumpCurve.Evaluate(elapsedTime);
+            Vector3 newScale = shadowStartScale + shadowStartScale * currentHeight * shadowMultiplyJump;
+            shadowRender.localScale = newScale;
+            currentHeight*= jumpPower;
             render.localPosition = new Vector2(render.localPosition.x, currentHeight);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         isGrounded = true;
         col2D.enabled = true;
         render.localPosition = Vector2.zero;
@@ -193,9 +201,13 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetBool("isRunning", true);
                 }
 
-                if(rb.velocity.x != 0 || rb.velocity.x !=0)
+                if(rb.velocity != Vector2.zero)
                 {
-                    
+                    currentShadowSinusState += Time.deltaTime * 7.5f;
+                    if (currentShadowSinusState >= 2 * 3.14)
+                        currentShadowSinusState = 0;
+                    float shadowScaley = Mathf.Sin(currentShadowSinusState);
+                    shadowRender.localScale = shadowStartScale + shadowStartScale * shadowMultiplyRunning * shadowScaley;
                 }
 
                
