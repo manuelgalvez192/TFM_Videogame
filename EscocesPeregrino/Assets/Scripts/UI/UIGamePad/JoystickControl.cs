@@ -39,12 +39,11 @@ public class JoystickControl : MonoBehaviour
             nextCircle.rectTransform.localPosition = newPos / 2;
         }
     }
-    public float holaBebe;
     void SetAxis()
     {
         float hor = GetAxisMagnitude(lastHandle.rectTransform.localPosition.x);
         float ver = GetAxisMagnitude(lastHandle.rectTransform.localPosition.y);
-        controller.HorizontalAxis=holaBebe = Mathf.Lerp(controller.HorizontalAxis, hor, responseSpeed * Time.deltaTime);
+        controller.HorizontalAxis= Mathf.Lerp(controller.HorizontalAxis, hor, responseSpeed * Time.deltaTime);
         controller.VerticalAxis = Mathf.Lerp(controller.VerticalAxis, ver, responseSpeed * Time.deltaTime);
 
         //controller.HorizontalAxis = GetAxisMagnitude(lastHandle.rectTransform.localPosition.x);
