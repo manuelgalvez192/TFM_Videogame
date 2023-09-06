@@ -23,6 +23,9 @@ public class AdsManager : MonoBehaviour
     const string interId = "ca-app-pub-3940256099942544/1033173712";
     const string rewardVideoId = "ca-app-pub-3940256099942544/5224354917";
     #endregion
+    static bool haveConexion = false;
+    public bool HaveConexion
+    { get { return haveConexion; } }
 
     void Awake()
     {
@@ -33,9 +36,7 @@ public class AdsManager : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        MobileAds.RaiseAdEventsOnUnityMainThread = true;
-
-        MobileAds.Initialize((InitializationStatus initStatus) => { });
+        StartCoroutine(CheckingConexion());
     }
 
     #region Banner
@@ -44,6 +45,8 @@ public class AdsManager : MonoBehaviour
     /// </summary>
     public void ThrowBannerAdd()
     {
+        if (!haveConexion)
+            return;
         CloseBannerAdd();
         //crear banner
         bannerAd = new BannerView(bannerId, AdSize.Banner, AdPosition.Bottom);
@@ -130,6 +133,8 @@ public class AdsManager : MonoBehaviour
     /// </summary>
     public void ThrowInterstitialAd()
     {
+        if (!haveConexion)
+            return;
         StartCoroutine(ThorwingInterstitialAD());
     }
     IEnumerator ThorwingInterstitialAD()
@@ -224,6 +229,8 @@ public class AdsManager : MonoBehaviour
     /// </summary>
     public void ThrowVideoRewardAd()
     {
+        if (!haveConexion)
+            return;
         StartCoroutine(ThrowingRewardVideo());
     }
     IEnumerator ThrowingRewardVideo()
@@ -366,6 +373,29 @@ public class AdsManager : MonoBehaviour
     void GetRewarded()
     {
         print("HAS OBTENIDO UN PONI AMARILLO");
+    }
+    IEnumerator CheckingConexion()
+    {
+        string URL = "https://www.google.com";
+        using(WWW page = new WWW(URL))
+        {
+            yield return page;
+            if(string.IsNullOrEmpty(page.error))
+            {
+                haveConexion = true;
+                //inicializarAnuncios
+                MobileAds.RaiseAdEventsOnUnityMainThread = true;
+
+                MobileAds.Initialize((InitializationStatus initStatus) => { });
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MainMenu") ;
+                ThrowBannerAdd();
+            }
+            else
+            {
+                haveConexion = false;
+            }
+        }
+
     }
 
     #endregion

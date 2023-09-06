@@ -10,10 +10,21 @@ public class ScondChanceControl : MonoBehaviour
     [SerializeField] GameObject panel;
     IEnumerator currentBehavior;
     [SerializeField] GameEvent onPlayerResucite;
+    bool haveConexion = false;
+    [SerializeField] Image buttonImg, rewardImage;
+    [SerializeField] Text rewardText;
     void OnEnable()
     {
         panel.SetActive(false);
         Invoke("ActivePanel", 1f);
+        haveConexion = AdsManager.instance.HaveConexion;
+        if(!haveConexion)
+        {
+            buttonImg.color = new Vector4(buttonImg.color.r, buttonImg.color.g, buttonImg.color.b, buttonImg.color.a / 2);
+            rewardImage.color = new Vector4(rewardImage.color.r, rewardImage.color.g, rewardImage.color.b, rewardImage.color.a / 2);
+            rewardText.color = new Vector4(rewardText.color.r, rewardText.color.g, rewardText.color.b, rewardText.color.a / 2);
+
+        }
     }
 
     IEnumerator SecondChangeBehaviour()
@@ -37,8 +48,11 @@ public class ScondChanceControl : MonoBehaviour
     }
     public void GetReward()
     {
+        if (!haveConexion)
+            return;
         StopCoroutine(currentBehavior);
         AdsManager.instance.ThrowVideoRewardAd(onPlayerResucite);
+        gameObject.SetActive(false);
     }
     void ActivePanel()
     {

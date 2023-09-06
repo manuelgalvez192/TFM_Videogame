@@ -5384,7 +5384,7 @@ Transform:
   - {fileID: 1696544255}
   - {fileID: 7409381513328026298}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2679453431987630118
 Rigidbody2D:
@@ -5695,7 +5695,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.94509804}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5722,18 +5722,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ScondChanceControl, Assembly-CSharp
         m_MethodName: GetReward
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6071996842648617298}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5974,6 +5962,9 @@ MonoBehaviour:
   timeToCkick: 5
   panel: {fileID: 1356193676242706595}
   onPlayerResucite: {fileID: 11400000, guid: 1b12d937d20dd77468e35de49b0b2987, type: 2}
+  buttonImg: {fileID: 6444462311013449557}
+  rewardImage: {fileID: 2917027293130456916}
+  rewardText: {fileID: 7690185350964745028}
 --- !u!1 &6329062689742753813
 GameObject:
   m_ObjectHideFlags: 0

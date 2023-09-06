@@ -6,7 +6,7 @@ public class MainMenuManager : MonoBehaviour
 {
     void Start()
     {
-        AdsManager.instance.ThrowBannerAdd();
+        //AdsManager.instance.ThrowBannerAdd();
     }
     public void PlayGame()
     {
