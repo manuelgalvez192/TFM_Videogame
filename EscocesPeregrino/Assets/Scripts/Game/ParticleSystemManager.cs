@@ -8,7 +8,15 @@ public class ParticleSystemManager : MonoBehaviour
     {
         public string typeName;
         public GameObject particlePrefab;
+        public Vector3 spawnScale;
+        public Vector3 spawnRotation;
         List<GameObject> instances;
+
+        public void InitializeList()
+        {
+            instances = new List<GameObject>();
+        }
+
         public GameObject GetParticle()
         {
             foreach(GameObject obj in instances)
@@ -38,26 +46,32 @@ public class ParticleSystemManager : MonoBehaviour
 
         foreach(ParticleGroup group in particles)
         {
+            group.InitializeList();
             particlesTypes.Add(group.typeName, group);
         }
-        
     }
 
     public void ThrowParticleSystem(string particleName, Transform transform)
     {
-        GameObject newparticle = particlesTypes[particleName].GetParticle();
+        if (!particlesTypes.ContainsKey(particleName))
+            return;
+        ParticleGroup newGroup = particlesTypes[particleName];
+        GameObject newparticle = newGroup.GetParticle();
 
         newparticle.transform.parent = transform;
-        newparticle.transform.position = Vector2.zero;
-        newparticle.transform.localScale = Vector2.one;
+        newparticle.transform.localPosition = Vector2.zero;
+        newparticle.transform.localRotation = Quaternion.Euler(newGroup.spawnRotation);
+        newparticle.transform.localScale = newGroup.spawnScale;
 
         newparticle.SetActive(true);
     }
     public void ThrowParticleSystem(string particleName, Vector2 Position)
     {
+        if (!particlesTypes.ContainsKey(particleName))
+            return;
         GameObject newparticle = particlesTypes[particleName].GetParticle();
 
-        newparticle.transform.position = Position;
+        newparticle.transform.localPosition = Position;
         newparticle.transform.localScale = Vector2.one;
 
         newparticle.SetActive(true);

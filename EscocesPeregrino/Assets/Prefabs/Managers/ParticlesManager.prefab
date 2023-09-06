@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5729876870082862170
 MonoBehaviour:
@@ -47,5 +47,17 @@ MonoBehaviour:
   particles:
   - typeName: RandomText
     particlePrefab: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
+    spawnScale: {x: 0.15, y: 0, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
   - typeName: Blood
     particlePrefab: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+    spawnScale: {x: 0.5, y: 0.5, z: 0.5}
+    spawnRotation: {x: -45, y: 0, z: 0}
+  - typeName: Fire
+    particlePrefab: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+    spawnScale: {x: 0.1, y: 0.1, z: 0.1}
+    spawnRotation: {x: 0, y: 0, z: 0}
+  - typeName: Boom
+    particlePrefab: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
+    spawnScale: {x: 0.1, y: 0.1, z: 0.1}
+    spawnRotation: {x: 0, y: 0, z: 0}
