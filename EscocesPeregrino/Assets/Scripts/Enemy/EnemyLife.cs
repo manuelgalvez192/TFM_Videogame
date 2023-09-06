@@ -40,6 +40,7 @@ public class EnemyLife : MonoBehaviour
                 currentLife -= playerDamage.playerDamage;
                 if (currentLife <= 0)
                 {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
                     isAlive = false;
                     collision.SetActive(false);
                     StartCoroutine(EnemyDeadAnimation());
