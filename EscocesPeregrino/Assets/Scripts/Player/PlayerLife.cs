@@ -66,7 +66,7 @@ public class PlayerLife : MonoBehaviour
         }
         else if(isBlocking)
         {
-
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerBlock, this.transform.position);
         }
        
     }
