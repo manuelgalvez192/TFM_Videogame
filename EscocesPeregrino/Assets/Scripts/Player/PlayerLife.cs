@@ -40,6 +40,7 @@ public class PlayerLife : MonoBehaviour
             currentLife -= damage;
             if (currentLife <= 0)
             {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath, this.transform.position);
                 animator.SetTrigger("die");
                 currentLife = 0;
                 PostProcessingManager.instance.OnPlayerDie();
