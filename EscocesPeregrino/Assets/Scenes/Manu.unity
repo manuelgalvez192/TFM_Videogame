@@ -835,7 +835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1011426923}
   minPlayerPosition: -2.467
-  maxPlayerPosition: 31.5
+  maxPlayerPosition: 30.43088
   offset: {x: 1, y: 0, z: 0}
 --- !u!1 &790936463
 GameObject:
@@ -869,10 +869,10 @@ MonoBehaviour:
   pauseMenu: {fileID: 530857699}
   resumeButton: {fileID: 1659485886}
   exitButton: {fileID: 1308123857}
-  resumeButtonScaleX: 0.22496
-  resumeButtonScaleY: 0.62498
-  exitButtonScaleX: 0.22496
-  exitButtonScaleY: 0.62498
+  resumeButtonScaleX: 0.2448465
+  resumeButtonScaleY: 0.6802282
+  exitButtonScaleX: 0.2448465
+  exitButtonScaleY: 0.6802282
 --- !u!4 &790936465
 Transform:
   m_ObjectHideFlags: 0
