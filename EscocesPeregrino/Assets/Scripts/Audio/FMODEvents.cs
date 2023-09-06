@@ -10,10 +10,26 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference playerHit { get; private set; }
     [field: SerializeField] public EventReference playerNoHit { get; private set; }
     [field: SerializeField] public EventReference playerJump { get; private set; }
+    [field: SerializeField] public EventReference playerLand { get; private set; }
+    [field: SerializeField] public EventReference playerSuperPunch { get; private set; }
+    [field: SerializeField] public EventReference playerBlock { get; private set; }
+    [field: SerializeField] public EventReference playerDeath { get; private set; }
+
+
+    [field: Header("Enemies SFX")]
+    [field: SerializeField] public EventReference enemieDeath { get; private set; }
+
+
 
     [field: Header ("Menu SFX")]
     [field: SerializeField] public EventReference menuClick { get; private set; }
+
+    [field: Header("Map SFX")]
+    [field: SerializeField] public EventReference laser { get; private set; }
     public static FMODEvents instance { get; private set; }
+
+    
+
 
     private void Awake()
     {

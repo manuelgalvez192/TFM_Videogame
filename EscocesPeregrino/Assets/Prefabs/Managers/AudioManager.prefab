@@ -72,6 +72,41 @@ MonoBehaviour:
       Data3: -1027415107
       Data4: -493455788
     Path: event:/Jump
+  <playerLand>k__BackingField:
+    Guid:
+      Data1: 1929732936
+      Data2: 1103781019
+      Data3: -1413188730
+      Data4: -25073617
+    Path: event:/Landing
+  <playerSuperPunch>k__BackingField:
+    Guid:
+      Data1: -268711590
+      Data2: 1163508507
+      Data3: -459875912
+      Data4: -1011647666
+    Path: event:/SuperPunch
+  <playerBlock>k__BackingField:
+    Guid:
+      Data1: -1326337266
+      Data2: 1243179224
+      Data3: -1516305767
+      Data4: 166998166
+    Path: event:/Blocking
+  <playerDeath>k__BackingField:
+    Guid:
+      Data1: -780766456
+      Data2: 1115081446
+      Data3: 954861751
+      Data4: 197544044
+    Path: event:/PlayerDie
+  <enemieDeath>k__BackingField:
+    Guid:
+      Data1: 1262419199
+      Data2: 1238095679
+      Data3: 1287203505
+      Data4: -613951182
+    Path: event:/EnemyDeath
   <menuClick>k__BackingField:
     Guid:
       Data1: 1876372714
@@ -79,6 +114,13 @@ MonoBehaviour:
       Data3: -355427699
       Data4: -1035204747
     Path: event:/MenuClick2
+  <laser>k__BackingField:
+    Guid:
+      Data1: -2055735516
+      Data2: 1086791007
+      Data3: 1370618038
+      Data4: -1017071151
+    Path: event:/Laser
 --- !u!1 &2139539709155671356
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +152,7 @@ Transform:
   m_Children:
   - {fileID: 2139539708802294318}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2139539709155671358
 MonoBehaviour:

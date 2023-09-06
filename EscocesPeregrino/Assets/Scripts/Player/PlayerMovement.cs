@@ -162,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerLand,this.transform.position);
         isGrounded = true;
         col2D.enabled = true;
         render.localPosition = Vector2.zero;
