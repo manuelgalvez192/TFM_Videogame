@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/FMODAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638295523716999877
+  lastModified: 638293496405438400
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -49,6 +49,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2050
+--- !u!114 &-8449811932103961583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemieDie
+  m_EditorClassIdentifier: 
+  Path: event:/EnemieDie
+  Guid:
+    Data1: 1499850229
+    Data2: 1149116802
+    Data3: 1217894579
+    Data4: -1310262300
+  Banks:
+  - {fileID: 749708519413997488}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1172
+--- !u!114 &-8328511144713261947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerDie
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerDie
+  Guid:
+    Data1: -780766456
+    Data2: 1115081446
+    Data3: 954861751
+    Data4: 197544044
+  Banks:
+  - {fileID: 749708519413997488}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2962
 --- !u!114 &-7465758738553227357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +184,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 375
+--- !u!114 &-3884993630078119861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Laser
+  m_EditorClassIdentifier: 
+  Path: event:/Laser
+  Guid:
+    Data1: -2055735516
+    Data2: 1086791007
+    Data3: 1370618038
+    Data4: -1017071151
+  Banks:
+  - {fileID: 749708519413997488}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1512
+--- !u!114 &-2199248889775457507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Landing
+  m_EditorClassIdentifier: 
+  Path: event:/Landing
+  Guid:
+    Data1: 1929732936
+    Data2: 1103781019
+    Data3: -1413188730
+    Data4: -25073617
+  Banks:
+  - {fileID: 749708519413997488}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2669
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,12 +262,16 @@ MonoBehaviour:
   - {fileID: -5405171862482630729}
   - {fileID: -5428413832240796161}
   - {fileID: 5170898918576226084}
+  - {fileID: -8328511144713261947}
+  - {fileID: -3884993630078119861}
+  - {fileID: -2199248889775457507}
+  - {fileID: -8449811932103961583}
   EditorParameters: []
   MasterBanks:
   - {fileID: -9080069057840936153}
   StringsBanks:
   - {fileID: 5643316299945300420}
-  cacheTime: 638295523717089851
+  cacheTime: 638296008895215388
   cacheVersion: 131605
 --- !u!114 &749708519413997488
 MonoBehaviour:
@@ -176,12 +288,12 @@ MonoBehaviour:
   Path: Assets/FMODAssets/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638295523717089851
+  lastModified: 638296008895215388
   FileSizes:
   - Name: Desktop
-    Value: 127840
+    Value: 187712
   - Name: Mobile
-    Value: 324672
+    Value: 478016
   Exists: 1
 --- !u!114 &3706899479452139836
 MonoBehaviour:
@@ -279,12 +391,12 @@ MonoBehaviour:
   Path: Assets/FMODAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638295523717029840
+  lastModified: 638296008895145566
   FileSizes:
   - Name: Desktop
-    Value: 1064
+    Value: 1246
   - Name: Mobile
-    Value: 1064
+    Value: 1246
   - Name: PC
-    Value: 1064
+    Value: 1246
   Exists: 1

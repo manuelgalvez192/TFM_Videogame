@@ -9,9 +9,10 @@ public class LifeComponent : MonoBehaviour
     public float currentLife;
 
     [SerializeField] string damagedTag;
+    [SerializeField] Transform particlePos;
+
     [SerializeField] UnityEvent DieAction;
     [SerializeField] UnityEvent DamageAction;
-
     void OnEnable()
     {
         currentLife = maxLife;
@@ -20,6 +21,7 @@ public class LifeComponent : MonoBehaviour
     public void GetDamage(float Damage)
     {
         currentLife -= Damage;
+        ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
         if(currentLife<=0)
         {
             DieAction.Invoke();
