@@ -13,6 +13,7 @@ public class LifeComponent : MonoBehaviour
 
     [SerializeField] UnityEvent DieAction;
     [SerializeField] UnityEvent DamageAction;
+    [SerializeField] bool isPlayer = false;
     void OnEnable()
     {
         currentLife = maxLife;
@@ -21,13 +22,32 @@ public class LifeComponent : MonoBehaviour
     public void GetDamage(float Damage)
     {
         currentLife -= Damage;
-        ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
+        ThrowDamageParticle();
         if(currentLife<=0)
         {
             DieAction.Invoke();
         }
         else
             DamageAction.Invoke();
+    }
+    void ThrowDamageParticle()
+    {
+        if(!isPlayer)
+        {
+            int rand = Random.Range(0, 2);
+            if(PlayerSingleton.instance.isSpecialAttack)
+            {
+
+                ParticleSystemManager.instance.ThrowParticleSystem(rand==0? "Boom" : "Fire", particlePos);
+            }
+            else
+                ParticleSystemManager.instance.ThrowParticleSystem(rand==0? "BasicHit" : "RandomText", particlePos);
+        }
+        
+        ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
+
+
+
     }
     //private void OnTriggerEnter2D(Collider2D other)
     //{

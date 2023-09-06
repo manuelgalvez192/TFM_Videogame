@@ -14,7 +14,7 @@ public class PlayerSingleton : MonoBehaviour
     public PlayerBasicAtack playerBasicAttack;
     public PlayerMovement playerMovement;
     public Animator playerAnimator;
-    public float playerAttackDamage;
+    public bool isSpecialAttack = false;
     [SerializeField] ParticleSystem rayParticles;
 
     void Awake()
@@ -23,7 +23,6 @@ public class PlayerSingleton : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
-        playerAttackDamage = playerBasicAttack.playerDamage;
     }
     public void PlayRayParticles()
     {

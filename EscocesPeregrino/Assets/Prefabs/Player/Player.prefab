@@ -5439,7 +5439,7 @@ MonoBehaviour:
   playerBasicAttack: {fileID: 5799724551216947619}
   playerMovement: {fileID: 930221121332049683}
   playerAnimator: {fileID: 2162832084452580250}
-  playerAttackDamage: 2
+  isSpecialAttack: 0
   rayParticles: {fileID: 6138868065206060327}
 --- !u!1 &3681559683723559122
 GameObject:

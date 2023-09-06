@@ -47,7 +47,7 @@ MonoBehaviour:
   particles:
   - typeName: RandomText
     particlePrefab: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
-    spawnScale: {x: 0.15, y: 0, z: 0}
+    spawnScale: {x: 0.2, y: 0.2, z: 0.2}
     spawnRotation: {x: 0, y: 0, z: 0}
   - typeName: Blood
     particlePrefab: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
@@ -59,5 +59,17 @@ MonoBehaviour:
     spawnRotation: {x: 0, y: 0, z: 0}
   - typeName: Boom
     particlePrefab: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
-    spawnScale: {x: 0.1, y: 0.1, z: 0.1}
+    spawnScale: {x: 0.2, y: 0.2, z: 0.2}
     spawnRotation: {x: 0, y: 0, z: 0}
+  - typeName: BasicHit
+    particlePrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+    spawnScale: {x: 0.2, y: 0.2, z: 0.2}
+    spawnRotation: {x: 0, y: 0, z: 0}
+  - typeName: Die
+    particlePrefab: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 3}
+    spawnScale: {x: 0.3, y: 0.3, z: 0.3}
+    spawnRotation: {x: 0, y: 0, z: 0}
+  - typeName: Heal
+    particlePrefab: {fileID: 100004, guid: 3af6f68141914ca43ba39b2403757bd0, type: 3}
+    spawnScale: {x: 0.5, y: 0.5, z: 0.5}
+    spawnRotation: {x: -90, y: 0, z: 0}

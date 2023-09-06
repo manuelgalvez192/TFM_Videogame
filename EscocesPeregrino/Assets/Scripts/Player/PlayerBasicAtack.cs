@@ -39,7 +39,8 @@ public class PlayerBasicAtack : MonoBehaviour
         {
             if(PlayerSingleton.instance.playerMovement.isGrounded)
             {
-                
+                PlayerSingleton.instance.isSpecialAttack = false;//cosas de particulas
+
                 canMove?.Invoke(false);
                 hitbox.SetActive(true);
                 atacking = true;

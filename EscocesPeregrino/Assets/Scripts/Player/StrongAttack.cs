@@ -36,6 +36,7 @@ public class StrongAttack : MonoBehaviour
     {
         if (canUseAttack)
         {
+            PlayerSingleton.instance.isSpecialAttack = true;//cosas de particulas
             animator.SetTrigger("strongAttack");
             playerMovement.canControl = false;
             hitbox.SetActive(true);
