@@ -116,7 +116,7 @@ public class BaseHanzo : MonoBehaviour
     }
     public virtual void Die()
     {
-
+        
     }
     public virtual void StopBehaviour()
     {

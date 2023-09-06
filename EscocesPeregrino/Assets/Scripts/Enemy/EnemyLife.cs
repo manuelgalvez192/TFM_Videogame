@@ -11,6 +11,7 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private EnemyAI enemyAi;
     [SerializeField] private PlayerBasicAtack playerDamage;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject collision;
     [SerializeField] private GameObject healDrop;
     
     private float currentLife;
@@ -40,6 +41,7 @@ public class EnemyLife : MonoBehaviour
                 if (currentLife <= 0)
                 {
                     isAlive = false;
+                    collision.SetActive(false);
                     StartCoroutine(EnemyDeadAnimation());
                 }
 
