@@ -82,7 +82,10 @@ public class InputsGameManager : MonoBehaviour
     }
 
     //Getters
-
+    public bool IsPlayingOnController()
+    {
+        return playerGamePad != null ? true : false;
+    }
     public float VerticalAxis 
     { get 
         {

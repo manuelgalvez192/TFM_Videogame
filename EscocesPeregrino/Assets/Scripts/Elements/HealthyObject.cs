@@ -21,7 +21,7 @@ public class HealthyObject : PickeableObject
         if(other.GetComponent<PlayerLife>()!=null)
         {
             lifeComponent.GetHeal(healAmount);
-            gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }

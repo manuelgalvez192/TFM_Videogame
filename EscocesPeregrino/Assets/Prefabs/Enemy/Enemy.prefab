@@ -68,6 +68,7 @@ MonoBehaviour:
   animator: {fileID: 7568013689733089673}
   collision: {fileID: 7476692219413400807}
   healDrop: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
+  particlePos: {fileID: 1543260785756031786}
 --- !u!1 &1628507700935195523
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ Transform:
   - {fileID: 6342872672692589887}
   - {fileID: 873324548560041982}
   - {fileID: 1836291461042313060}
+  - {fileID: 1543260785756031786}
   m_Father: {fileID: 1628507700935195524}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -424,6 +426,37 @@ MonoBehaviour:
   otherActions:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &4577184884594891824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543260785756031786}
+  m_Layer: 0
+  m_Name: ParticvleTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1543260785756031786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577184884594891824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7336517455620480025}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7476692219413400807
 GameObject:
   m_ObjectHideFlags: 0

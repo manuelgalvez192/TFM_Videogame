@@ -612,6 +612,7 @@ MonoBehaviour:
   attackDistance: 0.3
   attackRate: 1.5
   particlePos: {fileID: 7310905555464768865}
+  healthyObject: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
   state: 0
   longAttackDistance: 1.7
   longAttackCollider: {fileID: 3264277107897909631}

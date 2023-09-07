@@ -290,6 +290,8 @@ public class RoxxaneControl : BaseHanzo
     #endregion
     public override void GetDamage()
     {
+        if (!allowedToMove)
+            return;
         StopCoroutine(currentCorroutine);
         base.GetDamage();
         ChangeState(HanzoState.GettingDamage);
