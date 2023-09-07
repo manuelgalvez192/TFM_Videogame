@@ -21,8 +21,11 @@ public class UIPadController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField] UIPadButton attackButton;
     [SerializeField] UIPadButton coverButton;
     [SerializeField] UIPadButton dashButton;
-    private void Start()
+    [SerializeField] bool isMenuControls = false;
+    private void OnEnable()
     {
+        if (!InputsGameManager.instance.virtualPadEnabled&&!isMenuControls)
+            gameObject.SetActive(false);
         InputsGameManager.instance.UIController = this;
         jumpButton.ControllerParent = this;
         attackButton.ControllerParent = this;

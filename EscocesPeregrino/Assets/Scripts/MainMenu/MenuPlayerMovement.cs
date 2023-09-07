@@ -27,7 +27,7 @@ public class MenuPlayerMovement : MonoBehaviour
     float movementDustCount;
     [SerializeField, Range(0, 0.1f)] float movementDustRate = 0.08f;
 
-    void Start()
+    void OnEnable()
     {
         anim.SetBool("isGrounded", true);
     }
