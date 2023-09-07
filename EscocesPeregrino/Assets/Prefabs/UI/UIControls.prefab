@@ -329,6 +329,7 @@ MonoBehaviour:
   attackButton: {fileID: 1507965046578972910}
   coverButton: {fileID: 1507965044851776604}
   dashButton: {fileID: 1507965045776289663}
+  isMenuControls: 0
 --- !u!61 &1507965045710426398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -582,7 +583,7 @@ RectTransform:
   - {fileID: 4528584181389076124}
   - {fileID: 4954041974470349839}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1034,7 +1035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4528584181389076124
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1167,7 +1168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4954041974470349839
 RectTransform:
   m_ObjectHideFlags: 0

@@ -944,6 +944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiController: {fileID: 0}
+  virtualPadEnabled: 1
+  onControllerIn: {fileID: 0}
+  onControllerOut: {fileID: 0}
   jumpKey: 32
   attackKey: 106
   dashKey: 107
