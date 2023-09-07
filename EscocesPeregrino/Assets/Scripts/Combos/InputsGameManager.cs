@@ -60,10 +60,13 @@ public class InputsGameManager : MonoBehaviour
             instance = this;
 
         DontDestroyOnLoad(this.gameObject);
-        CheckForControllers();
         InputSystem.onDeviceChange += OnDeviceChange;
 
 
+    }
+    private void OnEnable()
+    {
+        CheckForControllers();
     }
     #region GamePadThings
     void InitializeGamePad()

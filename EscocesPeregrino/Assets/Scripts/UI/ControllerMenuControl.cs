@@ -17,25 +17,30 @@ public class ControllerMenuControl : MonoBehaviour
     private void Awake()
     {
         behaviorCorroutine = RunningBehavior();
-        foreach(GameObject obj in controllerInfo)
-        {
-            obj.SetActive(true);
-        }
     }
     public void OnControllerEnter()
     {
         StartCoroutine(behaviorCorroutine);
         foreach (GameObject obj in controllerInfo)
         {
-            obj.SetActive(false);
+            obj.SetActive(true);
         }
     }
     public void OnControllerExit()
     {
         StopCoroutine(behaviorCorroutine);
+        foreach (GameObject obj in controllerInfo)
+        {
+            obj.SetActive(true);
+        }
     }
     IEnumerator RunningBehavior()
     {
+        while (true)
+        {
+            yield return null;
+        }
+       
         yield break;
     }
 }
