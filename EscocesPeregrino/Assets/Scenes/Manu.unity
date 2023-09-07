@@ -671,10 +671,10 @@ GameObject:
   m_Component:
   - component: {fileID: 671685393}
   - component: {fileID: 671685392}
-  - component: {fileID: 671685391}
   - component: {fileID: 671685395}
   - component: {fileID: 671685396}
   - component: {fileID: 671685397}
+  - component: {fileID: 671685398}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -682,14 +682,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &671685391
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671685390}
-  m_Enabled: 1
 --- !u!20 &671685392
 Camera:
   m_ObjectHideFlags: 0
@@ -837,6 +829,21 @@ MonoBehaviour:
   minPlayerPosition: -2.467
   maxPlayerPosition: 30.43088
   offset: {x: 1, y: 0, z: 0}
+--- !u!114 &671685398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671685390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1c4086f1bdbcc4b8d31e87257b20db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMenuMusic: 0
+  islvl1Music: 1
+  islvl2Music: 0
 --- !u!1 &790936463
 GameObject:
   m_ObjectHideFlags: 0

@@ -114,6 +114,13 @@ MonoBehaviour:
       Data3: -355427699
       Data4: -1035204747
     Path: event:/MenuClick2
+  <menuMusic>k__BackingField:
+    Guid:
+      Data1: 1971964813
+      Data2: 1082655873
+      Data3: 535123127
+      Data4: -1545026914
+    Path: event:/MusicMainMenu
   <laser>k__BackingField:
     Guid:
       Data1: -2055735516
@@ -121,6 +128,20 @@ MonoBehaviour:
       Data3: 1370618038
       Data4: -1017071151
     Path: event:/Laser
+  <lvl1Music>k__BackingField:
+    Guid:
+      Data1: -184863627
+      Data2: 1293124914
+      Data3: -942848073
+      Data4: -142801507
+    Path: event:/MusicLvl1
+  <lvl2Music>k__BackingField:
+    Guid:
+      Data1: -1795897697
+      Data2: 1207527076
+      Data3: 1261797516
+      Data4: -212793542
+    Path: event:/MusicLvl2
 --- !u!1 &2139539709155671356
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +173,7 @@ Transform:
   m_Children:
   - {fileID: 2139539708802294318}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2139539709155671358
 MonoBehaviour:
