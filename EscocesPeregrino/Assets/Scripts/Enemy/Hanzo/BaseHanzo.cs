@@ -16,8 +16,10 @@ public class BaseHanzo : MonoBehaviour
     [SerializeField] protected float offset;
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float attackRate;
+    [SerializeField] Transform particlePos;
+    [SerializeField] GameObject healthyObject;
 
-    bool allowedToMove = true;
+    protected bool allowedToMove = true;
     protected bool followingPlayer;
 
     protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction, SpecialAction2 }
@@ -116,7 +118,19 @@ public class BaseHanzo : MonoBehaviour
     }
     public virtual void Die()
     {
-        
+        allowedToMove = false;
+        Invoke("ThrowDieParticles", 1.3f);
+        Destroy(this.gameObject, 2.5f);
+    }
+    void ThrowDieParticles()
+    {
+        ParticleSystemManager.instance.ThrowParticleSystem("Die", particlePos);
+        int randHealDrop = UnityEngine.Random.Range(0, 3);
+        if (randHealDrop > 1)
+        {
+            GameObject newDrop = Instantiate(healthyObject, transform.position, transform.rotation);//TO DO:: Si se hace pool camboiar el spawn
+            newDrop.GetComponent<PickeableObject>().OnDropObject();
+        }
     }
     public virtual void StopBehaviour()
     {

@@ -232,6 +232,7 @@ MonoBehaviour:
   enemyDamage: {fileID: 0}
   animator: {fileID: 2162832084452580250}
   electricParticles: {fileID: 6138868065206060327}
+  particlePos: {fileID: 2587993561890111448}
   isBlocking: 0
   GE_onPlayerDieEvent: {fileID: 11400000, guid: 655805c9cea9db84a9279da2cc750b10, type: 2}
   SecondChancePanel: {fileID: 6071996842648617298}
@@ -5439,7 +5440,7 @@ MonoBehaviour:
   playerBasicAttack: {fileID: 5799724551216947619}
   playerMovement: {fileID: 930221121332049683}
   playerAnimator: {fileID: 2162832084452580250}
-  playerAttackDamage: 2
+  isSpecialAttack: 0
   rayParticles: {fileID: 6138868065206060327}
 --- !u!1 &3681559683723559122
 GameObject:

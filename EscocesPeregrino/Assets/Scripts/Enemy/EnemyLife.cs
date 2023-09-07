@@ -13,7 +13,8 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject collision;
     [SerializeField] private GameObject healDrop;
-    
+    [SerializeField] private Transform particlePos;
+
     private float currentLife;
     private int numAnimation;
     private bool isAlive = true;
@@ -58,8 +59,21 @@ public class EnemyLife : MonoBehaviour
                     animator.SetBool("takeDamage1", false);
                     animator.SetBool("takeDamage2", true);
                 }
+                ThrowDamageParticle();
             }
         }
+    }
+    void ThrowDamageParticle()
+    {
+        
+            int rand = UnityEngine.Random.Range(0, 2);
+            if (PlayerSingleton.instance.isSpecialAttack)
+            {
+                ParticleSystemManager.instance.ThrowParticleSystem(rand == 0 ? "Boom" : "Fire", particlePos);
+            }
+            else
+                ParticleSystemManager.instance.ThrowParticleSystem(rand == 0 ? "BasicHit" : "RandomText", particlePos);
+        ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -87,8 +101,14 @@ public class EnemyLife : MonoBehaviour
         animator.SetTrigger("isDead");
         EnemyAI.canFollow = false;
         yield return new WaitForSeconds(2.5f);
-        GameObject newDrop = Instantiate(healDrop, transform.position,transform.rotation);//TO DO:: Si se hace pool camboiar el spawn
-        newDrop.GetComponent<PickeableObject>().OnDropObject();
+        ParticleSystemManager.instance.ThrowParticleSystem("Die", particlePos);
+
+        int randHealDrop = UnityEngine.Random.Range(0, 3);
+        if(randHealDrop>1)
+        {
+            GameObject newDrop = Instantiate(healDrop, transform.position,transform.rotation);//TO DO:: Si se hace pool camboiar el spawn
+            newDrop.GetComponent<PickeableObject>().OnDropObject();
+        }
         yield return new WaitForSeconds(2.5f);
         selfEnemy.SetActive(false);
     }
