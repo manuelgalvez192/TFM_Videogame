@@ -20,10 +20,13 @@ public class InputsGameManager : MonoBehaviour
 
 
     Gamepad playerGamePad;
+    
 
     [SerializeField]UIPadController uiController;
     public UIPadController UIController { set { uiController = value; } }
-
+    [Header("OnControllerChanges")]
+    [SerializeField] GameEvent onControllerIn;
+    [SerializeField] GameEvent onControllerOut;
 
 #if UNITY_STANDALONE || UNITY_EDITOR
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
@@ -57,9 +60,16 @@ public class InputsGameManager : MonoBehaviour
             instance = this;
 
         DontDestroyOnLoad(this.gameObject);
+        CheckForControllers();
+        InputSystem.onDeviceChange += OnDeviceChange;
 
+
+    }
+    #region GamePadThings
+    void InitializeGamePad()
+    {
         playerGamePad = Gamepad.current;
-        if(playerGamePad!=null)
+        if (playerGamePad != null)
         {
             attackPadButton = new PadInput();
             JumpPadButton = new PadInput();
@@ -67,7 +77,7 @@ public class InputsGameManager : MonoBehaviour
             coverPadButton = new PadInput();
             pickPadButton = new PadInput();
             pausePadButton = new PadInput();
-            moveMenuUpPadButton    =new PadInput();
+            moveMenuUpPadButton = new PadInput();
             moveMenuDownPadButton = new PadInput();
 
             attackPadButton.PadButton = playerGamePad.buttonWest;
@@ -80,6 +90,32 @@ public class InputsGameManager : MonoBehaviour
             moveMenuDownPadButton.PadButton = playerGamePad.dpad.down;
         }
     }
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if (change == InputDeviceChange.Added && device is Gamepad)
+        {
+            // Se ha conectado un mando
+            InitializeGamePad();
+            onControllerIn.Raise();
+        }
+        else if (change == InputDeviceChange.Removed && device is Gamepad)
+        {
+            // Se ha desconectado un mando
+            playerGamePad = null;
+            onControllerOut.Raise();
+        }
+    }
+    private void CheckForControllers()
+    {
+        // Comprueba si hay mando conectado al inicio
+        var gamepads = Gamepad.all;
+        if (gamepads.Count > 0)
+        {
+            InitializeGamePad();
+            onControllerIn.Raise();
+        }
+    }
+    #endregion
 
     //Getters
     public bool IsPlayingOnController()
