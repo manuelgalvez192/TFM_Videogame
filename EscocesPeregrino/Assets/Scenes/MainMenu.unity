@@ -652,8 +652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiController: {fileID: 0}
-  onControllerIn: {fileID: 0}
-  onControllerOut: {fileID: 0}
+  onControllerIn: {fileID: 11400000, guid: 80550facf979d754d8f1c3d3c8b58fc6, type: 2}
+  onControllerOut: {fileID: 11400000, guid: 26ddc8b2d67796443900dac09db6c57d, type: 2}
   jumpKey: 32
   attackKey: 106
   dashKey: 107
@@ -789,6 +789,8 @@ GameObject:
   m_Component:
   - component: {fileID: 526420365}
   - component: {fileID: 526420364}
+  - component: {fileID: 526420367}
+  - component: {fileID: 526420366}
   m_Layer: 0
   m_Name: ControllerControl
   m_TagString: Untagged
@@ -808,7 +810,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e7d11690adc6544bf213ef7ca2e76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerExist: 0
+  startButton: {fileID: 1878099629}
+  controlsButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  backButton: {fileID: 0}
+  changeControlsButton: []
+  controlsPanel: {fileID: 0}
+  controllerInfo: []
 --- !u!4 &526420365
 Transform:
   m_ObjectHideFlags: 0
@@ -824,6 +832,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526420366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526420363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34c38d1c8e0754b834e67f02de90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 26ddc8b2d67796443900dac09db6c57d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 526420364}
+        m_TargetAssemblyTypeName: ControllerMenuControl, Assembly-CSharp
+        m_MethodName: OnControllerExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &526420367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526420363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34c38d1c8e0754b834e67f02de90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 80550facf979d754d8f1c3d3c8b58fc6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 526420364}
+        m_TargetAssemblyTypeName: ControllerMenuControl, Assembly-CSharp
+        m_MethodName: OnCOntrollerEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &609124649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1337,6 +1401,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7128878733178503350, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128878733178503351, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7128878733178503351, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
@@ -7212,6 +7280,18 @@ PrefabInstance:
       propertyPath: m_Text
       value: A
       objectReference: {fileID: 0}
+    - target: {fileID: 675256030, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732001936, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628605346, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1720266946, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7306,6 +7386,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1333193746244934899, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128878731753645363, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7128878731753645363, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
@@ -7453,6 +7537,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7128878733178503350, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128878733178503351, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7128878733178503351, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
@@ -12626,6 +12714,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7128878733178503350, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
   m_PrefabInstance: {fileID: 1603575919}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1878099629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7128878733178503351, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
+  m_PrefabInstance: {fileID: 1603575919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2112293003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12720,6 +12819,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7128878733178503350, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128878733178503351, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7128878733178503351, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}

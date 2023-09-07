@@ -1,52 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
 public class ControllerMenuControl : MonoBehaviour
 {
-    public bool controllerExist;
+    [SerializeField] Button startButton;
+    [SerializeField] Button controlsButton;
+    [SerializeField] Button exitButton;
+    [SerializeField] Button backButton;
+    [SerializeField] Button[] changeControlsButton;
+    int currentButton = 0;
+    [SerializeField] GameObject controlsPanel;
+    [SerializeField] GameObject[] controllerInfo;
 
+    IEnumerator behaviorCorroutine;
     private void Awake()
     {
-        // Verifica si hay controladores conectados al inicio del juego
-        CheckForControllers();
-    }
-
-    private void OnEnable()
-    {
-        // Suscribirse al evento de conexión de joystick
-        InputSystem.onDeviceChange += OnDeviceChange;
-    }
-
-    private void OnDisable()
-    {
-        // Asegúrate de desuscribirte al salir del script o del objeto que lo contiene
-        InputSystem.onDeviceChange -= OnDeviceChange;
-    }
-
-    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
-    {
-        if (change == InputDeviceChange.Added && device is Gamepad)
+        behaviorCorroutine = RunningBehavior();
+        foreach(GameObject obj in controllerInfo)
         {
-            // Se ha conectado un joystick, puedes agregar aquí la lógica que desees
-            Debug.Log("HolaSoyUnMando");
-            controllerExist = true;
-            // Agrega tu lógica adicional aquí
-        }
-        else if (change == InputDeviceChange.Removed && device is Gamepad)
-        {
-            // Se ha desconectado un joystick, puedes manejarlo aquí si es necesario
-            controllerExist = false;
+            obj.SetActive(true);
         }
     }
-
-    private void CheckForControllers()
+    public void OnControllerEnter()
     {
-        // Comprueba si hay controladores conectados al inicio del juego
-        var gamepads = Gamepad.all;
-        if (gamepads.Count > 0)
+        StartCoroutine(behaviorCorroutine);
+        foreach (GameObject obj in controllerInfo)
         {
-            controllerExist = true;
-            Debug.Log("Controlador detectado al inicio del juego.");
+            obj.SetActive(false);
         }
+    }
+    public void OnControllerExit()
+    {
+        StopCoroutine(behaviorCorroutine);
+    }
+    IEnumerator RunningBehavior()
+    {
+        yield break;
     }
 }
