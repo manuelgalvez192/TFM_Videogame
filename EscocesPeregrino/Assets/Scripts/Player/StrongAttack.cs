@@ -37,6 +37,7 @@ public class StrongAttack : MonoBehaviour
         if (canUseAttack)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.playerSuperPunch,this.transform.position);
+            PlayerSingleton.instance.isSpecialAttack = true;//cosas de particulas
             animator.SetTrigger("strongAttack");
             playerMovement.canControl = false;
             hitbox.SetActive(true);
