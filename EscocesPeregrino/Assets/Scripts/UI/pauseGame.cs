@@ -17,6 +17,8 @@ public class pauseGame : MonoBehaviour
     [SerializeField] private float resumeButtonScaleY;
     [SerializeField] private float exitButtonScaleX;
     [SerializeField] private float exitButtonScaleY;
+    
+    [SerializeField] private GameObject PanelLoader;
 
     private short positionMenu = 1;
     private bool paused = false;
@@ -94,10 +96,20 @@ public class pauseGame : MonoBehaviour
 
     public void ExitMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(LoadAsync());
         
         Time.timeScale = pauseMenu.activeInHierarchy ? 1 : 0;
         pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
         paused = !paused;
+    }
+    
+    IEnumerator LoadAsync()
+    {
+        PanelLoader.SetActive(true);
+        
+        yield return new WaitForSeconds(2);
+        
+        AsyncOperation operation = SceneManager.LoadSceneAsync(0);
+
     }
 }
