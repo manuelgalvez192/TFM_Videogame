@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfEnemy: {fileID: 1628507700935195523}
-  maxLife: 20
+  maxLife: 15
   enemyAi: {fileID: 772806968628441091}
   playerDamage: {fileID: 0}
   animator: {fileID: 7568013689733089673}
@@ -100,7 +100,7 @@ Transform:
   m_Children:
   - {fileID: 7336517455620480025}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1628507700935195521
 Rigidbody2D:

@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7ca6ee92a08ea4a9a9fd42438e04c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 200
+  maxLife: 20
   currentLife: 0
   damagedTag: PlayerPunchHB
   particlePos: {fileID: 7310905555464768865}
@@ -549,7 +549,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isPlayer: 0
 --- !u!1 &3264277109617506460
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +589,7 @@ Transform:
   - {fileID: 4706474851592311968}
   - {fileID: 7310905555464768865}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3264277109617506465
 MonoBehaviour:
