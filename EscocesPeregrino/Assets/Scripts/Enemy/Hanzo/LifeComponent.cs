@@ -37,17 +37,12 @@ public class LifeComponent : MonoBehaviour
             int rand = Random.Range(0, 2);
             if(PlayerSingleton.instance.isSpecialAttack)
             {
-
                 ParticleSystemManager.instance.ThrowParticleSystem(rand==0? "Boom" : "Fire", particlePos);
             }
             else
                 ParticleSystemManager.instance.ThrowParticleSystem(rand==0? "BasicHit" : "RandomText", particlePos);
         }
-        
-        ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
-
-
-
+                ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
     }
     //private void OnTriggerEnter2D(Collider2D other)
     //{

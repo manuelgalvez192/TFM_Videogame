@@ -14,7 +14,7 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] ParticleSystem electricParticles;
-
+    [SerializeField] Transform particlePos;
     public bool isBlocking;
 
     [Header("Video for extra life")]
@@ -35,9 +35,10 @@ public class PlayerLife : MonoBehaviour
     public void GetDamage(float damage)
     {
         StartCoroutine(CanControl());
-        if(!isBlocking)
+        if (!isBlocking)
         {
             currentLife -= damage;
+            ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
             if (currentLife <= 0)
             {
                 animator.SetTrigger("die");
@@ -46,12 +47,12 @@ public class PlayerLife : MonoBehaviour
                 EnemyAI.canFollow = false;
                 GE_onPlayerDieEvent.Raise();
                 PlayerSingleton.instance.playerMovement.StopMovement();
-                if(!hasDied)
+                if (!hasDied)
                 {
                     hasDied = true;
                     SecondChancePanel.SetActive(true);
                 }
-                else 
+                else
                 {
                     StartCoroutine(GoMenuAfterDie());
                 }
@@ -64,16 +65,17 @@ public class PlayerLife : MonoBehaviour
             playerLifeSlider.value = currentLife;
             lifeText.text = "x" + currentLife.ToString();
         }
-        else if(isBlocking)
+        else if (isBlocking)
         {
 
         }
-       
+
     }
-    
+
     public void GetHeal(float heal)
     {
         currentLife += heal;
+        ParticleSystemManager.instance.ThrowParticleSystem("Heal", particlePos);
         if (currentLife >= maxLife)
             currentLife = maxLife;
         playerLifeSlider.value = currentLife;
@@ -87,7 +89,7 @@ public class PlayerLife : MonoBehaviour
             PlayerDie.canControl = false;
             yield return new WaitForSeconds(0.5f);
             PlayerDie.canControl = true;
-            
+
         }
     }
     /*private void OnTriggerEnter2D(Collider2D other)
@@ -118,7 +120,7 @@ public class PlayerLife : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(ResetComponentWait());
-        
+
     }
     IEnumerator ResetComponentWait()
     {

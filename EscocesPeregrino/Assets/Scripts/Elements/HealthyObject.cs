@@ -6,7 +6,7 @@ public class HealthyObject : PickeableObject
 {
     [SerializeField] PlayerLife lifeComponent;
     [SerializeField] float healAmount;
-    void OnEnable()
+    void Start()
     {
         lifeComponent = PlayerSingleton.instance.playerLife;
         Select();
@@ -18,7 +18,7 @@ public class HealthyObject : PickeableObject
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.GetComponent<PlayerLife>()!=null && other.GetComponent<PlayerLife>() == lifeComponent)
+        if(other.GetComponent<PlayerLife>()!=null)
         {
             lifeComponent.GetHeal(healAmount);
             gameObject.SetActive(false);

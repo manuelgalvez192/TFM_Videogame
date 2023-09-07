@@ -8,6 +8,7 @@ public class ParticleSystemManager : MonoBehaviour
     {
         public string typeName;
         public GameObject particlePrefab;
+        public Vector2 spawnOffset;
         public Vector3 spawnScale;
         public Vector3 spawnRotation;
         List<GameObject> instances;
@@ -59,7 +60,7 @@ public class ParticleSystemManager : MonoBehaviour
         GameObject newparticle = newGroup.GetParticle();
 
         newparticle.transform.parent = transform;
-        newparticle.transform.localPosition = Vector2.zero;
+        newparticle.transform.localPosition = Vector2.zero + newGroup.spawnOffset;
         newparticle.transform.localRotation = Quaternion.Euler(newGroup.spawnRotation);
         newparticle.transform.localScale = newGroup.spawnScale;
 
@@ -69,9 +70,11 @@ public class ParticleSystemManager : MonoBehaviour
     {
         if (!particlesTypes.ContainsKey(particleName))
             return;
-        GameObject newparticle = particlesTypes[particleName].GetParticle();
+        ParticleGroup newGroup = particlesTypes[particleName];
+        GameObject newparticle = newGroup.GetParticle();
 
-        newparticle.transform.localPosition = Position;
+        newparticle.transform.position = Position;
+        newparticle.transform.localRotation = Quaternion.Euler(newGroup.spawnRotation);
         newparticle.transform.localScale = Vector2.one;
 
         newparticle.SetActive(true);

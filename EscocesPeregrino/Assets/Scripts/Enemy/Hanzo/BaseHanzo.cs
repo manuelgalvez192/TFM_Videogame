@@ -16,6 +16,7 @@ public class BaseHanzo : MonoBehaviour
     [SerializeField] protected float offset;
     [SerializeField] protected float attackDistance;
     [SerializeField] protected float attackRate;
+    [SerializeField] Transform particlePos;
 
     bool allowedToMove = true;
     protected bool followingPlayer;
@@ -116,7 +117,11 @@ public class BaseHanzo : MonoBehaviour
     }
     public virtual void Die()
     {
-        
+        Invoke("ThrowDieParticles", 1.3f);
+    }
+    void ThrowDieParticles()
+    {
+        ParticleSystemManager.instance.ThrowParticleSystem("Die", particlePos);
     }
     public virtual void StopBehaviour()
     {

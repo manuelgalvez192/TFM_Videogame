@@ -18,7 +18,6 @@ public class RoxxaneControl : BaseHanzo
         trunk.transform.parent = null;
         trunk.gameObject.SetActive(false);
     }
-
     protected override void ChangeState(HanzoState newState)
     {
         animator.speed = 1;

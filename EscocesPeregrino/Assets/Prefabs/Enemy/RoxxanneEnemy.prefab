@@ -549,6 +549,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isPlayer: 0
 --- !u!1 &3264277109617506460
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +611,7 @@ MonoBehaviour:
   offset: 0
   attackDistance: 0.3
   attackRate: 1.5
+  particlePos: {fileID: 7310905555464768865}
   state: 0
   longAttackDistance: 1.7
   longAttackCollider: {fileID: 3264277107897909631}

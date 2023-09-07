@@ -319,6 +319,7 @@ MonoBehaviour:
   offset: 0.3
   attackDistance: 0.2
   attackRate: 1.5
+  particlePos: {fileID: 2196138515530980849}
   state: 0
   TPOffset: 0.3
   specialAttackPercent: 20
@@ -485,6 +486,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isPlayer: 0
 --- !u!1 &7890479638867108402
 GameObject:
   m_ObjectHideFlags: 0
