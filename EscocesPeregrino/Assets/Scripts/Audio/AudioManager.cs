@@ -26,6 +26,6 @@ public class AudioManager : MonoBehaviour
 
     public void StopOneShot()
     {
-        RuntimeManager.StopOneShot;
+        //RuntimeManager.StopOneShot;
     }
 }
