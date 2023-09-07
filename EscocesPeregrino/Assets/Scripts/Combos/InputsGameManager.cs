@@ -20,9 +20,13 @@ public class InputsGameManager : MonoBehaviour
 
 
     Gamepad playerGamePad;
+    public Gamepad PlayerGamePad
+    { get { return playerGamePad; } }
     
 
     [SerializeField]UIPadController uiController;
+    public bool virtualPadEnabled = true;
+
     public UIPadController UIController { set { uiController = value; } }
     [Header("OnControllerChanges")]
     [SerializeField] GameEvent onControllerIn;
@@ -61,14 +65,16 @@ public class InputsGameManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
         InputSystem.onDeviceChange += OnDeviceChange;
-
-
+#if UNITY_STANDALONE||UNITY_EDITOR
+        virtualPadEnabled = false;
+#endif
     }
-    private void OnEnable()
+
+    private void Start()
     {
         CheckForControllers();
     }
-    #region GamePadThings
+#region GamePadThings
     void InitializeGamePad()
     {
         playerGamePad = Gamepad.current;
@@ -116,9 +122,11 @@ public class InputsGameManager : MonoBehaviour
         {
             InitializeGamePad();
             onControllerIn.Raise();
+            return;
         }
+        onControllerOut.Raise();
     }
-    #endregion
+#endregion
 
     //Getters
     public bool IsPlayingOnController()
