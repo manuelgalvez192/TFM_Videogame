@@ -51,7 +51,7 @@ public class PlayerBasicAtack : MonoBehaviour
                 }
                 else if(!enemyHit)
                 {
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerNoHit, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
                 }
 
             }
