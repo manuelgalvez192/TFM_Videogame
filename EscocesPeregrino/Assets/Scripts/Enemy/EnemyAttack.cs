@@ -98,6 +98,4 @@ public class EnemyAttack : MonoBehaviour
     {
         DisableEnemyActions();
     }
-
- 
 }

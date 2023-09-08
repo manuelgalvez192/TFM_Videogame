@@ -227,6 +227,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1302136544}
     - target: {fileID: 264143725, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
+      propertyPath: maxLife
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 264143725, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
       propertyPath: collision
       value: 
       objectReference: {fileID: 1441310482}
@@ -1895,6 +1899,10 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 2000956050}
+    - target: {fileID: 264143725, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
+      propertyPath: maxLife
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 264143725, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
       propertyPath: collision
       value: 
