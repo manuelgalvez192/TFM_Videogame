@@ -18,6 +18,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Enemies SFX")]
     [field: SerializeField] public EventReference enemieDeath { get; private set; }
+    [field: SerializeField] public EventReference enemiePunch { get; private set; }
+    [field: SerializeField] public EventReference enemieSword { get; private set; }
 
 
 

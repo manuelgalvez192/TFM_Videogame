@@ -107,6 +107,20 @@ MonoBehaviour:
       Data3: 1287203505
       Data4: -613951182
     Path: event:/EnemyDeath
+  <enemiePunch>k__BackingField:
+    Guid:
+      Data1: 718110399
+      Data2: 1261527349
+      Data3: 1930688664
+      Data4: 7574744
+    Path: event:/EnemyPunch
+  <enemieSword>k__BackingField:
+    Guid:
+      Data1: -1360622676
+      Data2: 1305002172
+      Data3: -431597667
+      Data4: 557708636
+    Path: event:/EnemySword
   <menuClick>k__BackingField:
     Guid:
       Data1: 1876372714
@@ -173,7 +187,7 @@ Transform:
   m_Children:
   - {fileID: 2139539708802294318}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2139539709155671358
 MonoBehaviour:

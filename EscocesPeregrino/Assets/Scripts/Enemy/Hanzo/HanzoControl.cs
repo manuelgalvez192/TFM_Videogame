@@ -86,6 +86,7 @@ public class HanzoControl : BaseHanzo
     {
         animator.SetBool("isMoving", false);
         animator.SetTrigger("attack");
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieSword,this.transform.position);
         yield return new WaitForSeconds(0.25f);//los tiempos se cambian segun la animacion
         attackCollision.size = new Vector2(0, attackCollision.size.y);
         attackCollision.enabled = true;

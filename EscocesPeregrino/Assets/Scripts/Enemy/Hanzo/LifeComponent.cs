@@ -27,6 +27,7 @@ public class LifeComponent : MonoBehaviour
         ThrowDamageParticle();
         if (currentLife <= 0)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
             DieAction.Invoke();
             isAlive = false;
         }

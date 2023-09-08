@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
@@ -15,12 +16,34 @@ public class EnemyAttack : MonoBehaviour
     private bool isOnRange = false;
     private bool atacking = false;
 
+    private float timetoSoundAttack=0;
+
     private void Start()
     {
         currentLife = PlayerSingleton.instance.playerLife;
         //PlayerLife.disableActions += DisableEnemyActions;
     }
-    
+
+    private void Update()
+    {
+        if(atacking)
+        {
+
+            timetoSoundAttack -= Time.deltaTime;
+            if(timetoSoundAttack<=0)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.enemiePunch, this.transform.position);
+                timetoSoundAttack = 1.2f;
+            }
+
+        }
+        else
+        {
+
+        }
+        
+    }
+
     private void DisableEnemyActions()
     {
         EnemyAI.canFollow = false;
@@ -38,10 +61,12 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            
             animator.SetBool("isWalking", false);
             EnemyAI.canFollow = false;
             animator.SetBool("isAttacking", true);
             enemyPunchHB.SetActive(true);
+            atacking = true;
         }
     }
 
@@ -73,4 +98,6 @@ public class EnemyAttack : MonoBehaviour
     {
         DisableEnemyActions();
     }
+
+ 
 }
