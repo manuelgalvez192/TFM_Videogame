@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5807521393142371253
 Transform:
   m_ObjectHideFlags: 0
@@ -321,6 +321,7 @@ MonoBehaviour:
   attackRate: 1.5
   particlePos: {fileID: 2196138515530980849}
   healthyObject: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
+  OnEnemyDie: {fileID: 11400000, guid: 9ebd9bd071c3ef64d88f4fc58fa9da12, type: 2}
   state: 0
   TPOffset: 0.3
   specialAttackPercent: 20
@@ -453,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7ca6ee92a08ea4a9a9fd42438e04c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 5
+  maxLife: 10
   currentLife: 0
   damagedTag: PlayerPunchHB
   particlePos: {fileID: 2196138515530980849}
@@ -487,7 +488,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isPlayer: 0
 --- !u!1 &7890479638867108402
 GameObject:
   m_ObjectHideFlags: 0

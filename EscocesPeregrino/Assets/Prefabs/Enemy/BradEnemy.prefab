@@ -69,6 +69,7 @@ MonoBehaviour:
   collision: {fileID: 7476692219413400807}
   healDrop: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
   particlePos: {fileID: 1543260785756031786}
+  OnEnemyDie: {fileID: 11400000, guid: 9ebd9bd071c3ef64d88f4fc58fa9da12, type: 2}
 --- !u!1 &1628507700935195523
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ GameObject:
   - component: {fileID: 1628507700935195524}
   - component: {fileID: 1628507700935195521}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: BradEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +101,7 @@ Transform:
   m_Children:
   - {fileID: 7336517455620480025}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1628507700935195521
 Rigidbody2D:

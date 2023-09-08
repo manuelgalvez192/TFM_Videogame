@@ -14,6 +14,7 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private GameObject collision;
     [SerializeField] private GameObject healDrop;
     [SerializeField] private Transform particlePos;
+    [SerializeField] GameEvent OnEnemyDie;
 
     private float currentLife;
     private int numAnimation;
@@ -99,6 +100,7 @@ public class EnemyLife : MonoBehaviour
     private IEnumerator EnemyDeadAnimation()
     {
         animator.SetTrigger("isDead");
+        OnEnemyDie.Raise();
         EnemyAI.canFollow = false;
         yield return new WaitForSeconds(2.5f);
         ParticleSystemManager.instance.ThrowParticleSystem("Die", particlePos);
