@@ -14,11 +14,12 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private GameObject collision;
     [SerializeField] private GameObject healDrop;
     [SerializeField] private Transform particlePos;
+    [SerializeField] private Rigidbody2D rb;
     [SerializeField] GameEvent OnEnemyDie;
 
     private float currentLife;
     private int numAnimation;
-    private bool isAlive = true;
+    public static bool isAlive = true;
     Random rnd = new Random();
 
     private void Start()
@@ -44,6 +45,7 @@ public class EnemyLife : MonoBehaviour
                 {
                     AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
                     isAlive = false;
+                    rb.velocity = new Vector2(0, 0);
                     collision.SetActive(false);
                     StartCoroutine(EnemyDeadAnimation());
                 }
