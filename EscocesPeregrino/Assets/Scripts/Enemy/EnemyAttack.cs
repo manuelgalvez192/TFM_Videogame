@@ -59,7 +59,7 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator AttackToIdle()
     {
-        if (currentLife.currentLife > 0)
+        if (currentLife.currentLife > 0 && EnemyLife.isAlive)
         {
             yield return new WaitForSeconds(1);
         
