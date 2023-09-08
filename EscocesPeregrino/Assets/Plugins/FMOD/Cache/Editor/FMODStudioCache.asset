@@ -265,6 +265,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 744
+--- !u!114 &-688423342376349023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemySword
+  m_EditorClassIdentifier: 
+  Path: event:/EnemySword
+  Guid:
+    Data1: -1360622676
+    Data2: 1305002172
+    Data3: -431597667
+    Data4: 557708636
+  Banks:
+  - {fileID: 749708519413997488}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 792
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,14 +325,14 @@ MonoBehaviour:
   - {fileID: 3563313415356177311}
   - {fileID: -7370546524488999434}
   - {fileID: 5250279866756315221}
-  - {fileID: 7318883057712507574}
-  - {fileID: -5164061026552953251}
+  - {fileID: -688423342376349023}
+  - {fileID: 8198512334393542969}
   EditorParameters: []
   MasterBanks:
   - {fileID: -9080069057840936153}
   StringsBanks:
   - {fileID: 5643316299945300420}
-  cacheTime: 638297710800381613
+  cacheTime: 638297956865411656
   cacheVersion: 131605
 --- !u!114 &749708519413997488
 MonoBehaviour:
@@ -322,7 +349,7 @@ MonoBehaviour:
   Path: Assets/FMODAssets/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638297710800381613
+  lastModified: 638297956865411656
   FileSizes:
   - Name: Desktop
     Value: 7467360
@@ -479,7 +506,7 @@ MonoBehaviour:
   Path: Assets/FMODAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638297710784889766
+  lastModified: 638297956864377565
   FileSizes:
   - Name: Desktop
     Value: 1558
@@ -569,6 +596,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4492
+--- !u!114 &8198512334393542969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemyPunch
+  m_EditorClassIdentifier: 
+  Path: event:/EnemyPunch
+  Guid:
+    Data1: 718110399
+    Data2: 1261527349
+    Data3: 1930688664
+    Data4: 7574744
+  Banks:
+  - {fileID: 749708519413997488}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 744
 --- !u!114 &9141821873722727205
 MonoBehaviour:
   m_ObjectHideFlags: 0
