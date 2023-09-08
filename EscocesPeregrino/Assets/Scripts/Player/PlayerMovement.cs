@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canControl = value;
         return canControl;
+
     }
 
     private void OnDisable()

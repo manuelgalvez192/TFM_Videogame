@@ -22,7 +22,7 @@ public class ParticleSystemManager : MonoBehaviour
         {
             foreach(GameObject obj in instances)
             {
-                if (!obj.activeInHierarchy)
+                if (obj!=null&&!obj.activeInHierarchy)
                     return obj;
             }
             GameObject newInstance = Instantiate(particlePrefab);

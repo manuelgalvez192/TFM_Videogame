@@ -24,7 +24,7 @@ public class UIPadController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField] bool isMenuControls = false;
     private void OnEnable()
     {
-        if (!InputsGameManager.instance.virtualPadEnabled&&!isMenuControls)
+        if (!isMenuControls&&!InputsGameManager.instance.virtualPadEnabled  )
             gameObject.SetActive(false);
         InputsGameManager.instance.UIController = this;
         jumpButton.ControllerParent = this;
