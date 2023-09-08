@@ -320,54 +320,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
---- !u!1 &110222211 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8257791292594457816, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
-  m_PrefabInstance: {fileID: 110222210}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &110222212 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3681559683723559122, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
-  m_PrefabInstance: {fileID: 110222210}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &110222213 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2162832084452580250, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
   m_PrefabInstance: {fileID: 110222210}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &110222214 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 930221121332049683, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
-  m_PrefabInstance: {fileID: 110222210}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b530216d51d010a46ba1eaf30a1da3cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &110222215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
   m_PrefabInstance: {fileID: 110222210}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &110222216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110222212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242afe893e21ef749a93dff7b632c461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitbox: {fileID: 110222211}
-  animator: {fileID: 110222213}
-  imageCooldown: {fileID: 0}
-  strongAttackDamage: 7
-  playerMovement: {fileID: 110222214}
 --- !u!1 &369349595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,9 +1816,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 110222215}
-  minPlayerPosition: 0
-  maxPlayerPosition: 0
-  offset: {x: 0, y: 0, z: 0}
+  minPlayerPosition: -5.01
+  maxPlayerPosition: 7.255722
+  offset: {x: 1, y: 0, z: 0}
 --- !u!114 &2003817713
 MonoBehaviour:
   m_ObjectHideFlags: 0
