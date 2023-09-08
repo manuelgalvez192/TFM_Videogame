@@ -14,10 +14,11 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private GameObject collision;
     [SerializeField] private GameObject healDrop;
     [SerializeField] private Transform particlePos;
+    [SerializeField] private Rigidbody2D rb;
 
     private float currentLife;
     private int numAnimation;
-    private bool isAlive = true;
+    public static bool isAlive = true;
     Random rnd = new Random();
 
     private void Start()
@@ -39,10 +40,13 @@ public class EnemyLife : MonoBehaviour
             {
                 numAnimation = rnd.Next(1, 3);
                 currentLife -= playerDamage.playerDamage;
+                
                 if (currentLife <= 0)
                 {
                     AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
                     isAlive = false;
+                    rb.velocity = new Vector2(0, 0);
+                    EnemyAI.canFollow = false;
                     collision.SetActive(false);
                     StartCoroutine(EnemyDeadAnimation());
                 }
