@@ -67,19 +67,20 @@ public class AudioManager : MonoBehaviour
 
     public void StopMusic()
     {
-        if(!isMenuM)
+        if(isMenuM)
         {
             menuMusicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             menuMusicInstance.release();
         }
 
-        if (!lvl1MusicInstance.isValid())
+        if (lvl1MusicInstance.isValid())
         {
+            menuMusicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             lvl1MusicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             lvl1MusicInstance.release();
         }
 
-        if (!lvl2MusicInstance.isValid())
+        if (lvl2MusicInstance.isValid())
         {
             lvl2MusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             lvl2MusicInstance.release();
