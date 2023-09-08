@@ -589,7 +589,7 @@ Transform:
   - {fileID: 4706474851592311968}
   - {fileID: 7310905555464768865}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3264277109617506465
 MonoBehaviour:
@@ -612,6 +612,7 @@ MonoBehaviour:
   attackRate: 1.5
   particlePos: {fileID: 7310905555464768865}
   healthyObject: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
+  OnEnemyDie: {fileID: 11400000, guid: 9ebd9bd071c3ef64d88f4fc58fa9da12, type: 2}
   state: 0
   longAttackDistance: 1.7
   longAttackCollider: {fileID: 3264277107897909631}

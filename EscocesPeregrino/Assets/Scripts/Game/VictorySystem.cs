@@ -20,10 +20,25 @@ public class VictorySystem : MonoBehaviour
     [SerializeField] private PlayerMovement canControl;
     [SerializeField] private Animator _animator;
 
+    [SerializeField] bool needToKillAllEnemies = false;
+    bool allEnemiesDied = false;
+    int totalEnemies;
+    int currentEnemies =0;
+
     
     void Start()
     {
         postPorcesObject.profile.TryGetSettings(out vignete);
+
+        if (!needToKillAllEnemies)
+        {
+            allEnemiesDied = true;
+            return;
+
+        }
+
+        GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("LifeComponent");
+        totalEnemies = enemyArray.Length - 1;
     }
     IEnumerator Win()
     {
@@ -65,10 +80,22 @@ public class VictorySystem : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            if (!allEnemiesDied)
+                return;
             canControl.canControl = false;
             _animator.SetTrigger("victory");
             StartCoroutine("Win");
         }
     }
     
+    public void OnEnemyDie()
+    {
+        if (!needToKillAllEnemies)
+            return;
+        currentEnemies++;
+        if(currentEnemies>= totalEnemies)
+        {
+            allEnemiesDied = true;
+        }
+    }
 }

@@ -38,6 +38,7 @@ public class PlayerLife : MonoBehaviour
         StartCoroutine(CanControl());
         if (!isBlocking)
         {
+            PlayerSingleton.instance.playerBasicAttack.FinishCombo();
             currentLife -= damage;
             ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
             if (currentLife <= 0)

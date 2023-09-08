@@ -11,6 +11,8 @@ public class PlayerBlock : MonoBehaviour
     
     private bool canBlock;
     private float timeToBlockAnim = 0.15f;
+
+    bool wasBlocking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,18 +26,38 @@ public class PlayerBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(InputsGameManager.instance.CoverButtonDown)
+        if(InputsGameManager.instance.CoverButton)
         {
-            BlockAttack();
+            if(!wasBlocking)
+            {
+                wasBlocking = true;
+                BlockAttack();
+            }
         }
-        else if(InputsGameManager.instance.CoverButtonUp)
+        else
         {
-            playerMovement.isBlocking = false;
-            playerLife.isBlocking = false;
-            timeToBlockAnim = 0.15f;
-            anim.speed = 1;
-            anim.SetBool("isBlocking", false);
+            if(wasBlocking)
+            {
+                wasBlocking = false;
+                playerMovement.isBlocking = false;
+                playerLife.isBlocking = false;
+                timeToBlockAnim = 0.15f;
+                anim.speed = 1;
+                anim.SetBool("isBlocking", false);
+            }
         }
+        //if(InputsGameManager.instance.CoverButtonDown)
+        //{
+        //    BlockAttack();
+        //}
+        //else if(InputsGameManager.instance.CoverButtonUp)
+        //{
+        //    playerMovement.isBlocking = false;
+        //    playerLife.isBlocking = false;
+        //    timeToBlockAnim = 0.15f;
+        //    anim.speed = 1;
+        //    anim.SetBool("isBlocking", false);
+        //}
     }
 
 
