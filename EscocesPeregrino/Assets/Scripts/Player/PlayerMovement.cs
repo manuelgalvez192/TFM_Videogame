@@ -51,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
     private bool ChangeMoveOption(bool value)
     {
         canControl = value;
-        print(canControl);
        return canControl;
 
     }
