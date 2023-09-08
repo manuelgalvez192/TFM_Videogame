@@ -34,6 +34,7 @@ public class PlayerLife : MonoBehaviour
     }
     public void GetDamage(float damage)
     {
+        PlayerSingleton.instance.playerBasicAttack.FinishCombo();
         StartCoroutine(CanControl());
         if (!isBlocking)
         {

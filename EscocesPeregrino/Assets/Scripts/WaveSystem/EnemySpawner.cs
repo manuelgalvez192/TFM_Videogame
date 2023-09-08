@@ -48,7 +48,8 @@ public class EnemySpawner : MonoBehaviour
             if(enemiesSpawned < waveSystem.enemiesToSpawn)
             {
                 print("Spawned");
-                instance = SpawnPool.Instance.Spawn(enemies[Random.Range(0, enemies.Length)].transform, spawners[Random.Range(0, spawners.Length)]);
+                //instance = SpawnPool.Instance.Spawn(enemies[Random.Range(0, enemies.Length)].transform, spawners[Random.Range(0, spawners.Length)]);
+                 DaniPool.Instance.Spawn(enemies[Random.Range(0, enemies.Length)], spawners[Random.Range(0, spawners.Length)]);
                 waveSystem.enemiesLeft++;
                 enemiesSpawned++;
                 yield return new WaitForSeconds(3);

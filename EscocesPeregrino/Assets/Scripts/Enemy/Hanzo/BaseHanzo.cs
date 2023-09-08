@@ -18,6 +18,7 @@ public class BaseHanzo : MonoBehaviour
     [SerializeField] protected float attackRate;
     [SerializeField] Transform particlePos;
     [SerializeField] GameObject healthyObject;
+    [SerializeField] GameEvent OnEnemyDie;
 
     protected bool allowedToMove = true;
     protected bool followingPlayer;
@@ -120,7 +121,12 @@ public class BaseHanzo : MonoBehaviour
     {
         allowedToMove = false;
         Invoke("ThrowDieParticles", 1.3f);
-        Destroy(this.gameObject, 2.5f);
+        Invoke("Deactive", 2.5f);
+        OnEnemyDie.Raise();
+    }
+    public void Deactive()
+    {
+        gameObject.SetActive(false);
     }
     void ThrowDieParticles()
     {

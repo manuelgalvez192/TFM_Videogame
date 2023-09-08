@@ -65,7 +65,7 @@ public class InputsGameManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
         InputSystem.onDeviceChange += OnDeviceChange;
-#if UNITY_STANDALONE||UNITY_EDITOR
+#if UNITY_STANDALONE
         virtualPadEnabled = false;
 #endif
     }
