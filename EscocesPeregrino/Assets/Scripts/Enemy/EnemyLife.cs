@@ -27,9 +27,12 @@ public class EnemyLife : MonoBehaviour
         playerDamage = PlayerSingleton.instance.playerBasicAttack;
     }
 
-    private void Update()
-    {
 
+    void ResetEnemy()
+    {
+        enemyAi.ResetEnemy();
+        isAlive = true;
+        currentLife = maxLife;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -127,4 +130,5 @@ public class EnemyLife : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         selfEnemy.SetActive(false);
     }
+    
 }

@@ -46,6 +46,11 @@ public class LifeComponent : MonoBehaviour
 
         ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
     }
+    public void ResetComponent()
+    {
+        currentLife = maxLife;
+        isAlive = true;
+    }
     //private void OnTriggerEnter2D(Collider2D other)
     //{
     //    if(other.tag ==damagedTag)

@@ -22,6 +22,7 @@ public class BaseHanzo : MonoBehaviour
 
     protected bool allowedToMove = true;
     protected bool followingPlayer;
+    [SerializeField] LifeComponent lifeComponent;
 
     protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction, SpecialAction2 }
     [SerializeField]protected HanzoState state = HanzoState.Waiting;
@@ -37,10 +38,15 @@ public class BaseHanzo : MonoBehaviour
     }
     private void OnEnable()
     {
-        animator.SetTrigger("reset");
+        ResetEnemy();
     }
 
-
+    protected virtual void ResetEnemy()
+    {
+        animator.SetTrigger("reset");
+        ChangeState(HanzoState.Waiting);
+        lifeComponent.ResetComponent();
+    }
     protected void FollowPlayer()
     {
         //animator.SetBool("isMoving", true);

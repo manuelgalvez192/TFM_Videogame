@@ -613,6 +613,7 @@ MonoBehaviour:
   particlePos: {fileID: 7310905555464768865}
   healthyObject: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
   OnEnemyDie: {fileID: 11400000, guid: 9ebd9bd071c3ef64d88f4fc58fa9da12, type: 2}
+  lifeComponent: {fileID: 3264277108928168320}
   state: 0
   longAttackDistance: 1.7
   longAttackCollider: {fileID: 3264277107897909631}

@@ -322,6 +322,7 @@ MonoBehaviour:
   particlePos: {fileID: 2196138515530980849}
   healthyObject: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
   OnEnemyDie: {fileID: 11400000, guid: 9ebd9bd071c3ef64d88f4fc58fa9da12, type: 2}
+  lifeComponent: {fileID: 7305203517169428585}
   state: 0
   TPOffset: 0.3
   specialAttackPercent: 20

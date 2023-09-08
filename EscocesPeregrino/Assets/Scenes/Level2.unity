@@ -1335,10 +1335,10 @@ MonoBehaviour:
   - {fileID: 1086533661}
   - {fileID: 2094286995}
   enemies:
+  - {fileID: 1628507700935195523, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
+  - {fileID: 1628507700935195523, guid: eaac106dde93f544ab04c4746087234a, type: 3}
   - {fileID: 7305203516738749030, guid: dcd1806fa245930488fef8056024223e, type: 3}
   - {fileID: 3264277109617506460, guid: 0b2937532765eb240b9a4b60e9330d67, type: 3}
-  - {fileID: 1628507700935195523, guid: eaac106dde93f544ab04c4746087234a, type: 3}
-  - {fileID: 1628507700935195523, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
   timeToSpawn: 1
   stopSpawning: 0
 --- !u!4 &1472600362

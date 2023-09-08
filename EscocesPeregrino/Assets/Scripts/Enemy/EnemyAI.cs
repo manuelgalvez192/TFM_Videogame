@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
         player = PlayerSingleton.instance.gameObject;
     }
 
+
     void FixedUpdate()
     {
         if (canFollow)
@@ -59,7 +60,10 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-    
+    public void ResetEnemy()
+    {
+        canFollow = true;
+    }
     public void StopBehaviour()
     {
         canFollow = false;
