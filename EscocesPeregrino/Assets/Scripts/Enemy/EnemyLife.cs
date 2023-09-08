@@ -27,11 +27,6 @@ public class EnemyLife : MonoBehaviour
         playerDamage = PlayerSingleton.instance.playerBasicAttack;
     }
 
-    private void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "PlayerPunchHB")
