@@ -708,7 +708,7 @@ MonoBehaviour:
   nextCircle: {fileID: 1507965045874876400}
   maxDistance: 80
   controller: {fileID: 1507965045710426385}
-  responseSpeed: 10
+  responseSpeed: 4
 --- !u!1 &1507965046531354844
 GameObject:
   m_ObjectHideFlags: 0
