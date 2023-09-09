@@ -83,6 +83,7 @@ public class VictorySystem : MonoBehaviour
             if (!allEnemiesDied)
                 return;
             canControl.canControl = false;
+            PlayerSingleton.instance.playerMovement.StopMovement();
             _animator.SetTrigger("victory");
             AudioManager.instance.PlayMusic(FMODEvents.instance.fanfareMusic, this.transform.position);
             StartCoroutine("Win");

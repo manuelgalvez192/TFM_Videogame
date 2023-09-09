@@ -317,7 +317,7 @@ MonoBehaviour:
   speed: 3
   detectionRange: 2
   offset: 0.3
-  attackDistance: 0.2
+  attackDistance: 0.4
   attackRate: 1.5
   particlePos: {fileID: 2196138515530980849}
   healthyObject: {fileID: 2615365678708976029, guid: 8ba0593c52f5c6e47b18f5aa2ae47405, type: 3}
