@@ -20,6 +20,12 @@ public class MenuPlayerMovement : MonoBehaviour
     bool isGrounded =true;
     [Header("Block")]
     bool isBlocking;
+    [Header("Shadow")]
+    [SerializeField] float shadowMultiplyJump;
+    Vector3 shadowStartScale;
+    [SerializeField] Transform shadowRender;
+
+
 
     [Header("Particle System")]
     [SerializeField] ParticleSystem dustMovementPS;
@@ -30,6 +36,8 @@ public class MenuPlayerMovement : MonoBehaviour
     void OnEnable()
     {
         anim.SetBool("isGrounded", true);
+        shadowStartScale = shadowRender.localScale;
+
     }
 
     void Update()
@@ -130,7 +138,10 @@ public class MenuPlayerMovement : MonoBehaviour
 
         while (elapsedTime <= maxTime)
         {
-            currentHeight = jumpCurve.Evaluate(elapsedTime) * jumpPower;
+            currentHeight = jumpCurve.Evaluate(elapsedTime);
+            Vector3 newScale = shadowStartScale + shadowStartScale * currentHeight * shadowMultiplyJump;
+            shadowRender.localScale = newScale;
+            currentHeight *= jumpPower;
             render.localPosition = new Vector2(render.localPosition.x, currentHeight);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -139,6 +150,7 @@ public class MenuPlayerMovement : MonoBehaviour
         isGrounded = true;
         anim.SetBool("isGrounded", true);
         render.localPosition = Vector2.zero;
+
         ThrowJumpDust();
 
 

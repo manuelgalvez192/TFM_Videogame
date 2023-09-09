@@ -26,7 +26,7 @@ public class BaseHanzo : MonoBehaviour
 
     protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction, SpecialAction2 }
     [SerializeField]protected HanzoState state = HanzoState.Waiting;
-    protected IEnumerator currentCorroutine;
+    [SerializeField]protected IEnumerator currentCorroutine;
 
     protected void Start()
     {
