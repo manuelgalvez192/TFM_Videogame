@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.01
+      value: -5.35
       objectReference: {fileID: 0}
     - target: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -381,7 +381,7 @@ MonoBehaviour:
   resumeButtonScaleY: 0.62498
   exitButtonScaleX: 0.22496
   exitButtonScaleY: 0.62498
-  PanelLoader: {fileID: 0}
+  PanelLoader: {fileID: 1044837382}
 --- !u!1 &527425131
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +808,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIControls
       objectReference: {fileID: 0}
+    - target: {fileID: 2076467292793829498, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117695674718039259, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_Name
+      value: PauseButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117695674718039259, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190673928577154582, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 369349597}
+    - target: {fileID: 7190673928577154582, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190673928577154582, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: pauseGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190673928577154582, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
@@ -1025,6 +1053,18 @@ PrefabInstance:
     - target: {fileID: 6433047383900036301, guid: ce9c45bb42dea9e44b819a14494abc29, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165179308003528586, guid: ce9c45bb42dea9e44b819a14494abc29, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165179308003528586, guid: ce9c45bb42dea9e44b819a14494abc29, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165179308003528586, guid: ce9c45bb42dea9e44b819a14494abc29, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1754,8 +1794,8 @@ Camera:
   m_GameObject: {fileID: 2003817708}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1796,7 +1836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003817708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.55, y: -0.43, z: -3.06}
+  m_LocalPosition: {x: -4.008423, y: -0.43, z: -3.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
