@@ -1757,18 +1757,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParticlesManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5729876870082862170, guid: 20c4f6d722474ca4d8bede55bd3d9d85, type: 3}
-      propertyPath: particles.Array.data[0].spawnScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5729876870082862170, guid: 20c4f6d722474ca4d8bede55bd3d9d85, type: 3}
-      propertyPath: particles.Array.data[0].spawnScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5729876870082862170, guid: 20c4f6d722474ca4d8bede55bd3d9d85, type: 3}
-      propertyPath: particles.Array.data[0].spawnScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 5729876870082862171, guid: 20c4f6d722474ca4d8bede55bd3d9d85, type: 3}
       propertyPath: m_RootOrder
       value: 15

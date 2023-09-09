@@ -48,7 +48,7 @@ MonoBehaviour:
   - typeName: RandomText
     particlePrefab: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
     spawnOffset: {x: 0.2, y: 0}
-    spawnScale: {x: 0.2, y: 0.2, z: 0.2}
+    spawnScale: {x: 0.35, y: 0.35, z: 0.35}
     spawnRotation: {x: 0, y: 0, z: 0}
   - typeName: Blood
     particlePrefab: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
