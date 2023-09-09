@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e320c67d80a9d419eeda6d1b019d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLifeSlider: {fileID: 1938885734516554100}
-  lifeText: {fileID: 9185912541654817412}
+  playerLifeSlider: {fileID: 0}
+  lifeText: {fileID: 0}
   maxLife: 50
   enemyDamage: {fileID: 0}
   animator: {fileID: 2162832084452580250}
@@ -5386,7 +5386,7 @@ Transform:
   - {fileID: 7409381513328026298}
   - {fileID: 1450236107307713554}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2679453431987630118
 Rigidbody2D:
@@ -5594,7 +5594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 8257791292594457816}
   animator: {fileID: 2162832084452580250}
-  imageCooldown: {fileID: 3561686918081595985}
+  imageCooldown: {fileID: 0}
   strongAttackDamage: 7
   playerMovement: {fileID: 930221121332049683}
 --- !u!1 &3792963656551084642
@@ -6447,11 +6447,11 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
-  autoRandomSeed: 1
+  autoRandomSeed: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -6515,7 +6515,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6620,8 +6620,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -6684,7 +6684,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.08
+      scalar: 0.09
       minScalar: 0.05
       maxCurve:
         serializedVersion: 2
@@ -7001,7 +7001,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 25
+    maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -7061,7 +7061,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 12
+    type: 4
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -7148,7 +7148,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 0.06
       mode: 3
       spread: 0
       speed:
@@ -7267,7 +7267,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7441,13 +7441,22 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: -1
-          outSlope: -1
-          tangentMode: 34
+          time: 0.0038610026
+          value: 0.52702713
+          inSlope: 7.9655156
+          outSlope: 7.9655156
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
+          outWeight: 0.16058888
+        - serializedVersion: 3
+          time: 0.35054344
+          value: 0.6250463
+          inSlope: 1.0670156
+          outSlope: 1.0670156
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.26350617
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
@@ -7764,9 +7773,9 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
-        key1: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0.7764706}
+        key3: {r: 0, g: 0, b: 0, a: 0.92941177}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -7780,16 +7789,16 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
-        atime4: 0
+        atime1: 42020
+        atime2: 48188
+        atime3: 56283
+        atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 5
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8699,8 +8708,8 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.5
+      scalar: 3
+      minScalar: -3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -11604,39 +11613,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1450236106426656231, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
   m_PrefabInstance: {fileID: 1283727861}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1938885734516554100 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1938885735514527873, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
-  m_PrefabInstance: {fileID: 1283727861}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3561686918081595985 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3561686919365323684, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
-  m_PrefabInstance: {fileID: 1283727861}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &9185912541654817412 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9185912542535367537, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
-  m_PrefabInstance: {fileID: 1283727861}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6337617212676120691
 PrefabInstance:
   m_ObjectHideFlags: 0
