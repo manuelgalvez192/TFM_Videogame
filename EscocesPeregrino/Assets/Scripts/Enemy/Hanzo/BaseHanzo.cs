@@ -30,14 +30,14 @@ public class BaseHanzo : MonoBehaviour
 
     protected void Start()
     {
-        player = PlayerSingleton.instance.transform;
         rb = GetComponent<Rigidbody2D>();
         attackCollision.enabled = false;
         attackCollisionSize = attackCollision.size.x;
-        ChangeState(HanzoState.Waiting);
+        //ChangeState(HanzoState.Waiting);
     }
     private void OnEnable()
     {
+        player = PlayerSingleton.instance.transform;
         ResetEnemy();
     }
 
