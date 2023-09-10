@@ -8,6 +8,7 @@ public class HanzoControl : BaseHanzo
     public float specialAttackPercent = 10;
     [SerializeField] Collider2D collider;
     [SerializeField] private GameObject collision;
+    [SerializeField] GameObject shadow;
     void Start()
     {
         base.Start();
@@ -113,7 +114,9 @@ public class HanzoControl : BaseHanzo
         animator.SetBool("isMoving", false);
         animator.SetTrigger("specialAttack");
 
-        yield return new WaitForSeconds(2.06f); // tiempo en desaparecer
+        yield return new WaitForSeconds(1.06f); // tiempo en desaparecer
+        shadow.SetActive(false);
+        yield return new WaitForSeconds(1.06f); // tiempo en desaparecer
         float rot;
         if (PlayerSingleton.instance.gameObject.transform.GetChild(0).transform.localScale.x < 0)
             rot = 1;
@@ -135,6 +138,7 @@ public class HanzoControl : BaseHanzo
 
         yield return new WaitForSeconds(1.3f);
         collider.enabled = true;
+        shadow.SetActive(true);
 
         yield return new WaitForSeconds(1.6f);
         ChangeState(HanzoState.Attacking);
