@@ -2610,6 +2610,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2480332467621965376, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.06999993
+      objectReference: {fileID: 0}
     - target: {fileID: 3133327152336531707, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: imageCooldown
       value: 
@@ -2624,11 +2628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.19
+      value: -2.85
       objectReference: {fileID: 0}
     - target: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2690,6 +2694,10 @@ PrefabInstance:
       propertyPath: playerLifeSlider
       value: 
       objectReference: {fileID: 1770495202}
+    - target: {fileID: 8257791292594457816, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
