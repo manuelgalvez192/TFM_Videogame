@@ -5386,7 +5386,7 @@ Transform:
   - {fileID: 7409381513328026298}
   - {fileID: 1450236107307713554}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2679453431987630118
 Rigidbody2D:
@@ -5594,7 +5594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 8257791292594457816}
   animator: {fileID: 2162832084452580250}
-  imageCooldown: {fileID: 0}
+  imageCooldown: {fileID: 3561686918081595985}
   strongAttackDamage: 7
   playerMovement: {fileID: 930221121332049683}
 --- !u!1 &3792963656551084642
@@ -11613,6 +11613,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1450236106426656231, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
   m_PrefabInstance: {fileID: 1283727861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3561686918081595985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3561686919365323684, guid: da496bb3902735343bf3a4e61faa3577, type: 3}
+  m_PrefabInstance: {fileID: 1283727861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6337617212676120691
 PrefabInstance:
   m_ObjectHideFlags: 0

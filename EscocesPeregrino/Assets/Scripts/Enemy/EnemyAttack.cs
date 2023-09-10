@@ -93,6 +93,7 @@ public class EnemyAttack : MonoBehaviour
             atacking = false;
             yield break;
         }
+            yield break;
     }
     public void StopBehavior()
     {

@@ -111,7 +111,7 @@ public class EnemyLife : MonoBehaviour
     private IEnumerator TakeDamageAnim()
     {
         yield return new WaitForSeconds(0.5f);
-        animator.SetBool("isAttacking", true);
+        //animator.SetBool("isAttacking", true);
     }
     
     private IEnumerator EnemyDeadAnimation()
