@@ -5439,6 +5439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLife: {fileID: 7914866354274215235}
   playerBasicAttack: {fileID: 5799724551216947619}
+  playerStrongAttack: {fileID: 3133327152336531707}
   playerMovement: {fileID: 930221121332049683}
   playerAnimator: {fileID: 2162832084452580250}
   isSpecialAttack: 0

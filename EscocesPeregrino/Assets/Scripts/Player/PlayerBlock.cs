@@ -13,10 +13,13 @@ public class PlayerBlock : MonoBehaviour
     private float timeToBlockAnim = 0.15f;
 
     bool wasBlocking = false;
+    public bool allowedToRun = true;
+
     // Start is called before the first frame update
     void Start()
     {
-      
+        if (!allowedToRun)
+            return;
         canBlock = true;
     
         playerMovement= GetComponent<PlayerMovement>();

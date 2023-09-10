@@ -17,6 +17,8 @@ public class PlayerBasicAtack : MonoBehaviour
     
     public delegate bool CanMove(bool value);
     public static CanMove canMove;
+    public bool allowedToRun = true;
+
 
     void Start()
     {
@@ -27,7 +29,9 @@ public class PlayerBasicAtack : MonoBehaviour
 
     void Update()
     {
-        if(InputsGameManager.instance.AttackButtonDown)
+        if (!allowedToRun)
+            return;
+        if (InputsGameManager.instance.AttackButtonDown)
         {
             Combo();
         }
