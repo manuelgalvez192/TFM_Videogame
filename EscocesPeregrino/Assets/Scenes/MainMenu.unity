@@ -1003,6 +1003,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2139539708802294319, guid: 29cfd4222bd7d0b40b1361a6b9d79cae, type: 3}
+      propertyPath: <fanfareMusic>k__BackingField.Path
+      value: event:/Fanfare
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139539708802294319, guid: 29cfd4222bd7d0b40b1361a6b9d79cae, type: 3}
+      propertyPath: <fanfareMusic>k__BackingField.Guid.Data1
+      value: 1537280820
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139539708802294319, guid: 29cfd4222bd7d0b40b1361a6b9d79cae, type: 3}
+      propertyPath: <fanfareMusic>k__BackingField.Guid.Data2
+      value: 1183416052
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139539708802294319, guid: 29cfd4222bd7d0b40b1361a6b9d79cae, type: 3}
+      propertyPath: <fanfareMusic>k__BackingField.Guid.Data3
+      value: -1789197891
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139539708802294319, guid: 29cfd4222bd7d0b40b1361a6b9d79cae, type: 3}
+      propertyPath: <fanfareMusic>k__BackingField.Guid.Data4
+      value: 828590614
+      objectReference: {fileID: 0}
     - target: {fileID: 2139539709155671356, guid: 29cfd4222bd7d0b40b1361a6b9d79cae, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1126,6 +1146,24 @@ Transform:
   m_Father: {fileID: 1422085783}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &730651444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4348099804929574461, guid: e99eae2eda1656d4bacb327521cf7af3, type: 3}
+  m_PrefabInstance: {fileID: 1290042601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &730651447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730651444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c60b73aa4e96340aecb3e7d3fa8b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSceneName: MainMenu
 --- !u!1 &775663988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +1991,7 @@ GameObject:
   - component: {fileID: 1110134719}
   - component: {fileID: 1110134721}
   - component: {fileID: 1110134720}
+  - component: {fileID: 1110134722}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2135,6 +2174,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110134715}
   m_Enabled: 0
+--- !u!114 &1110134722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110134715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c60b73aa4e96340aecb3e7d3fa8b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuSceneName: MainMenu
 --- !u!224 &1114061059 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1333193746244934898, guid: 58c66169087b95140a6cc11e38fe212f, type: 3}
@@ -2645,6 +2697,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManagerMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 4348099804929574461, guid: e99eae2eda1656d4bacb327521cf7af3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348099804929574462, guid: e99eae2eda1656d4bacb327521cf7af3, type: 3}
+      propertyPath: mainMenuMusic
+      value: 
+      objectReference: {fileID: 730651447}
     - target: {fileID: 4348099804929574463, guid: e99eae2eda1656d4bacb327521cf7af3, type: 3}
       propertyPath: m_RootOrder
       value: 14
