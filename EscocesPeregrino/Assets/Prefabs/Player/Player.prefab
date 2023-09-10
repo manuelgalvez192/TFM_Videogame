@@ -5441,6 +5441,7 @@ MonoBehaviour:
   playerBasicAttack: {fileID: 5799724551216947619}
   playerStrongAttack: {fileID: 3133327152336531707}
   playerMovement: {fileID: 930221121332049683}
+  playerBlock: {fileID: 7937602630403498097}
   playerAnimator: {fileID: 2162832084452580250}
   isSpecialAttack: 0
   rayParticles: {fileID: 6138868065206060327}
@@ -5569,6 +5570,7 @@ MonoBehaviour:
   hitbox: {fileID: 8257791292594457816}
   animator: {fileID: 2162832084452580250}
   playerDamage: 5
+  allowedToRun: 1
 --- !u!114 &1095470563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,6 +5600,7 @@ MonoBehaviour:
   imageCooldown: {fileID: 3561686918081595985}
   strongAttackDamage: 7
   playerMovement: {fileID: 930221121332049683}
+  allowedToRun: 1
 --- !u!1 &3792963656551084642
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,6 +6068,7 @@ MonoBehaviour:
   shadowMultiplyRunning: 0.05
   isGrounded: 1
   isBlocking: 0
+  allowedToRun: 1
   dustMovementPS: {fileID: 1060045332078870262}
   dustJumpPS: {fileID: 7309057628307533977}
   movementDustRate: 0.08
@@ -6081,6 +6085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2162832084452580250}
+  allowedToRun: 1
 --- !u!114 &1851128901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6124,6 +6129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2162832084452580250}
+  allowedToRun: 1
 --- !u!1 &6639483093349216211
 GameObject:
   m_ObjectHideFlags: 0
