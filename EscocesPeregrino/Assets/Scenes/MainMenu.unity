@@ -1053,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2139539709155671358, guid: 29cfd4222bd7d0b40b1361a6b9d79cae, type: 3}
       propertyPath: isMenuM
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

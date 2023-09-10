@@ -85,7 +85,7 @@ public class VictorySystem : MonoBehaviour
             canControl.canControl = false;
             PlayerSingleton.instance.playerMovement.StopMovement();
             _animator.SetTrigger("victory");
-            AudioManager.instance.PlayMusic(FMODEvents.instance.fanfareMusic, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fanfareMusic, this.transform.position);
             StartCoroutine("Win");
         }
     }

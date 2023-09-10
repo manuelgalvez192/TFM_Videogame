@@ -37,22 +37,21 @@ public class SceneManagerMusic : MonoBehaviour
         if (audioManager != null)
         {
             // Implementa la lógica para detener la música actual según la escena
-            if (sceneName == menuSceneName)
+            if (sceneName != menuSceneName)
             {
                
-                audioManager.StopMusic();
+                audioManager.StopMusic(FMODEvents.instance.menuMusic);
               
             }
-            else if (sceneName == lvl1SceneName)
+            else if (sceneName != lvl1SceneName)
             {
-                audioManager.isMenuM = false;
-                audioManager.isLvl2M= false;
-                audioManager.StopMusic();
+              
+                audioManager.StopMusic(FMODEvents.instance.lvl1Music);
                 
             }
-            else if (sceneName == lvl2SceneName)
+            else if (sceneName != lvl2SceneName)
             {
-                audioManager.StopMusic();
+                audioManager.StopMusic(FMODEvents.instance.lvl2Music);
                
             }
             // Agrega más condiciones según tus necesidades
@@ -64,18 +63,18 @@ public class SceneManagerMusic : MonoBehaviour
         AudioManager audioManager = AudioManager.instance;
         if (sceneName ==menuSceneName)
         {
-            audioManager.isMenuM = true;
-            audioManager.PlayMusic(FMODEvents.instance.menuMusic, this.transform.position);
+        
+            audioManager.PlayMusic(FMODEvents.instance.menuMusic);
         }
         else if (sceneName == lvl1SceneName)
         {
-            audioManager.isLvl1M = true;
-            audioManager.PlayMusic(FMODEvents.instance.lvl1Music, this.transform.position);
+            
+            audioManager.PlayMusic(FMODEvents.instance.lvl1Music);
         }
         else if (sceneName == lvl2SceneName)
         {
-            audioManager.isLvl2M = true;
-            audioManager.PlayMusic(FMODEvents.instance.lvl2Music, this.transform.position);
+          
+            audioManager.PlayMusic(FMODEvents.instance.lvl2Music);
         }
     }
 }
