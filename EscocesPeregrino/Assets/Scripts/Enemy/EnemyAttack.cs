@@ -89,11 +89,11 @@ public class EnemyAttack : MonoBehaviour
             yield return new WaitForSeconds(1);
         
             EnemyAI.canFollow = true;
+            print("entraaaaaaaaaaaaaaaaaaaaaa");
             animator.SetBool("isAttacking", false);
             atacking = false;
             yield break;
         }
-            yield break;
     }
     public void StopBehavior()
     {
