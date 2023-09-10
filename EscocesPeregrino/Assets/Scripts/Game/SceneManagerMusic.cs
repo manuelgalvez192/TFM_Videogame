@@ -11,13 +11,15 @@ public class SceneManagerMusic : MonoBehaviour
     public string lvl1SceneName = "Manu";
     public string lvl2SceneName = "Level2";
 
+    public MainMenuMusic mainMenuMusic;
+
     public static SceneManagerMusic instance;
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Evita que se destruya al cambiar de escena
+            
         }
         else
         {
@@ -53,8 +55,8 @@ public class SceneManagerMusic : MonoBehaviour
             // Implementa la lógica para detener la música actual según la escena
             if (sceneName != menuSceneName)
             {
-               
-                audioManager.StopMusic(FMODEvents.instance.menuMusic);
+                mainMenuMusic.StopMusic();
+                //audioManager.StopMusic(FMODEvents.instance.menuMusic);
               
             }
             else if (sceneName != lvl1SceneName)
@@ -77,8 +79,8 @@ public class SceneManagerMusic : MonoBehaviour
         AudioManager audioManager = AudioManager.instance;
         if (sceneName == menuSceneName)
         {
-            
-            audioManager.PlayMusic(FMODEvents.instance.menuMusic);
+            mainMenuMusic.PlayMusic();
+            //audioManager.PlayMusic(FMODEvents.instance.menuMusic);
         }
         else if (sceneName == lvl1SceneName)
         {

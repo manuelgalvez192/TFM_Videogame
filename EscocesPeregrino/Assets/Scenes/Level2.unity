@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36c6fc2913bf734e823d9c0f55f5edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 671685392}
   spawners:
   - {fileID: 727623765}
   - {fileID: 1925457345}
