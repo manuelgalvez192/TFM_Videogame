@@ -11,6 +11,20 @@ public class SceneManagerMusic : MonoBehaviour
     public string lvl1SceneName = "Manu";
     public string lvl2SceneName = "Level2";
 
+    public static SceneManagerMusic instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Evita que se destruya al cambiar de escena
+        }
+        else
+        {
+            Destroy(gameObject); // Destruye duplicados
+        }
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -61,14 +75,14 @@ public class SceneManagerMusic : MonoBehaviour
     private void PlayNewMusic(string sceneName)
     {
         AudioManager audioManager = AudioManager.instance;
-        if (sceneName ==menuSceneName)
+        if (sceneName == menuSceneName)
         {
-        
+            
             audioManager.PlayMusic(FMODEvents.instance.menuMusic);
         }
         else if (sceneName == lvl1SceneName)
         {
-            
+           
             audioManager.PlayMusic(FMODEvents.instance.lvl1Music);
         }
         else if (sceneName == lvl2SceneName)

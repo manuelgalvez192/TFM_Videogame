@@ -5,6 +5,7 @@ using FMODUnity;
 using FMOD.Studio;
 
 
+
 public class AudioManager : MonoBehaviour
 {
 
@@ -12,11 +13,14 @@ public class AudioManager : MonoBehaviour
 
     private Dictionary<EventReference, EventInstance> musicInstances = new Dictionary<EventReference, EventInstance>();
 
+    EventInstance musicEventInstance;
+  
     private void Awake()
     {
         if(instance != null)
         {
-            Debug.LogError("Found more than one Audio Manager in the scene");
+            //Debug.LogError("Found more than one Audio Manager in the scene");
+            DontDestroyOnLoad(gameObject); // Evita que se destruya al cambiar de escena
         }
         instance = this;
     }
@@ -38,23 +42,24 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        EventInstance soundEventInstance = RuntimeManager.CreateInstance(sound);
-        soundEventInstance.start();
-        musicInstances[sound] = soundEventInstance;
+        musicEventInstance = RuntimeManager.CreateInstance(sound);
+        musicEventInstance.start();
+        musicInstances[sound] = musicEventInstance;
 
     }
 
     public void StopMusic(EventReference sound)
     {
-        if (musicInstances.TryGetValue(sound, out EventInstance soundEventInstance))
-        {
-            if (soundEventInstance.isValid())
-            {
-                soundEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                soundEventInstance.release();
-            }
-            musicInstances.Remove(sound);
-        }
+         print("Trying to stop music for " + sound);
+            print("Stopping music for " + sound);
+                musicInstances[sound] = musicEventInstance;
+                musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                musicEventInstance.release();
+                musicInstances.Remove(sound);
+
+
+  
+
 
     }
 
