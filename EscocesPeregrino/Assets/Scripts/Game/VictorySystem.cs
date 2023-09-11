@@ -25,6 +25,8 @@ public class VictorySystem : MonoBehaviour
     public int totalEnemies;
     public int currentEnemies =0;
 
+    private MainMenuMusic menuMusic;
+
     
     void Start()
     {
@@ -87,6 +89,7 @@ public class VictorySystem : MonoBehaviour
             _animator.SetTrigger("victory");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.fanfareMusic, this.transform.position);
             StartCoroutine("Win");
+            StartCoroutine("SetMusicVolume");
         }
     }
     
@@ -100,4 +103,18 @@ public class VictorySystem : MonoBehaviour
             allEnemiesDied = true;
         }
     }
+
+    private  IEnumerator SetMusicVolume()
+    {
+        menuMusic.SetVolume(0.1f);
+
+        yield return new WaitForSeconds(10f);
+
+        menuMusic.SetVolume(1);
+
+        yield return null;
+
+    }
+        
+
 }
