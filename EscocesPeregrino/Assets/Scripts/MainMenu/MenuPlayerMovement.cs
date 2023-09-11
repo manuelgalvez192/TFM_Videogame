@@ -32,6 +32,7 @@ public class MenuPlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem dustJumpPS;
     float movementDustCount;
     [SerializeField, Range(0, 0.1f)] float movementDustRate = 0.08f;
+    bool wasBlocking = false;
 
     void OnEnable()
     {
@@ -71,15 +72,24 @@ public class MenuPlayerMovement : MonoBehaviour
     }
     void SetAnimatorValues()
     {
-        if (InputsGameManager.instance.CoverButtonDown)
+
+        if (InputsGameManager.instance.CoverButton)
         {
-            isBlocking = true;
-            anim.SetBool("Cover", true);
+            if(!wasBlocking)
+            {
+                wasBlocking = true;
+                isBlocking = true;
+                anim.SetBool("Cover", true);
+            }
         }
-            if (InputsGameManager.instance.CoverButtonUp)
+        else
         {
-            isBlocking = false;
-            anim.SetBool("Cover", false);
+            if (wasBlocking)
+            {
+                wasBlocking = false;
+                isBlocking = false;
+                anim.SetBool("Cover", false);
+            }
         }
         if (isBlocking)
             return;
