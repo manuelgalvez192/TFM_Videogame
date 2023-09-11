@@ -71,6 +71,7 @@ MonoBehaviour:
   particlePos: {fileID: 1543260785756031786}
   rb: {fileID: 1628507700935195521}
   attackHitBox: {fileID: 4479874167173968574}
+  onEnemyDie: {fileID: 11400000, guid: 9ebd9bd071c3ef64d88f4fc58fa9da12, type: 2}
   isAlive: 1
 --- !u!1 &1628507700935195523
 GameObject:

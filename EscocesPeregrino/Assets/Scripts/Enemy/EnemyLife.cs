@@ -16,6 +16,7 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private Transform particlePos;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject attackHitBox;
+    [SerializeField] GameEvent onEnemyDie;
 
     private float currentLife;
     private int numAnimation;
@@ -60,6 +61,7 @@ public class EnemyLife : MonoBehaviour
                 attackHitBox.SetActive(false);
                 collision.SetActive(false);
                 StartCoroutine(EnemyDeadAnimation());
+                onEnemyDie.Raise();
             }
 
             if (numAnimation == 1)
