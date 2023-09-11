@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7ca6ee92a08ea4a9a9fd42438e04c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 20
+  maxLife: 10
   currentLife: 0
   damagedTag: PlayerPunchHB
   particlePos: {fileID: 7310905555464768865}
