@@ -36,4 +36,9 @@ public class MainMenuMusic : MonoBehaviour
         musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicEventInstance.release();
     }
+
+    public void SetVolume(float volume)
+    {
+        musicEventInstance.setVolume(volume);
+    }
 }

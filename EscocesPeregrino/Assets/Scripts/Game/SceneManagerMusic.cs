@@ -55,19 +55,18 @@ public class SceneManagerMusic : MonoBehaviour
             // Implementa la lógica para detener la música actual según la escena
             if (sceneName != menuSceneName)
             {
-                mainMenuMusic.StopMusic();
+                
                 //audioManager.StopMusic(FMODEvents.instance.menuMusic);
               
             }
             else if (sceneName != lvl1SceneName)
             {
               
-                audioManager.StopMusic(FMODEvents.instance.lvl1Music);
                 
             }
             else if (sceneName != lvl2SceneName)
             {
-                audioManager.StopMusic(FMODEvents.instance.lvl2Music);
+                
                
             }
             // Agrega más condiciones según tus necesidades
@@ -85,12 +84,12 @@ public class SceneManagerMusic : MonoBehaviour
         else if (sceneName == lvl1SceneName)
         {
            
-            audioManager.PlayMusic(FMODEvents.instance.lvl1Music);
+           
         }
         else if (sceneName == lvl2SceneName)
         {
           
-            audioManager.PlayMusic(FMODEvents.instance.lvl2Music);
+            
         }
     }
 }
