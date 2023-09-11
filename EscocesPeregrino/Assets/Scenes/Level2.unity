@@ -1017,13 +1017,13 @@ MonoBehaviour:
   - prefab: {fileID: 7305203516738749030, guid: dcd1806fa245930488fef8056024223e, type: 3}
     objects: []
     firstAmount: 5
-  - prefab: {fileID: 1628507700935195523, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
+  - prefab: {fileID: 264415586875896055, guid: 435798c636ba8ce4cb5cdd786314b743, type: 3}
     objects: []
     firstAmount: 5
   - prefab: {fileID: 3264277109617506460, guid: 0b2937532765eb240b9a4b60e9330d67, type: 3}
     objects: []
     firstAmount: 5
-  - prefab: {fileID: 1628507700935195523, guid: eaac106dde93f544ab04c4746087234a, type: 3}
+  - prefab: {fileID: 6682556492569152264, guid: 86b6d4aff5cae1845b211f9360f508a5, type: 3}
     objects: []
     firstAmount: 5
 --- !u!1001 &686984616
@@ -1041,6 +1041,10 @@ PrefabInstance:
     - target: {fileID: 3448057974344562157, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984580233871805664, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.732178
       objectReference: {fileID: 0}
     - target: {fileID: 6139649673421744172, guid: cc03a3c48805c0149b76de3eeb1507d8, type: 3}
       propertyPath: m_RootOrder
@@ -2089,8 +2093,8 @@ MonoBehaviour:
   - {fileID: 1086533661}
   - {fileID: 2094286995}
   enemies:
-  - {fileID: 1628507700935195523, guid: df500ed0113f4ee48b5d100faa16dcc5, type: 3}
-  - {fileID: 1628507700935195523, guid: eaac106dde93f544ab04c4746087234a, type: 3}
+  - {fileID: 264415586875896055, guid: 435798c636ba8ce4cb5cdd786314b743, type: 3}
+  - {fileID: 6682556492569152264, guid: 86b6d4aff5cae1845b211f9360f508a5, type: 3}
   - {fileID: 7305203516738749030, guid: dcd1806fa245930488fef8056024223e, type: 3}
   - {fileID: 3264277109617506460, guid: 0b2937532765eb240b9a4b60e9330d67, type: 3}
   timeToSpawn: 1
@@ -2916,6 +2920,14 @@ PrefabInstance:
     - target: {fileID: 1507965046322904735, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
       propertyPath: m_Name
       value: UIControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954041974470349839, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -65.80005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954041974470349839, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32.399902
       objectReference: {fileID: 0}
     - target: {fileID: 5117695674718039259, guid: 6897d788a7d40e742b5d512c690ae01c, type: 3}
       propertyPath: m_IsActive
