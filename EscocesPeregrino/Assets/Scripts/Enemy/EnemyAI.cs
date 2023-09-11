@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
 
     private float detectionDistance;
     private Vector2 placeToGo;
-    public static bool canFollow = true;
+    public bool canFollow = true;
 
 
     private void Start()

@@ -46,7 +46,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void DisableEnemyActions()
     {
-        EnemyAI.canFollow = false;
+        enemyAi.canFollow = false;
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", false);
         capsule.enabled = false;
@@ -63,7 +63,7 @@ public class EnemyAttack : MonoBehaviour
         {
             
             animator.SetBool("isWalking", false);
-            EnemyAI.canFollow = false;
+            enemyAi.canFollow = false;
             animator.SetBool("isAttacking", true);
             enemyPunchHB.SetActive(true);
             atacking = true;
@@ -88,7 +88,7 @@ public class EnemyAttack : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
         
-            EnemyAI.canFollow = true;
+            enemyAi.canFollow = true;
             print("entraaaaaaaaaaaaaaaaaaaaaa");
             animator.SetBool("isAttacking", false);
             atacking = false;

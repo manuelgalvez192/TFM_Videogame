@@ -55,7 +55,7 @@ public class EnemyLife : MonoBehaviour
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
                 isAlive = false;
                 rb.velocity = new Vector2(0, 0);
-                EnemyAI.canFollow = false;
+                enemyAi.canFollow = false;
                 collision.SetActive(false);
                 StartCoroutine(EnemyDeadAnimation());
             }
@@ -117,7 +117,7 @@ public class EnemyLife : MonoBehaviour
     private IEnumerator EnemyDeadAnimation()
     {
         animator.SetTrigger("isDead");
-        EnemyAI.canFollow = false;
+        enemyAi.canFollow = false;
         yield return new WaitForSeconds(2.5f);
         ParticleSystemManager.instance.ThrowParticleSystem("Die", particlePos);
 

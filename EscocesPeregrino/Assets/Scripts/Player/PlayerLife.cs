@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] float maxLife = 10;
     [NonSerialized] public float currentLife;
     [SerializeField] private EnemyAttack enemyDamage;
+    [SerializeField] private EnemyAI enemyAi;
 
     [SerializeField] private Animator animator;
     [SerializeField] ParticleSystem electricParticles;
@@ -47,7 +48,7 @@ public class PlayerLife : MonoBehaviour
                 animator.SetTrigger("die");
                 currentLife = 0;
                 PostProcessingManager.instance.OnPlayerDie();
-                EnemyAI.canFollow = false;
+                enemyAi.canFollow = false;
                 GE_onPlayerDieEvent.Raise();
                 PlayerSingleton.instance.playerMovement.StopMovement();
                 if (!hasDied)
