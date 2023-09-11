@@ -68,4 +68,9 @@ public class EnemyAI : MonoBehaviour
     {
         canFollow = false;
     }
+
+    public void ResetEnemyMovement()
+    {
+        canFollow = true;
+    }
 }
