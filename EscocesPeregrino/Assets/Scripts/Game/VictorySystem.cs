@@ -21,9 +21,9 @@ public class VictorySystem : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     [SerializeField] bool needToKillAllEnemies = false;
-    bool allEnemiesDied = false;
-    int totalEnemies;
-    int currentEnemies =0;
+    public bool allEnemiesDied = false;
+    public int totalEnemies;
+    public int currentEnemies =0;
 
     
     void Start()
