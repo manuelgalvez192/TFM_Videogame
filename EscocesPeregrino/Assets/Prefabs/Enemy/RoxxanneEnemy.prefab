@@ -606,7 +606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3264277108205604563}
   attackCollision: {fileID: 3264277108002480742}
-  speed: 1
+  speed: 2
   detectionRange: 3
   offset: 0
   attackDistance: 0.3
