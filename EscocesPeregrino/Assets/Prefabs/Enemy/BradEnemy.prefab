@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 7568013689733089673}
   - component: {fileID: 772806968628441091}
   - component: {fileID: 6107122448955670303}
+  - component: {fileID: 3797029591960976365}
   m_Layer: 0
   m_Name: EnemyController
   m_TagString: Untagged
@@ -289,6 +290,46 @@ MonoBehaviour:
       - m_Target: {fileID: 2050687105109215634}
         m_TargetAssemblyTypeName: EnemyAttack, Assembly-CSharp
         m_MethodName: StopBehavior
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3797029591960976365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350482142429397796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34c38d1c8e0754b834e67f02de90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 1b12d937d20dd77468e35de49b0b2987, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 772806968628441091}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
+        m_MethodName: ResetEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2050687105109215634}
+        m_TargetAssemblyTypeName: EnemyAttack, Assembly-CSharp
+        m_MethodName: EnablaAttackOnResucite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

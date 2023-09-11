@@ -52,6 +52,12 @@ public class EnemyAttack : MonoBehaviour
         animator.SetBool("isWalking", false);
         capsule.enabled = false;
     }
+    public void EnablaAttackOnResucite()
+    {
+        capsule.enabled = true;
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isWalking", false);
+    }
 
     private void OnDisable()
     {
