@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private EnemyAI enemyAi;
+    [SerializeField] private EnemyLife enemyLife;
     [SerializeField] private GameObject enemyPunchHB;
     [SerializeField] private CapsuleCollider2D capsule;
     [SerializeField] private PlayerLife currentLife;
@@ -84,7 +85,7 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator AttackToIdle()
     {
-        if (currentLife.currentLife > 0 && EnemyLife.isAlive)
+        if (currentLife.currentLife > 0 && enemyLife.isAlive)
         {
             yield return new WaitForSeconds(1);
         
