@@ -59,6 +59,7 @@ public class pauseGame : MonoBehaviour
         Time.timeScale = pauseMenu.activeInHierarchy ? 1 : 0;
         pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
         paused = !paused;
+        PlayerSingleton.instance.SetPlayerAllowedToMove(!paused);
         
         //initial selected button resume
         resumeButton.transform.localScale = new Vector3(resumeButtonScaleX + 0.1f,

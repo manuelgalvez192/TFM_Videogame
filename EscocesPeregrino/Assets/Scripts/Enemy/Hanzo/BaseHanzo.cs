@@ -18,13 +18,15 @@ public class BaseHanzo : MonoBehaviour
     [SerializeField] protected float attackRate;
     [SerializeField] Transform particlePos;
     [SerializeField] GameObject healthyObject;
+    [SerializeField] GameEvent OnEnemyDie;
 
     protected bool allowedToMove = true;
     protected bool followingPlayer;
+    [SerializeField] LifeComponent lifeComponent;
 
     protected enum HanzoState { Waiting, Following,CheckingLastPositon,GettingDamage, Attacking, SpecialAction, SpecialAction2 }
     [SerializeField]protected HanzoState state = HanzoState.Waiting;
-    protected IEnumerator currentCorroutine;
+    [SerializeField]protected IEnumerator currentCorroutine;
 
     protected void Start()
     {
@@ -36,10 +38,16 @@ public class BaseHanzo : MonoBehaviour
     }
     private void OnEnable()
     {
-        animator.SetTrigger("reset");
+        player = PlayerSingleton.instance.transform;
+        ResetEnemy();
     }
 
-
+    protected virtual void ResetEnemy()
+    {
+        animator.SetTrigger("reset");
+        ChangeState(HanzoState.Waiting);
+        lifeComponent.ResetComponent();
+    }
     protected void FollowPlayer()
     {
         //animator.SetBool("isMoving", true);
@@ -120,7 +128,12 @@ public class BaseHanzo : MonoBehaviour
     {
         allowedToMove = false;
         Invoke("ThrowDieParticles", 1.3f);
-        Destroy(this.gameObject, 2.5f);
+        Invoke("Deactive", 2.5f);
+        OnEnemyDie.Raise();
+    }
+    public void Deactive()
+    {
+        gameObject.SetActive(false);
     }
     void ThrowDieParticles()
     {

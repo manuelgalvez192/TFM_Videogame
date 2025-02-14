@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6440786234564098727}
   - component: {fileID: 6440786234564098726}
   - component: {fileID: 6440786234564098725}
+  - component: {fileID: 1789416025876521017}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -284,6 +285,37 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  canControl: {fileID: 0}
+  _animator: {fileID: 0}
+  needToKillAllEnemies: 0
+--- !u!114 &1789416025876521017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440786234564098723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34c38d1c8e0754b834e67f02de90c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 9ebd9bd071c3ef64d88f4fc58fa9da12, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6440786234564098725}
+        m_TargetAssemblyTypeName: VictorySystem, Assembly-CSharp
+        m_MethodName: OnEnemyDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6440786235176309148
 GameObject:
   m_ObjectHideFlags: 0

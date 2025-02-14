@@ -10,10 +10,8 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private Text lifeText;
     [SerializeField] float maxLife = 10;
     [NonSerialized] public float currentLife;
-    [SerializeField] private EnemyAttack enemyDamage;
 
     [SerializeField] private Animator animator;
-    [SerializeField] ParticleSystem electricParticles;
     [SerializeField] Transform particlePos;
     public bool isBlocking;
 
@@ -38,6 +36,7 @@ public class PlayerLife : MonoBehaviour
         StartCoroutine(CanControl());
         if (!isBlocking)
         {
+            PlayerSingleton.instance.playerBasicAttack.FinishCombo();
             currentLife -= damage;
             ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
             if (currentLife <= 0)
@@ -46,7 +45,7 @@ public class PlayerLife : MonoBehaviour
                 animator.SetTrigger("die");
                 currentLife = 0;
                 PostProcessingManager.instance.OnPlayerDie();
-                EnemyAI.canFollow = false;
+                
                 GE_onPlayerDieEvent.Raise();
                 PlayerSingleton.instance.playerMovement.StopMovement();
                 if (!hasDied)

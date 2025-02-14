@@ -10,6 +10,10 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float maxPlayerPosition;
     
     public Vector3 offset;
+    private void Start()
+    {
+        player =PlayerSingleton.instance.transform;
+    }
 
     void FixedUpdate()
     {

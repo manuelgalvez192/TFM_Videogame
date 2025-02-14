@@ -34,7 +34,10 @@ public class RaysMapManager : MonoBehaviour
                 {
                     rand = Random.Range(1, 6);
                     if(rand>2)
+                    {
                         obj.SetActive(true);
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.laser, this.transform.position);
+                    }  
                     else
                         obj.SetActive(false);
                 }

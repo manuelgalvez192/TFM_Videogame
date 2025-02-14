@@ -14,10 +14,13 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private GameObject collision;
     [SerializeField] private GameObject healDrop;
     [SerializeField] private Transform particlePos;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject attackHitBox;
+    [SerializeField] GameEvent onEnemyDie;
 
     private float currentLife;
     private int numAnimation;
-    private bool isAlive = true;
+    public bool isAlive = true;
     Random rnd = new Random();
 
     private void Start()
@@ -26,41 +29,56 @@ public class EnemyLife : MonoBehaviour
         playerDamage = PlayerSingleton.instance.playerBasicAttack;
     }
 
-    private void Update()
-    {
 
+    void ResetEnemy()
+    {
+        enemyAi.ResetEnemy();
+        isAlive = true;
+        currentLife = maxLife;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "PlayerPunchHB")
         {
-            if (isAlive)
-            {
-                numAnimation = rnd.Next(1, 3);
-                currentLife -= playerDamage.playerDamage;
-                if (currentLife <= 0)
-                {
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
-                    isAlive = false;
-                    collision.SetActive(false);
-                    StartCoroutine(EnemyDeadAnimation());
-                }
+            GetDamage();
+        }
+    }
 
-                if (numAnimation == 1)
-                {
-                    animator.SetBool("isAttacking", false);
-                    animator.SetBool("takeDamage2", false);
-                    animator.SetBool("takeDamage1", true);
-                }
-                if (numAnimation == 2)
-                {
-                    animator.SetBool("isAttacking", false);
-                    animator.SetBool("takeDamage1", false);
-                    animator.SetBool("takeDamage2", true);
-                }
-                ThrowDamageParticle();
+    public void GetDamage()
+    {
+        if (isAlive)
+        {
+            numAnimation = rnd.Next(1, 3);
+            currentLife -= playerDamage.playerDamage;
+                
+            if (currentLife <= 0)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
+                isAlive = false;
+                rb.velocity = new Vector2(0, 0);
+                enemyAi.canFollow = false;
+                attackHitBox.SetActive(false);
+                collision.SetActive(false);
+                StartCoroutine(EnemyDeadAnimation());
+                onEnemyDie.Raise();
             }
+
+            if (numAnimation == 1)
+            {
+                animator.SetBool("isAttacking", false);
+                animator.SetBool("takeDamage2", false);
+                animator.SetBool("takeDamage1", true);
+            }
+            if (numAnimation == 2)
+            {
+                animator.SetBool("isAttacking", false);
+                animator.SetBool("takeDamage1", false);
+                animator.SetBool("takeDamage2", true);
+            }
+            ThrowDamageParticle();
+            
+            Invoke("FinishDamage", 0.5f);
         }
     }
     void ThrowDamageParticle()
@@ -75,31 +93,35 @@ public class EnemyLife : MonoBehaviour
                 ParticleSystemManager.instance.ThrowParticleSystem(rand == 0 ? "BasicHit" : "RandomText", particlePos);
         ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
     }
+  
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.tag == "PlayerPunchHB")
+    //     {
+    //         
+    //     }
+    // }
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void FinishDamage()
     {
-        if (other.tag == "PlayerPunchHB")
+        animator.SetBool("takeDamage1", false);
+        animator.SetBool("takeDamage2", false);
+        if (transform.parent.gameObject.activeInHierarchy)
         {
-            print("sale");
-            animator.SetBool("takeDamage1", false);
-            animator.SetBool("takeDamage2", false);
-            if (transform.parent.gameObject.activeInHierarchy)
-            {
-                StartCoroutine(TakeDamageAnim());
-            }
+            StartCoroutine(TakeDamageAnim());
         }
     }
 
     private IEnumerator TakeDamageAnim()
     {
         yield return new WaitForSeconds(0.5f);
-        animator.SetBool("isAttacking", true);
+        //animator.SetBool("isAttacking", true);
     }
     
     private IEnumerator EnemyDeadAnimation()
     {
         animator.SetTrigger("isDead");
-        EnemyAI.canFollow = false;
+        enemyAi.canFollow = false;
         yield return new WaitForSeconds(2.5f);
         ParticleSystemManager.instance.ThrowParticleSystem("Die", particlePos);
 
@@ -112,4 +134,5 @@ public class EnemyLife : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         selfEnemy.SetActive(false);
     }
+    
 }

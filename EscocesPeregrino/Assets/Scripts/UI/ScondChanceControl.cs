@@ -17,6 +17,12 @@ public class ScondChanceControl : MonoBehaviour
     {
         panel.SetActive(false);
         Invoke("ActivePanel", 1f);
+
+#if UNITY_STANDALONE
+        buttonImg.color = new Vector4(buttonImg.color.r, buttonImg.color.g, buttonImg.color.b, buttonImg.color.a / 2);
+        rewardImage.color = new Vector4(rewardImage.color.r, rewardImage.color.g, rewardImage.color.b, rewardImage.color.a / 2);
+        rewardText.color = new Vector4(rewardText.color.r, rewardText.color.g, rewardText.color.b, rewardText.color.a / 2);
+#else
         haveConexion = AdsManager.instance.HaveConexion;
         if(!haveConexion)
         {
@@ -25,6 +31,7 @@ public class ScondChanceControl : MonoBehaviour
             rewardText.color = new Vector4(rewardText.color.r, rewardText.color.g, rewardText.color.b, rewardText.color.a / 2);
 
         }
+#endif
     }
 
     IEnumerator SecondChangeBehaviour()
@@ -48,11 +55,14 @@ public class ScondChanceControl : MonoBehaviour
     }
     public void GetReward()
     {
+#if UNITY_STANDALONE 
+#else
         if (!haveConexion)
             return;
         StopCoroutine(currentBehavior);
         AdsManager.instance.ThrowVideoRewardAd(onPlayerResucite);
         gameObject.SetActive(false);
+#endif
     }
     void ActivePanel()
     {

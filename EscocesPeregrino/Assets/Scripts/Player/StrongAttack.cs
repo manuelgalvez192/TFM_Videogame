@@ -12,6 +12,7 @@ public class StrongAttack : MonoBehaviour
     private bool canUseAttack;
     public float strongAttackDamage;
     public PlayerMovement playerMovement;
+    public bool allowedToRun = true;
     private void Start()
     {
         imageCooldown.fillAmount = 1;
@@ -21,6 +22,8 @@ public class StrongAttack : MonoBehaviour
 
     void Update()
     {
+        if (!allowedToRun)
+            return;
         if (InputsGameManager.instance.DashButtonDown)
         {
             Attack();

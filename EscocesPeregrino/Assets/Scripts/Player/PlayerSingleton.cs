@@ -12,7 +12,9 @@ public class PlayerSingleton : MonoBehaviour
     [Header("Components")]
     public PlayerLife playerLife;
     public PlayerBasicAtack playerBasicAttack;
+    public StrongAttack playerStrongAttack;
     public PlayerMovement playerMovement;
+    public PlayerBlock playerBlock;
     public Animator playerAnimator;
     public bool isSpecialAttack = false;
     [SerializeField] ParticleSystem rayParticles;
@@ -27,6 +29,14 @@ public class PlayerSingleton : MonoBehaviour
     public void PlayRayParticles()
     {
         rayParticles.Play();
+    }
+
+    public void SetPlayerAllowedToMove(bool result)
+    {
+        playerMovement.allowedToRun = result;
+        playerBasicAttack.allowedToRun = result;
+        playerStrongAttack.allowedToRun = result;
+        playerBlock.allowedToRun = result;
     }
 }
 

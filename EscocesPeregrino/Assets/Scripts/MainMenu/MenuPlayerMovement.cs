@@ -20,16 +20,25 @@ public class MenuPlayerMovement : MonoBehaviour
     bool isGrounded =true;
     [Header("Block")]
     bool isBlocking;
+    [Header("Shadow")]
+    [SerializeField] float shadowMultiplyJump;
+    Vector3 shadowStartScale;
+    [SerializeField] Transform shadowRender;
+
+
 
     [Header("Particle System")]
     [SerializeField] ParticleSystem dustMovementPS;
     [SerializeField] ParticleSystem dustJumpPS;
     float movementDustCount;
     [SerializeField, Range(0, 0.1f)] float movementDustRate = 0.08f;
+    bool wasBlocking = false;
 
     void OnEnable()
     {
         anim.SetBool("isGrounded", true);
+        shadowStartScale = shadowRender.localScale;
+
     }
 
     void Update()
@@ -63,15 +72,24 @@ public class MenuPlayerMovement : MonoBehaviour
     }
     void SetAnimatorValues()
     {
-        if (InputsGameManager.instance.CoverButtonDown)
+
+        if (InputsGameManager.instance.CoverButton)
         {
-            isBlocking = true;
-            anim.SetBool("Cover", true);
+            if(!wasBlocking)
+            {
+                wasBlocking = true;
+                isBlocking = true;
+                anim.SetBool("Cover", true);
+            }
         }
-            if (InputsGameManager.instance.CoverButtonUp)
+        else
         {
-            isBlocking = false;
-            anim.SetBool("Cover", false);
+            if (wasBlocking)
+            {
+                wasBlocking = false;
+                isBlocking = false;
+                anim.SetBool("Cover", false);
+            }
         }
         if (isBlocking)
             return;
@@ -130,7 +148,10 @@ public class MenuPlayerMovement : MonoBehaviour
 
         while (elapsedTime <= maxTime)
         {
-            currentHeight = jumpCurve.Evaluate(elapsedTime) * jumpPower;
+            currentHeight = jumpCurve.Evaluate(elapsedTime);
+            Vector3 newScale = shadowStartScale + shadowStartScale * currentHeight * shadowMultiplyJump;
+            shadowRender.localScale = newScale;
+            currentHeight *= jumpPower;
             render.localPosition = new Vector2(render.localPosition.x, currentHeight);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -139,6 +160,7 @@ public class MenuPlayerMovement : MonoBehaviour
         isGrounded = true;
         anim.SetBool("isGrounded", true);
         render.localPosition = Vector2.zero;
+
         ThrowJumpDust();
 
 

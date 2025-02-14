@@ -1,47 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using UnityEngine.SceneManagement;
 
 public class MusicPlayer : MonoBehaviour
 {
 
-    public bool isMenuMusic;
-    public bool islvl1Music;
-    public bool islvl2Music;
+    public string menuSceneName = "Menu";
+    public string lvl1SceneName = "Manu";
+    public string lvl2SceneName = "Level2";
+   
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        if (isMenuMusic)
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == menuSceneName )
         {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.menuMusic, this.transform.position);
+            AudioManager.instance.PlayMusic(FMODEvents.instance.menuMusic);
         }
 
-        if (islvl1Music)
+        if (currentSceneName == lvl1SceneName)
         {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.lvl1Music, this.transform.position);
+            AudioManager.instance.PlayMusic(FMODEvents.instance.lvl1Music);
         }
 
-        if (islvl2Music)
+        if (currentSceneName == lvl2SceneName)
         {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.lvl2Music, this.transform.position);
+            AudioManager.instance.PlayMusic(FMODEvents.instance.lvl2Music);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       if(!islvl1Music)
-       {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.menuMusic, this.transform.position);
-       }
-       if (!isMenuMusic)
-       {
-
-       }
-       if(!islvl2Music)
-       {
-
-       }
-    }
+   
 }

@@ -18,6 +18,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Enemies SFX")]
     [field: SerializeField] public EventReference enemieDeath { get; private set; }
+    [field: SerializeField] public EventReference enemiePunch { get; private set; }
+    [field: SerializeField] public EventReference enemieSword { get; private set; }
 
 
 
@@ -29,6 +31,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference laser { get; private set; }
     [field: SerializeField] public EventReference lvl1Music { get; private set; }
     [field: SerializeField] public EventReference lvl2Music { get; private set; }
+    [field: SerializeField] public EventReference fanfareMusic { get; private set; }
     public static FMODEvents instance { get; private set; }
 
 

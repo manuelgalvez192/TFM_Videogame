@@ -16,13 +16,14 @@ public class EnemyAI : MonoBehaviour
 
     private float detectionDistance;
     private Vector2 placeToGo;
-    public static bool canFollow = true;
+    public bool canFollow = true;
 
 
     private void Start()
     {
         player = PlayerSingleton.instance.gameObject;
     }
+
 
     void FixedUpdate()
     {
@@ -59,8 +60,17 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
+    public void ResetEnemy()
+    {
+        canFollow = true;
+    }
     public void StopBehaviour()
     {
         canFollow = false;
+    }
+
+    public void ResetEnemyMovement()
+    {
+        canFollow = true;
     }
 }

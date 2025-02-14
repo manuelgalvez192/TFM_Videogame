@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isBlocking;
     private bool isRunning;
     private bool playingStepsSounds;
+    public bool allowedToRun = true;
+
 
     [Header("Particle System")]
     [SerializeField] ParticleSystem dustMovementPS;
@@ -51,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
     private bool ChangeMoveOption(bool value)
     {
         canControl = value;
-        print(canControl);
        return canControl;
 
     }
@@ -62,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        if (!allowedToRun)
+            return;
         if (canControl)
         {
             if (InputsGameManager.instance.JumpButtonDown)

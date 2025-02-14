@@ -17,6 +17,8 @@ public class PlayerBasicAtack : MonoBehaviour
     
     public delegate bool CanMove(bool value);
     public static CanMove canMove;
+    public bool allowedToRun = true;
+
 
     void Start()
     {
@@ -27,7 +29,9 @@ public class PlayerBasicAtack : MonoBehaviour
 
     void Update()
     {
-        if(InputsGameManager.instance.AttackButtonDown)
+        if (!allowedToRun)
+            return;
+        if (InputsGameManager.instance.AttackButtonDown)
         {
             Combo();
         }
@@ -51,7 +55,7 @@ public class PlayerBasicAtack : MonoBehaviour
                 }
                 else if(!enemyHit)
                 {
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerNoHit, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
                 }
 
             }

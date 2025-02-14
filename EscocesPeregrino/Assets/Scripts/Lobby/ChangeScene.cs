@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
     [SerializeField] private string changeLevel;
+    [SerializeField] private GameObject PanelLoader;
     
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,17 @@ public class ChangeScene : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             Debug.Log("Inside");
-            SceneManager.LoadScene(changeLevel);
+            StartCoroutine(LoadAsync());
         }
+    }
+    
+    IEnumerator LoadAsync()
+    {
+        PanelLoader.SetActive(true);
+        
+        yield return new WaitForSeconds(2);
+        
+        AsyncOperation operation = SceneManager.LoadSceneAsync(changeLevel);
+
     }
 }

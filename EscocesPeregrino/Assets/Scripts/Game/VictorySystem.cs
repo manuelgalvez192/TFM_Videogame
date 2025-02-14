@@ -20,10 +20,27 @@ public class VictorySystem : MonoBehaviour
     [SerializeField] private PlayerMovement canControl;
     [SerializeField] private Animator _animator;
 
+    [SerializeField] bool needToKillAllEnemies = false;
+    public bool allEnemiesDied = false;
+    public int totalEnemies;
+    public int currentEnemies =0;
+
+    private MainMenuMusic menuMusic;
+
     
     void Start()
     {
         postPorcesObject.profile.TryGetSettings(out vignete);
+
+        if (!needToKillAllEnemies)
+        {
+            allEnemiesDied = true;
+            return;
+
+        }
+
+        GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("LifeComponent");
+        totalEnemies = enemyArray.Length - 1;
     }
     IEnumerator Win()
     {
@@ -65,10 +82,39 @@ public class VictorySystem : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            if (!allEnemiesDied)
+                return;
             canControl.canControl = false;
+            PlayerSingleton.instance.playerMovement.StopMovement();
             _animator.SetTrigger("victory");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.fanfareMusic, this.transform.position);
             StartCoroutine("Win");
+            StartCoroutine("SetMusicVolume");
         }
     }
     
+    public void OnEnemyDie()
+    {
+        if (!needToKillAllEnemies)
+            return;
+        currentEnemies++;
+        if(currentEnemies>= totalEnemies)
+        {
+            allEnemiesDied = true;
+        }
+    }
+
+    private  IEnumerator SetMusicVolume()
+    {
+        menuMusic.SetVolume(0.1f);
+
+        yield return new WaitForSeconds(10f);
+
+        menuMusic.SetVolume(1);
+
+        yield return null;
+
+    }
+        
+
 }

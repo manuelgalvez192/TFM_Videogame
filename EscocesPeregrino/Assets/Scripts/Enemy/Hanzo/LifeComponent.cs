@@ -27,6 +27,7 @@ public class LifeComponent : MonoBehaviour
         ThrowDamageParticle();
         if (currentLife <= 0)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemieDeath, this.transform.position);
             DieAction.Invoke();
             isAlive = false;
         }
@@ -44,6 +45,11 @@ public class LifeComponent : MonoBehaviour
             ParticleSystemManager.instance.ThrowParticleSystem(rand == 0 ? "BasicHit" : "RandomText", particlePos);
 
         ParticleSystemManager.instance.ThrowParticleSystem("Blood", particlePos);
+    }
+    public void ResetComponent()
+    {
+        currentLife = maxLife;
+        isAlive = true;
     }
     //private void OnTriggerEnter2D(Collider2D other)
     //{

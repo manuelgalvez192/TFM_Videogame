@@ -81,13 +81,17 @@ public class ControllerMenuControl : MonoBehaviour
     {
         while (true)
         {
+            if(!controlsPanel.activeInHierarchy)
+            {
             if (playPadButton.GetPadButtonUp())
                 startButton.onClick.Invoke();
             else if (controlsPadButton.GetPadButtonUp())
                 controlsButton.onClick.Invoke();
             else if (exitPadPadButton.GetPadButtonUp())
                 exitButton.onClick.Invoke();
-            else if(controlsPanel.activeInHierarchy)
+
+            }
+            else 
             {
                 if (backPadButton.GetPadButtonUp())
                     backButton.onClick.Invoke();
